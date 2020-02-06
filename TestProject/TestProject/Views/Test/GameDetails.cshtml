@@ -1,8 +1,10 @@
-﻿
+﻿@model RawgGameDetailsVM
+
 @{
     ViewData["Title"] = "GameDetails";
 }
 
 <h1>GameDetail</h1>
-
-@ViewData["result"]
+<p><strong>ID:</strong> @Model.id</p>
+<p><strong>NAME:</strong> @Model.name</p>
+<p><strong>DESCRIPTION:</strong> @Model.description_raw</p>

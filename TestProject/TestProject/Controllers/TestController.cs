@@ -33,11 +33,11 @@ namespace TestProject.Controllers
             request.AddHeader("x-rapidapi-key", "18d888b8e8mshfd51db13a18bc87p1a2b6bjsn4b77c635255c");
             IRestResponse response = client.Execute(request);
 
-            //RawgGamesGenreVM objec = JsonConvert.DeserializeObject<RawgGamesGenreVM>(response.Content);
+            var rawgGameDetailsVM = JsonConvert.DeserializeObject<RawgGameDetailsVM>(response.Content);
 
             ViewData["result"] = response.Content;
 
-            return View();
+            return View(rawgGameDetailsVM);
         }
     }
 }
