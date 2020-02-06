@@ -23,7 +23,7 @@ namespace TestProject.Models
         public List<Game> games { get; set; }
     }
 
-    public class RootObject
+    public class RawgVM
     {
         public int count { get; set; }
         public object next { get; set; }

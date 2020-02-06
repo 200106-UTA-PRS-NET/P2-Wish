@@ -1,0 +1,38 @@
+﻿@model RawgGamesGenreVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+    @foreach (var item in Model.results)
+    {
+        <ul>
+            <li>ID: @item.id</li>
+            <li>TITLE: @item.name</li>
+            <li>
+                PLATFORMS:
+                <ul>
+                    @foreach (var platform in item.platforms)
+                    {
+                        <li>@platform.platform.name</li>
+                    }
+                </ul>
+            </li>
+            <li>
+                GENRES:
+                <ul>
+                    @foreach (var genre in item.genres)
+                    {
+                        <li>@genre.name</li>
+                    }
+                </ul>
+            </li>
+            <li>
+                Metacritic:
+                @item.metacritic
+            </li>
+        </ul>
+    <hr />
+    }

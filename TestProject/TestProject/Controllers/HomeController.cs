@@ -41,24 +41,9 @@ namespace TestProject.Controllers
             return View(objec);
         }
 
-        public IActionResult Test()
-        {
-
-
-            return View();
-        }
 
         public IActionResult Privacy()
         {
-            var client = new RestClient("https://rawg-video-games-database.p.rapidapi.com/genres");
-            var request = new RestRequest(Method.GET);
-            request.AddHeader("x-rapidapi-host", "rawg-video-games-database.p.rapidapi.com");
-            request.AddHeader("x-rapidapi-key", "18d888b8e8mshfd51db13a18bc87p1a2b6bjsn4b77c635255c");
-            IRestResponse response = client.Execute(request);
-
-
-            ViewData["result"] = response.Content;
-
             return View();
         }
 
