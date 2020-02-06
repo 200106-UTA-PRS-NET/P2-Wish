@@ -23,5 +23,21 @@ namespace TestProject.Controllers
 
             return View(objec);
         }
+
+        public IActionResult GameDetails(int? id)
+        {
+            string reqString = "https://rawg-video-games-database.p.rapidapi.com/games/" + id.ToString();
+            var client = new RestClient(reqString);
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("x-rapidapi-host", "rawg-video-games-database.p.rapidapi.com");
+            request.AddHeader("x-rapidapi-key", "18d888b8e8mshfd51db13a18bc87p1a2b6bjsn4b77c635255c");
+            IRestResponse response = client.Execute(request);
+
+            //RawgGamesGenreVM objec = JsonConvert.DeserializeObject<RawgGamesGenreVM>(response.Content);
+
+            ViewData["result"] = response.Content;
+
+            return View();
+        }
     }
 }
