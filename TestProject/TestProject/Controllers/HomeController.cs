@@ -5,9 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Serialization.Json;
 using TestProject.Models;
+using unirest_net.http;
 
 namespace TestProject.Controllers
 {
@@ -24,16 +26,19 @@ namespace TestProject.Controllers
 
         public IActionResult Index()
         {
-            var client = new RestClient("https://chicken-coop.p.rapidapi.com/games/borderlands%202?platform=pc");
+
+            // search for title
+            var client = new RestClient("https://chicken-coop.p.rapidapi.com/games?title=god%20of%20war%20III%20Remastered");
             var request = new RestRequest(Method.GET);
             request.AddHeader("x-rapidapi-host", "chicken-coop.p.rapidapi.com");
             request.AddHeader("x-rapidapi-key", "18d888b8e8mshfd51db13a18bc87p1a2b6bjsn4b77c635255c");
             IRestResponse response = client.Execute(request);
 
+            ChickenCoopVM objec = JsonConvert.DeserializeObject<ChickenCoopVM>(response.Content);
+
             ViewData["result"] = response.Content;
 
-
-            return View();
+            return View(objec);
         }
 
         public IActionResult Test()
@@ -45,6 +50,14 @@ namespace TestProject.Controllers
 
         public IActionResult Privacy()
         {
+            var client = new RestClient("https://rawg-video-games-database.p.rapidapi.com/genres");
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("x-rapidapi-host", "rawg-video-games-database.p.rapidapi.com");
+            request.AddHeader("x-rapidapi-key", "18d888b8e8mshfd51db13a18bc87p1a2b6bjsn4b77c635255c");
+            IRestResponse response = client.Execute(request);
+
+            ViewData["result"] = response.Content;
+
             return View();
         }
 
