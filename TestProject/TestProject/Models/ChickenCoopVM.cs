@@ -15,7 +15,7 @@ namespace TestProject.Models
     {
         public string query { get; set; }
         public double executionTime { get; set; }
-        public List<RawgResult> result { get; set; }
+        public List<ChickenResult> result { get; set; }
         public int countResult { get; set; }
     }
 }
