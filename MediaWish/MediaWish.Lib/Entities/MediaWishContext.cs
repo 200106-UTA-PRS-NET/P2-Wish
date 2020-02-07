@@ -31,7 +31,9 @@ namespace MediaWish.Library.Entities
                 {
                     if (!optionsBuilder.IsConfigured)
                     {
-                        optionsBuilder.UseSqlServer("Server=DESKTOP-9K2Q9T1\\SQLEXPRESS;Database=MediaWishDB; Trusted_Connection=true");
+                        //optionsBuilder.UseSqlServer("Server=DESKTOP-9K2Q9T1\\SQLEXPRESS;Database=MediaWishDB; Trusted_Connection=true");
+                        optionsBuilder.UseSqlServer("Server=tcp:mediawishserver.database.windows.net,1433;Initial Catalog=MediaWishDB;Persist Security Info=False;User ID=Steven;Password=Revature123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+
                     }
 
                 }
