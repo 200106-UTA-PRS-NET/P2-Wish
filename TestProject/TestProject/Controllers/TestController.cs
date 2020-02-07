@@ -35,6 +35,8 @@ namespace TestProject.Controllers
 
             var rawgGameDetailsVM = JsonConvert.DeserializeObject<RawgGameDetailsVM>(response.Content);
 
+            
+
             ViewData["result"] = response.Content;
 
             return View(rawgGameDetailsVM);
