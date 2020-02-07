@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaWish.WebMVC", "MediaWish.WebMVC\MediaWish.WebMVC.csproj", "{833F1036-F031-4AE0-9339-F60D9BA9E4B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaWish.Library", "MediaWish.Lib\MediaWish.Library.csproj", "{90E53463-EFB1-46E6-850C-EBA49F4EDD25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaWish.Library", "MediaWish.Lib\MediaWish.Library.csproj", "{90E53463-EFB1-46E6-850C-EBA49F4EDD25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaWish.DataAccess", "MediaWish.DataAccess\MediaWish.DataAccess.csproj", "{0154F9D9-460A-47CB-886A-E0964953CFAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaWish.DataAccess", "MediaWish.DataAccess\MediaWish.DataAccess.csproj", "{0154F9D9-460A-47CB-886A-E0964953CFAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaWish.Test", "MediaWish.Test\MediaWish.Test.csproj", "{A45C4BA4-1536-4E04-AE31-78203AA4E574}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaWish.Test", "MediaWish.Test\MediaWish.Test.csproj", "{A45C4BA4-1536-4E04-AE31-78203AA4E574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaWish.WebApi", "MediaWish.WebApi\MediaWish.WebApi.csproj", "{6083D738-92D7-4035-989D-3F8508AA30E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{833F1036-F031-4AE0-9339-F60D9BA9E4B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{833F1036-F031-4AE0-9339-F60D9BA9E4B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{833F1036-F031-4AE0-9339-F60D9BA9E4B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{833F1036-F031-4AE0-9339-F60D9BA9E4B7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{90E53463-EFB1-46E6-850C-EBA49F4EDD25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{90E53463-EFB1-46E6-850C-EBA49F4EDD25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90E53463-EFB1-46E6-850C-EBA49F4EDD25}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{A45C4BA4-1536-4E04-AE31-78203AA4E574}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A45C4BA4-1536-4E04-AE31-78203AA4E574}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A45C4BA4-1536-4E04-AE31-78203AA4E574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6083D738-92D7-4035-989D-3F8508AA30E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6083D738-92D7-4035-989D-3F8508AA30E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6083D738-92D7-4035-989D-3F8508AA30E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6083D738-92D7-4035-989D-3F8508AA30E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
