@@ -1,2 +1,3 @@
 # P2-Wish
-Media Wish
+
+Media Wish is a fullstack application in which allows the user to generate their media wishlist to their liking. Once the user creates an account, they have the ability to select any movie or videogame to add to their wishlist. Additionally the user can also generate a list of media they can both view and select from based on a set of filters they specify. Upon selection, the media will be stored in a wish list in which the user can add, view and/or delete contents from. Each user wish list is also open to the public , which allows family and friends to view for potential gifts. 3rd party API's include Chicken Coop, RAWG Database, and Movie DB, in which provide a database of media.
