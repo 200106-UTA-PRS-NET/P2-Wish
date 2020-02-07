@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaWish.WebMVC", "MediaWish\MediaWish.WebMVC.csproj", "{833F1036-F031-4AE0-9339-F60D9BA9E4B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaWish.WebMVC", "MediaWish.WebMVC\MediaWish.WebMVC.csproj", "{833F1036-F031-4AE0-9339-F60D9BA9E4B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaWish.Library", "MediaWish.Lib\MediaWish.Library.csproj", "{90E53463-EFB1-46E6-850C-EBA49F4EDD25}"
 EndProject
