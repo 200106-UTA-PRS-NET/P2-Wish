@@ -131,12 +131,13 @@ namespace TestProject.Models
         public List<Genre> genres { get; set; }
     }
 
+
     public class RawgGamesGenreVM
     {
         public int count { get; set; }
         public string next { get; set; }
         public string previous { get; set; }
-        public List<Result> results { get; set; }
         public bool user_platforms { get; set; }
+        public List<Result> results { get; set; }
     }
 }
