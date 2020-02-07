@@ -6,13 +6,12 @@
 
 <h1>Search</h1>
 
-<form>
-    <select class="custom-select">
+<form asp-action="MoviesByGenreID">
+    <select class="custom-select" id="selectedGenreID" name="selectedGenreID">
         @foreach (var item in Model.genres)
         {
             <option value=@item.GetHashCode()>@item</option>
-
         }
-
     </select>
-</form>>
+    <input type="submit" value="Search"/>
+</form>
