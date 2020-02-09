@@ -59,6 +59,26 @@ namespace MovieBox.DataAccess.Repositories
             IRestResponse response = client.Execute(request);
 
             var movieAPI = JsonConvert.DeserializeObject<MovieAPI>(response.Content);
+
+            /* Adds ALL movies of a genre in one list (slow; too many requests)
+             * 
+            List<Movies> movies = new List<Movies>();
+            for (int i = 1; i < movieAPI.total_pages; i++)
+            {
+                strRequest = $"{DOMAIN}/3/discover/movie?api_key={API_KEY}&with_genres={genreID}&page={i}";
+                client = new RestClient(strRequest);
+                request = new RestRequest(Method.GET);
+                response = client.Execute(request);
+
+                movieAPI = JsonConvert.DeserializeObject<MovieAPI>(response.Content);
+
+                foreach(Movies m in movieAPI.results)
+                {
+                    movies.Add(m);
+                }
+            }
+            */
+
             return movieAPI.results;
         }
 
