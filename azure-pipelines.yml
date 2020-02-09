@@ -23,13 +23,6 @@ steps:
 
 # ASP.NET Core
 
-- task: SonarCloudPrepare@1
-  inputs:
-      SonarCloud: 'JohnP1SonarCloud'
-      organization: 'mediawishp2'
-      scannerMode: 'MSBuild'
-      projectKey: 'wish'
-
 - script: 
     dotnet build --configuration $(buildConfiguration)
   workingDirectory: $(pathtosolution)
