@@ -30,9 +30,12 @@ steps:
   displayName: 'dotnet build $(buildConfiguration)'
 
 
-  - task: SonarCloudPrepare@1
+- task: SonarCloudPrepare@1
     inputs:
+      SonarCloud: 'JohnP1SonarCloud'
+      organization: 'mediawishp2'
       scannerMode: 'MSBuild'
+      projectKey: 'wish'
 
 - task: DotNetCoreCLI@2
   inputs:
