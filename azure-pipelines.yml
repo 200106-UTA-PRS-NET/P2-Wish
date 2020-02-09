@@ -29,5 +29,15 @@ steps:
   workingDirectory: $(pathtosolution)
   displayName: 'dotnet build $(buildConfiguration)'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '--configuration $(buildConfiguration)'
 
-
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure subscription 1(9375756f-0e0f-4b34-aa53-18216b72c750)'
+    appType: 'webAppLinux'
+    appName: 'MediaWish'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
