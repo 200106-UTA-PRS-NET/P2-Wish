@@ -29,6 +29,11 @@ steps:
   workingDirectory: $(pathtosolution)
   displayName: 'dotnet build $(buildConfiguration)'
 
+
+  - task: SonarCloudPrepare@1
+    inputs:
+      scannerMode: 'MSBuild'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
