@@ -23,8 +23,5 @@ namespace MovieBox.WebAPI.Controllers
             var users = Mapper.Map(_usersRepo.GetUsers());
             return users;
         }
-
-
-
     }
 }

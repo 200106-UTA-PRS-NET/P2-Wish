@@ -19,6 +19,7 @@ namespace MovieBox.WebAPI.Controllers
             _moviesRepo = moviesRepo;
         }
 
+        // Get popular movies
         [HttpGet]
         [Route("movies")]
         [Route("movies/popular")]
@@ -28,7 +29,23 @@ namespace MovieBox.WebAPI.Controllers
             return movies;
         }
 
-        [HttpGet("{id}", Name = "Details")]
+        // Get movies by genre id
+        [HttpGet]
+        [Route("movies/genre/{id?}")]
+        public IActionResult Genre(int id)
+        {
+            var movies = Mapper.Map(_moviesRepo.GetMoviesByGenre(id));
+            if (movies.Count() == 0 || movies == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(movies);
+            }
+        }
+
+        // Get movie details by movie id
         [Route("movies/details/{id=2}")] // movieID 0,1 are nonexistent so movie 2 is 
         public IActionResult Details(int id)
         {
@@ -41,6 +58,6 @@ namespace MovieBox.WebAPI.Controllers
             {
                 return Ok(movie);
             }
-        }
+        }    
     }
 }
