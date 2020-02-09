@@ -36,7 +36,7 @@ namespace MovieBox.WebAPI
 
             // Adding Dependency to your Controller to use Db
             services.AddTransient<IUsersRepo, UsersRepo>();
-            services.AddTransient<IMoviesRepo<DataAccess.Models.Movies>, MoviesRepo>();
+            services.AddTransient<IMoviesRepo<DataAccess.Models.Movies, DataAccess.Models.MovieDetails>, MoviesRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,8 +55,15 @@ namespace MovieBox.WebAPI
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Movies}/{action=Popular}/{id?}"
+                    );
+
                 endpoints.MapControllers();
             });
+
+            
         }
     }
 }

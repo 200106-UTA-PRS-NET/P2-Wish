@@ -10,21 +10,37 @@ using MovieBox.WebAPI.Models;
 namespace MovieBox.WebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class MoviesController : Controller
     {
-        private readonly IMoviesRepo<DataAccess.Models.Movies> _moviesRepo;
+        private readonly IMoviesRepo<DataAccess.Models.Movies, DataAccess.Models.MovieDetails> _moviesRepo;
 
-        public MoviesController(IMoviesRepo<DataAccess.Models.Movies> moviesRepo)
+        public MoviesController(IMoviesRepo<DataAccess.Models.Movies, DataAccess.Models.MovieDetails> moviesRepo)
         {
             _moviesRepo = moviesRepo;
         }
 
         [HttpGet]
-        public IEnumerable<Models.Movies> Get()
+        [Route("movies")]
+        [Route("movies/popular")]
+        public IEnumerable<Models.Movies> Popular()
         {
             var movies = Mapper.Map(_moviesRepo.GetPopularMovies());
             return movies;
+        }
+
+        [HttpGet("{id}", Name = "Details")]
+        [Route("movies/details/{id=2}")] // movieID 0,1 are nonexistent so movie 2 is 
+        public IActionResult Details(int id)
+        {
+            var movie = Mapper.Map(_moviesRepo.GetMovieByID(id));
+            if (movie == null || movie.title == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(movie);
+            }
         }
     }
 }
