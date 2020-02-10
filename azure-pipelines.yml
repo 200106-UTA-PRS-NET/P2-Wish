@@ -1,12 +1,10 @@
+
 # ASP.NET Core
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
 - master
@@ -23,12 +21,21 @@ steps:
 
 # ASP.NET Core
 
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'wishp2'
+    organization: 'mediawishp2'
+    scannerMode: 'MSBuild'
+    projectKey: 'wish'
+
+
 - script: 
     dotnet build --configuration $(buildConfiguration)
   workingDirectory: $(pathtosolution)
   displayName: 'dotnet build $(buildConfiguration)'
 
-
+- task: SonarCloudAnalyze@1
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -42,3 +49,7 @@ steps:
     appType: 'webAppLinux'
     appName: 'MediaWish'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
