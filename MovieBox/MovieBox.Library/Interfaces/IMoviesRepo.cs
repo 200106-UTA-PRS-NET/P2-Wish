@@ -27,10 +27,10 @@ namespace MovieBox.Library.Interfaces
         Western = 37
     }
 
-    public interface IMoviesRepo<T>
+    public interface IMoviesRepo<T, U>
     {
         public IEnumerable<T> GetPopularMovies();
         public IEnumerable<T> GetMoviesByGenre(int genreID);
-        public T GetMovieByID(int movieID);
+        public U GetMovieByID(int movieID);
     }
 }

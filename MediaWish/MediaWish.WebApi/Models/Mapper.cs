@@ -3,44 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MovieBox.WebAPI.Models
+namespace MediaWish.WebApi.Models
 {
     public class Mapper
     {
         #region Users
-        public static Users Map(Library.Users user)
+        public static Users Map(Library.Entities.Users users)
         {
             return new Users()
             {
-                Id = user.Id,
-                Name = user.Name
+                Id = users.Id,
+                Name = users.Name,
+                Username = users.Username,
+                Email = users.Email,
+                Password = users.Password,
             };
         }
-        public static Library.Users Map(Users user)
+        public static Library.Entities.Users Map(Users users)
         {
-            return new Library.Users()
+            return new Library.Entities.Users()
             {
-                Id = user.Id,
-                Name = user.Name
+                Id = users.Id,
+                Name = users.Name,
+                Username = users.Username,
+                Email = users.Email,
+                Password = users.Password,
             };
-        }
-        public static IEnumerable<Users> Map(IEnumerable<Library.Users> users)
-        {
-            List<Users> newUsers = new List<Users>();
-            foreach (var user in users)
-            {
-                newUsers.Add(Map(user));
-            }
-            return newUsers;
-        }
-        public static IEnumerable<Library.Users> Map(IEnumerable<Users> users)
-        {
-            List<Library.Users> newUsers = new List<Library.Users>();
-            foreach (var user in users)
-            {
-                newUsers.Add(Map(user));
-            }
-            return newUsers;
         }
         #endregion
 
@@ -72,7 +60,7 @@ namespace MovieBox.WebAPI.Models
         public static IEnumerable<Movies> Map(IEnumerable<DataAccess.Models.Movies> movies)
         {
             List<Movies> newMovies = new List<Movies>();
-            foreach(var m in movies)
+            foreach (var m in movies)
             {
                 newMovies.Add(Map(m));
             }
@@ -95,7 +83,7 @@ namespace MovieBox.WebAPI.Models
             return new MovieDetails()
             {
                 id = movie.id,
-                genres  = movie.genres,
+                genres = movie.genres,
                 title = movie.title,
                 vote_average = movie.vote_average,
                 overview = movie.overview,

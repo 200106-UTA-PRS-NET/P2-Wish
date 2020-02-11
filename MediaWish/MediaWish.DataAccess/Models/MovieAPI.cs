@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MovieBox.DataAccess.Models
+namespace MediaWish.DataAccess.Models
 {
     // class for when searching for a list of movies
     public class MovieAPI

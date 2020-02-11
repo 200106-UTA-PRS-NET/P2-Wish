@@ -22,16 +22,15 @@ namespace MediaWish.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
-        public Users GetUser()
+        public Users GetUserById(int id)
         {
-            //TODO
-            throw new NotImplementedException();
+            var user = _db.users.Where(u => u.Id == id).Single();
+            return user;
         }
 
         public IEnumerable<Users> GetUsers()
         {
             var users = _db.users.Select(u => u).ToList();
-
             return users;
         }
     }

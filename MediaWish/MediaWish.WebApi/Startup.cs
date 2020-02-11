@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediaWish.DataAccess.Repositories;
 using MediaWish.Library.Entities;
+using MediaWish.Library.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -24,9 +26,14 @@ namespace MediaWish.WebApi
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MediaWishContext>(options =>
+            services.AddControllers();
 
+            services.AddDbContext<MediaWishContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MediaWishDB")));
+
+            // Adding Dependency to your Controller to use Db
+            services.AddTransient<IUsersRepo, UsersRepo>();
+            services.AddTransient<IMoviesRepo<DataAccess.Models.Movies, DataAccess.Models.MovieDetails>, MoviesRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,10 +48,12 @@ namespace MediaWish.WebApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller}/{action}/{id?}"
+                    );
+
+                endpoints.MapControllers();
             });
         }
     }

@@ -8,7 +8,7 @@ namespace MovieBox.WebAPI.Controllers
 
     [ApiController]
     [Route("[controller]")]
-    public class UsersController : Controller
+    public class UsersController : ControllerBase
     {
         private readonly IUsersRepo _usersRepo;
 
@@ -23,8 +23,5 @@ namespace MovieBox.WebAPI.Controllers
             var users = Mapper.Map(_usersRepo.GetUsers());
             return users;
         }
-
-
-
     }
 }
