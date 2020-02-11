@@ -28,6 +28,9 @@ steps:
     organization: 'mediawishp2'
     scannerMode: 'MSBuild'
     projectKey: 'wish'
+    extraProperties: |
+        sonar.cs.opencover.reportsPaths="$(Build.ArtifactStagingDirectory)/coverage/*"
+        sonar.cs.vstest.reportsPaths="$(Build.ArtifactStagingDirectory)/MediaWish.Test/*.trx"
 
 
 - script: 
@@ -41,11 +44,17 @@ steps:
     --no-build
     --results-directory $(Build.ArtifactStagingDirectory)/MediaWish.Test/
     /p:CollectCoverage=true
+    /p:CoverletOutputFormat=opencover
+    /p:CoverletOutput="$(Build.ArtifactStagingDirectory)/coverage/"
   workingDirectory: $(pathtosolution)
   displayName: 'dotnet test'
 
 
 - task: SonarCloudAnalyze@1
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -60,6 +69,4 @@ steps:
     appName: 'MediaWish'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
+
