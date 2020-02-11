@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace MediaWish.DataAccess.Repositories
 {
-    public class MoviesRepo : IMoviesRepo<Movies, MovieDetails>
+    public class MoviesRepo : IMoviesRepo<MovieAPI, MovieDetails>
     {
         const string API_KEY = "9e5b0ab89fd681ae90099669cd36adc8";  // api key we got for TheMovieDB api
         const string DOMAIN = "https://api.themoviedb.org";
@@ -24,7 +24,7 @@ namespace MediaWish.DataAccess.Repositories
             return movie;
         }
 
-        public IEnumerable<Movies> GetMoviesByGenre(int genreID, int page)
+        public MovieAPI GetMoviesByGenre(int genreID, int page)
         {
             string strRequest = $"{DOMAIN}/3/discover/movie?api_key={API_KEY}&with_genres={genreID}&page={page}";
             var client = new RestClient(strRequest);
@@ -32,11 +32,11 @@ namespace MediaWish.DataAccess.Repositories
             IRestResponse response = client.Execute(request);
 
             var movieAPI = JsonConvert.DeserializeObject<MovieAPI>(response.Content);
-            return movieAPI.results;
+            return movieAPI;
 
         }
 
-        public IEnumerable<Movies> GetPopularMovies(int page)
+        public MovieAPI GetPopularMovies(int page)
         {
             string strRequest = $"{DOMAIN}/3/movie/popular?api_key={API_KEY}&language={LANGUAGE}&region={REGION}&page={page}";
             var client = new RestClient(strRequest);
@@ -44,7 +44,7 @@ namespace MediaWish.DataAccess.Repositories
             IRestResponse response = client.Execute(request);
 
             var movieAPI = JsonConvert.DeserializeObject<MovieAPI>(response.Content);
-            return movieAPI.results;
+            return movieAPI;
         }
     }
 }

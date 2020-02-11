@@ -38,6 +38,8 @@ namespace MediaWish.Test
             Assert.Equal(name, user.Name);
         }
 
+
+
         [Fact]
         public void Name_Users_Null()
         {
