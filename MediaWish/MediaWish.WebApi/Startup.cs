@@ -33,7 +33,7 @@ namespace MediaWish.WebApi
 
             // Adding Dependency to your Controller to use Db
             services.AddTransient<IUsersRepo, UsersRepo>();
-
+            services.AddTransient<IMoviesRepo<DataAccess.Models.Movies, DataAccess.Models.MovieDetails>, MoviesRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

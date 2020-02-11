@@ -31,5 +31,95 @@ namespace MediaWish.WebApi.Models
             };
         }
         #endregion
+
+        #region Movies
+        public static Movies Map(DataAccess.Models.Movies movie)
+        {
+            return new Movies()
+            {
+                id = movie.id,
+                genre_ids = movie.genre_ids,
+                title = movie.title,
+                vote_average = movie.vote_average,
+                overview = movie.overview,
+                release_date = movie.release_date
+            };
+        }
+        public static DataAccess.Models.Movies Map(Movies movie)
+        {
+            return new DataAccess.Models.Movies()
+            {
+                id = movie.id,
+                genre_ids = movie.genre_ids,
+                title = movie.title,
+                vote_average = movie.vote_average,
+                overview = movie.overview,
+                release_date = movie.release_date
+            };
+        }
+        public static IEnumerable<Movies> Map(IEnumerable<DataAccess.Models.Movies> movies)
+        {
+            List<Movies> newMovies = new List<Movies>();
+            foreach (var m in movies)
+            {
+                newMovies.Add(Map(m));
+            }
+            return newMovies;
+        }
+        public static IEnumerable<DataAccess.Models.Movies> Map(IEnumerable<Movies> movies)
+        {
+            List<DataAccess.Models.Movies> newMovies = new List<DataAccess.Models.Movies>();
+            foreach (var m in movies)
+            {
+                newMovies.Add(Map(m));
+            }
+            return newMovies;
+        }
+        #endregion
+
+        #region MovieDetails
+        public static MovieDetails Map(DataAccess.Models.MovieDetails movie)
+        {
+            return new MovieDetails()
+            {
+                id = movie.id,
+                genres = movie.genres,
+                title = movie.title,
+                vote_average = movie.vote_average,
+                overview = movie.overview,
+                release_date = movie.release_date
+            };
+        }
+        public static DataAccess.Models.MovieDetails Map(MovieDetails movie)
+        {
+            return new DataAccess.Models.MovieDetails()
+            {
+                id = movie.id,
+                genres = movie.genres,
+                title = movie.title,
+                vote_average = movie.vote_average,
+                overview = movie.overview,
+                release_date = movie.release_date
+            };
+        }
+        public static IEnumerable<MovieDetails> Map(IEnumerable<DataAccess.Models.MovieDetails> movies)
+        {
+            List<MovieDetails> newMovies = new List<MovieDetails>();
+            foreach (var m in movies)
+            {
+                newMovies.Add(Map(m));
+            }
+            return newMovies;
+        }
+        public static IEnumerable<DataAccess.Models.MovieDetails> Map(IEnumerable<MovieDetails> movies)
+        {
+            List<DataAccess.Models.MovieDetails> newMovies = new List<DataAccess.Models.MovieDetails>();
+            foreach (var m in movies)
+            {
+                newMovies.Add(Map(m));
+            }
+            return newMovies;
+        }
+        #endregion
     }
 }
