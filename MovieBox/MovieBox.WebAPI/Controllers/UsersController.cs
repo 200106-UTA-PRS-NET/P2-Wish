@@ -8,7 +8,7 @@ namespace MovieBox.WebAPI.Controllers
 
     [ApiController]
     [Route("[controller]")]
-    public class UsersController : Controller
+    public class UsersController : ControllerBase
     {
         private readonly IUsersRepo _usersRepo;
 

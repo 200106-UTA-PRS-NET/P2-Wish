@@ -10,7 +10,7 @@ using MovieBox.WebAPI.Models;
 namespace MovieBox.WebAPI.Controllers
 {
     [ApiController]
-    public class MoviesController : Controller
+    public class MoviesController : ControllerBase
     {
         private readonly IMoviesRepo<DataAccess.Models.Movies, DataAccess.Models.MovieDetails> _moviesRepo;
 
