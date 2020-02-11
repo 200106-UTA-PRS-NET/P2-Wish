@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace MediaWish.WebApi
 {
@@ -28,7 +29,17 @@ namespace MediaWish.WebApi
 
             // Adding Dependency to your Controller to use Db
             services.AddTransient<IUsersRepo, UsersRepo>();
+<<<<<<< HEAD
+            services.AddTransient<IMoviesRepo<DataAccess.Models.Movies, DataAccess.Models.MovieDetails>, MoviesRepo>();
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo() { Title = "MediaWish API", Version = "v1" });
+            });
+=======
             services.AddTransient<IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails>, MoviesRepo>();
+>>>>>>> 3cb99955ae2a79678b19fb123819cf31411795e5
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,7 +48,24 @@ namespace MediaWish.WebApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
+            } 
+
+            /*
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger(options => {
+                options.RouteTemplate = "/swagger/{documentName}/swagger.json";
+            });
+            */
+
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("swagger/v1/swagger.json", "MediaWish API");
+            });
+            //
 
             app.UseRouting();
 
