@@ -35,7 +35,6 @@ steps:
   workingDirectory: $(pathtosolution)
   displayName: 'dotnet build $(buildConfiguration)'
 
-- task: SonarCloudAnalyze@1
 
 - script: dotnet test
     --configuration $(buildConfiguration)
@@ -44,6 +43,9 @@ steps:
     /p:CollectCoverage=true
   workingDirectory: $(pathtosolution)
   displayName: 'dotnet test'
+
+
+  - task: SonarCloudAnalyze@1
 
 - task: DotNetCoreCLI@2
   inputs:
