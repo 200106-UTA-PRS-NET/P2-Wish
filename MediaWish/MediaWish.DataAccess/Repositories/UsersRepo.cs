@@ -2,7 +2,6 @@
 using MediaWish.Library.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace MediaWish.DataAccess.Repositories
@@ -16,10 +15,11 @@ namespace MediaWish.DataAccess.Repositories
             _db = db ?? throw new ArgumentNullException(nameof(db));
         }
 
-        public void CreateUser()
+        public int CreateUser(Users user)
         {
-            //TODO
-            throw new NotImplementedException();
+            _db.Add(user);
+            _db.SaveChanges();
+            return user.Id;
         }
 
         public Users GetUserById(int id)
@@ -33,5 +33,6 @@ namespace MediaWish.DataAccess.Repositories
             var users = _db.users.Select(u => u).ToList();
             return users;
         }
+
     }
 }
