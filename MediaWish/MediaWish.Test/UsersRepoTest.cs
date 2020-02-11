@@ -1,3 +1,4 @@
+using MediaWish.DataAccess.Repositories;
 using MediaWish.Library.Entities;
 using MediaWish.Library.Interfaces;
 using MediaWish.Test.MockRepositories;
@@ -23,6 +24,25 @@ namespace MediaWish.Test
 
             // Assert
             Assert.Equal(typeof(List<Users>), users.GetType());
+        }
+
+        [Fact]
+        public void Users_Name_NonEmptyValue_StoresCorrectly()
+        {
+            string name = "James";
+            Users user = new Users()
+            {
+                Name = name
+            };
+
+            Assert.Equal(name, user.Name);
+        }
+
+        [Fact]
+        public void Name_Users_Null()
+        {
+            Users user = new Users();
+            Assert.Null(user.Name);
         }
 
         [Fact]
