@@ -41,6 +41,8 @@ namespace MediaWish.WebApi
             {
                 options.AddPolicy(AllMyOrigins, b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             });
+
+            services.AddTransient<IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails>, MoviesRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
