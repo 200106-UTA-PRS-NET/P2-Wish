@@ -2,12 +2,35 @@
 using MediaWish.Library.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace MediaWish.Test.MockRepositories
 {
     public class MockUsersRepo : IUsersRepo
     {
+        static IEnumerable<Users> users = new List<Users>()
+        {
+
+            new Users()
+            {
+                Id = 0,
+                Name = "Banana Man",
+                Username = "bananaman",
+                Password = "bananalover",
+                Email = "bananaman12@gmail.com"
+            },
+
+            new Users()
+            {
+                Id = 1,
+                Name = "Taong Saging",
+                Username = "sagingsaba",
+                Password = "sabasaging",
+                Email = "sabangsaging33@gmail.com"
+            }
+
+        };
+
 
         public int CreateUser(Users user)
         {
@@ -16,12 +39,12 @@ namespace MediaWish.Test.MockRepositories
 
         public Users GetUserById(int id)
         {
-            throw new NotImplementedException();
+            return users.Where(u => u.Id == id).Single();
         }
 
         public IEnumerable<Users> GetUsers()
         {
-            throw new NotImplementedException();
+            return users.Select(u => u).ToList();
         }
     }
 }
