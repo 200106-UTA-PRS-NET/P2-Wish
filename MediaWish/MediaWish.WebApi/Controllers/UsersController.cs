@@ -36,8 +36,7 @@ namespace MediaWish.WebApi.Controller
         public IActionResult Create([FromBody, Bind("id,name,username,password,email")]Users user)
         {
             int newid = _usersRepo.CreateUser(Mapper.Map(user));
-            return Ok();
-            //return CreatedAtRoute("users/info", new { ID = newid });
+            return CreatedAtRoute("users/info", new { id = newid });
         }
     }
 }
