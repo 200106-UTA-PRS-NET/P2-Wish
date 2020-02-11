@@ -9,6 +9,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
+
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+
 namespace MediaWish.WebApi
 {
     public class Startup
@@ -23,7 +28,14 @@ namespace MediaWish.WebApi
         readonly string AllMyOrigins = "_allMyOrigins";
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            //services.AddControllers();
+            services.AddControllers(options =>
+            {
+                /*
+                 By default, when the framework detects that the request is coming from a browser:
+                        The Accept header is ignored. The content is returned in JSON, unless otherwise configured*/
+                options.RespectBrowserAcceptHeader = true; // false by default
+            });
 
             services.AddDbContext<MediaWishContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MediaWishDB")));
@@ -69,7 +81,7 @@ namespace MediaWish.WebApi
                 c.SwaggerEndpoint("swagger/v1/swagger.json", "MediaWish API");
             });
             //
-
+            app.UseCors(AllMyOrigins);
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
