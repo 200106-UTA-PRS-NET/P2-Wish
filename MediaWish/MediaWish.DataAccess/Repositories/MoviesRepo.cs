@@ -24,7 +24,7 @@ namespace MediaWish.DataAccess.Repositories
             return movie;
         }
 
-        public IEnumerable<Movies> GetMoviesByGenre(int genreID, int page=1)
+        public IEnumerable<Movies> GetMoviesByGenre(int genreID, int page)
         {
             string strRequest = $"{DOMAIN}/3/discover/movie?api_key={API_KEY}&with_genres={genreID}&page={page}";
             var client = new RestClient(strRequest);
@@ -36,7 +36,7 @@ namespace MediaWish.DataAccess.Repositories
 
         }
 
-        public IEnumerable<Movies> GetPopularMovies(int page=1)
+        public IEnumerable<Movies> GetPopularMovies(int page)
         {
             string strRequest = $"{DOMAIN}/3/movie/popular?api_key={API_KEY}&language={LANGUAGE}&region={REGION}&page={page}";
             var client = new RestClient(strRequest);
