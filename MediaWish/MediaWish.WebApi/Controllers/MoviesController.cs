@@ -49,5 +49,21 @@ namespace MediaWish.WebApi.Controllers
                 return Ok(movie);
             }
         }
+
+        // Get movies by genre id
+        [HttpGet]
+        [Route("movies/genre/{id?}/{page?}")]
+        public IActionResult Genre(int id, int page=1)
+        {
+            var movies = Mapper.Map(_moviesRepo.GetMoviesByGenre(id, page));
+            if (movies.Count() == 0 || movies == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(movies);
+            }
+        }
     }
 }

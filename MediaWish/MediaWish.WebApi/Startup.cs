@@ -50,7 +50,7 @@ namespace MediaWish.WebApi
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Users}/{action=Info}/1"
+                    pattern: "{controller}/{action}/{id?}"
                     );
 
                 endpoints.MapControllers();
