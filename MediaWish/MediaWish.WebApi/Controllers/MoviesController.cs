@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MediaWish.WebApi.Controllers
 {
+    [ApiController]
     public class MoviesController : ControllerBase
     {
         private readonly IMoviesRepo<DataAccess.Models.Movies, DataAccess.Models.MovieDetails> _moviesRepo;
@@ -31,6 +32,21 @@ namespace MediaWish.WebApi.Controllers
             } catch (Exception)
             {
                 return NotFound();
+            }
+        }
+
+        // Get movie details by movie id
+        [Route("movies/details/{id}")] // movieID 0,1 are nonexistent so movie 2 is 
+        public IActionResult Details(int id=2)
+        {
+            var movie = Mapper.Map(_moviesRepo.GetMovieByID(id));
+            if (movie == null || movie.title == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(movie);
             }
         }
     }
