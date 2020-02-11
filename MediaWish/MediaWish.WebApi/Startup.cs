@@ -20,6 +20,7 @@ namespace MediaWish.WebApi
         {
             Configuration = configuration;
         }
+        readonly string AllMyOrigins = "_allMyOrigins";
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -29,11 +30,18 @@ namespace MediaWish.WebApi
 
             // Adding Dependency to your Controller to use Db
             services.AddTransient<IUsersRepo, UsersRepo>();
+
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo() { Title = "MediaWish API", Version = "v1" });
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(AllMyOrigins, b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
+
             services.AddTransient<IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails>, MoviesRepo>();
         }
 
