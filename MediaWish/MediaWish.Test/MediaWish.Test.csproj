@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MediaWish.DataAccess\MediaWish.DataAccess.csproj" />
     <ProjectReference Include="..\MediaWish.Lib\MediaWish.Library.csproj" />
+    <ProjectReference Include="..\MediaWish.WebApi\MediaWish.WebApi.csproj" />
   </ItemGroup>
 
 </Project>
