@@ -22,15 +22,16 @@ namespace MediaWish.WebApi.Controller
         [Route("users/info/{id}")]
         public IActionResult Info(int id)
         {
-            var user = Mapper.Map(_usersRepo.GetUserById(id));
-            if (user == null)
+            try
+            {
+                var user = Mapper.Map(_usersRepo.GetUserById(id));
+                return Ok(user);
+            }
+            catch (InvalidOperationException)
             {
                 return NotFound();
             }
-            else
-            {
-                return Ok(user);
-            }
+
         }
     }
 }
