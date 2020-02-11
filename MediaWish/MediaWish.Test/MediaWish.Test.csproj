@@ -13,4 +13,9 @@
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MediaWish.DataAccess\MediaWish.DataAccess.csproj" />
+    <ProjectReference Include="..\MediaWish.Lib\MediaWish.Library.csproj" />
+  </ItemGroup>
+
 </Project>
