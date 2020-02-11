@@ -45,7 +45,7 @@ steps:
   displayName: 'dotnet test'
 
 
-  - task: SonarCloudAnalyze@1
+- task: SonarCloudAnalyze@1
 
 - task: DotNetCoreCLI@2
   inputs:
