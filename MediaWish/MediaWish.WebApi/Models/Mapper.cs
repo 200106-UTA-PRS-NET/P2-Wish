@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MediaWish.WebApi.Models
 {
-    public class Mapper
+    public static class Mapper
     {
         #region Users
         public static Users Map(Library.Entities.Users users)

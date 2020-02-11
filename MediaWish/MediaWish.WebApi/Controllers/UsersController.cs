@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -32,6 +29,15 @@ namespace MediaWish.WebApi.Controller
                 return NotFound();
             }
 
+        }
+
+        [HttpPost]
+        [Route("users/create")]
+        public IActionResult Create([FromBody, Bind("id,name,username,password,email")]Users user)
+        {
+            int newid = _usersRepo.CreateUser(Mapper.Map(user));
+            return Ok();
+            //return CreatedAtRoute("users/info", new { ID = newid });
         }
     }
 }

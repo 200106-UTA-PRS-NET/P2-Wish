@@ -2,9 +2,7 @@
 using MediaWish.Library.Interfaces;
 using Newtonsoft.Json;
 using RestSharp;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MediaWish.DataAccess.Repositories
 {
