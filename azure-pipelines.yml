@@ -37,6 +37,14 @@ steps:
 
 - task: SonarCloudAnalyze@1
 
+- script: dotnet test
+    --configuration $(buildConfiguration)
+    --no-build
+    --results-directory $(Build.ArtifactStagingDirectory)/MediaWish.Test/
+    /p:CollectCoverage=true
+  workingDirectory: $(pathtosolution)
+  displayName: 'dotnet test'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
