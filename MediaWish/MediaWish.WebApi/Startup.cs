@@ -47,12 +47,8 @@ namespace MediaWish.WebApi
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(options =>
             {
-<<<<<<< HEAD
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "MediaWish API", Version = "v1" });
-=======
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "MediaWish Api", Version = "v1" });
 
->>>>>>> 35a832225995257784a1324584582e98cd06ad8c
             });
 
             services.AddCors(options =>
