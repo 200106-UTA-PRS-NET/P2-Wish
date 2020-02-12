@@ -1,10 +1,6 @@
 ﻿using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MediaWish.WebApi.Controllers
 {
@@ -39,7 +35,7 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult Genre(int genreID, int page=1)
         {
             var games = Mapper.Map(_gamesRepo.GetGamesbyGenreID(genreID, page));
-            if (games.count == 0 || games == null)
+            if (games.count == 0 || games.Equals(null))
             {
                 return NotFound();
             }
@@ -54,7 +50,7 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult Search(string searchGame)
         {
             var games = Mapper.Map(_gamesRepo.SearchGame(searchGame));
-            if (games == null)
+            if (games.Equals(null))
             {
                 return NotFound();
             }
@@ -69,7 +65,7 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult Platform(int platformID, int page=1)
         {
             var games = Mapper.Map(_gamesRepo.GetGamesByPlatformId(platformID, page));
-            if (games.count == 0 || games == null)
+            if (games.count == 0 || games.Equals(null))
             {
                 return NotFound();
             } 
