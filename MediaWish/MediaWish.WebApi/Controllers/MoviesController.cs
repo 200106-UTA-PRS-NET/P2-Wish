@@ -71,8 +71,10 @@ namespace MediaWish.WebApi.Controllers
             }
         }
 
-        [HttpGet]
+        //[HttpGet]
         [Route("movies/search/{movieSearch}/{page?}")]
+        [HttpGet]
+
         public IActionResult Search(string movieSearch, int page=1)
         {
             var movies = _moviesRepo.SearchMovie(movieSearch, page);
