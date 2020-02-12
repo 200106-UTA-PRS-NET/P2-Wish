@@ -1,6 +1,7 @@
 ﻿using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace MediaWish.WebApi.Controllers
 {
@@ -20,7 +21,7 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult All(int page=1)
         {
             var games = Mapper.Map(_gamesRepo.GetAllGames(page));
-            if (games.count == 0 || games == null)
+            if (games.count == 0)
             {
                 return NotFound();
             }
@@ -35,7 +36,7 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult Genre(int genreID, int page=1)
         {
             var games = Mapper.Map(_gamesRepo.GetGamesbyGenreID(genreID, page));
-            if (games.count == 0 || games.Equals(null))
+            if (games.count == 0)
             {
                 return NotFound();
             }
@@ -49,14 +50,14 @@ namespace MediaWish.WebApi.Controllers
         [HttpGet]
         public IActionResult Search(string searchGame)
         {
-            var games = Mapper.Map(_gamesRepo.SearchGame(searchGame));
-            if (games.Equals(null))
+            try
             {
-                return NotFound();
-            }
-            else
-            {
+                var games = Mapper.Map(_gamesRepo.SearchGame(searchGame));
                 return Ok(games);
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -65,7 +66,7 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult Platform(int platformID, int page=1)
         {
             var games = Mapper.Map(_gamesRepo.GetGamesByPlatformId(platformID, page));
-            if (games.count == 0 || games.Equals(null))
+            if (games.count == 0)
             {
                 return NotFound();
             } 
