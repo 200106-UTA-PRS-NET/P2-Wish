@@ -46,5 +46,16 @@ namespace MediaWish.DataAccess.Repositories
             var movieAPI = JsonConvert.DeserializeObject<MovieAPI>(response.Content);
             return movieAPI;
         }
+
+        public MovieAPI SearchMovie(string movieStr, int page)
+        {
+            string strRequest = $"{DOMAIN}/3/search/movie?api_key={API_KEY}&language={LANGUAGE}&query={movieStr}&page={page}&include_adult=true&region={REGION}";
+            var client = new RestClient(strRequest);
+            var request = new RestRequest(Method.GET);
+            IRestResponse response = client.Execute(request);
+
+            var movieAPI = JsonConvert.DeserializeObject<MovieAPI>(response.Content);
+            return movieAPI;
+        }
     }
 }

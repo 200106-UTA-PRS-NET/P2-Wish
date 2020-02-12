@@ -65,5 +65,20 @@ namespace MediaWish.WebApi.Controllers
                 return Ok(movies);
             }
         }
+
+        [HttpGet]
+        [Route("movies/search/{movieSearch}/{page?}")]
+        public IActionResult Search(string movieSearch, int page=1)
+        {
+            var movies = _moviesRepo.SearchMovie(movieSearch, page);
+            if (movies.results.Count() == 0 || movies == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(movies);
+            }
+        }
     }
 }
