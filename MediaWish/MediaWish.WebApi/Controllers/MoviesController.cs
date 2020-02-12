@@ -3,12 +3,13 @@ using System.Linq;
 using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 using System.Web.Http.Cors;
 
 namespace MediaWish.WebApi.Controllers
 {
     [ApiController]
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+
     public class MoviesController : ControllerBase
     {
         private readonly IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails> _moviesRepo;
