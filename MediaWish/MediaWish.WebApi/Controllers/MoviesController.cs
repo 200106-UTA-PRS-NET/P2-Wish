@@ -50,7 +50,6 @@ namespace MediaWish.WebApi.Controllers
         }
 
         // Get movies by genre id
-       // [HttpGet]
         [Route("movies/genre/{id?}/{page?}")]
         [HttpGet]
         public IActionResult Genre(int id, int page=1)
@@ -69,7 +68,6 @@ namespace MediaWish.WebApi.Controllers
         //[HttpGet]
         [Route("movies/search/{movieSearch}/{page?}")]
         [HttpGet]
-
         public IActionResult Search(string movieSearch, int page=1)
         {
             var movies = _moviesRepo.SearchMovie(movieSearch, page);
