@@ -52,10 +52,10 @@ namespace MediaWish.WebApi
 
             });
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllOrigins", b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-            });
+            //services.AddCors(options =>
+            //{
+            //   options.AddPolicy("AllOrigins", b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            //});
 
         }
 
@@ -94,7 +94,7 @@ namespace MediaWish.WebApi
             app.UseRouting();
             app.UseAuthorization();
 
-            app.UseCors("AllOrigins");
+            //app.UseCors("AllOrigins");
 
             app.UseEndpoints(endpoints =>
             {
