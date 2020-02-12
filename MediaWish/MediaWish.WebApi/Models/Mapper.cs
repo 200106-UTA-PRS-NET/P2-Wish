@@ -118,5 +118,128 @@ namespace MediaWish.WebApi.Models
             return newMovies;
         }
         #endregion
+
+        #region Games
+        public static DataAccess.Models.Platform2 Map(Platform2 platform2)
+        {
+            return new DataAccess.Models.Platform2()
+            {
+                id = platform2.id,
+                name = platform2.name
+            };
+        }
+        public static Platform Map(DataAccess.Models.Platform platform)
+        {
+            return new Platform()
+            {
+                id = platform.platform.id,
+                name = platform.platform.name
+            };
+        }
+        public static List<Platform> Map(List<DataAccess.Models.Platform> platforms)
+        {
+            List<Platform> newPlatforms = new List<Platform>();
+            foreach(var p in platforms)
+            {
+                newPlatforms.Add(Map(p));
+            }
+            return newPlatforms;
+        }
+        public static DataAccess.Models.GameGenre Map(GameGenre genre)
+        {
+            return new DataAccess.Models.GameGenre()
+            {
+                id = genre.id,
+                name = genre.name
+            };
+        }
+        public static GameGenre Map(DataAccess.Models.GameGenre genre)
+        {
+            return new GameGenre()
+            {
+                id = genre.id,
+                name = genre.name
+            };
+        }
+        public static List<DataAccess.Models.GameGenre> Map(List<GameGenre> genres)
+        {
+            List<DataAccess.Models.GameGenre> newGenres = new List<DataAccess.Models.GameGenre>();
+            foreach(var g in genres)
+            {
+                newGenres.Add(Map(g));
+            }
+            return newGenres;
+        }
+        public static List<GameGenre> Map(List<DataAccess.Models.GameGenre> genres)
+        {
+            List<GameGenre> newGenres = new List<GameGenre>();
+            foreach (var g in genres)
+            {
+                newGenres.Add(Map(g));
+            }
+            return newGenres;
+        }
+        public static DataAccess.Models.Games Map(Games game)
+        {
+            return new DataAccess.Models.Games()
+            {
+                id = game.id,
+                name = game.name,
+                released = game.released,
+                genres = Map(game.genres),
+                rating = game.rating,
+            };
+        }
+        public static Games Map(DataAccess.Models.Games game)
+        {
+            return new Games()
+            {
+                id = game.id,
+                name = game.name,
+                released = game.released,
+                genres = Map(game.genres),
+                rating = game.rating,
+                platforms = Map(game.platforms)
+            };
+        }
+        public static List<DataAccess.Models.Games> Map(IEnumerable<Games> games)
+        {
+            List<DataAccess.Models.Games> newGames = new List<DataAccess.Models.Games>();
+            foreach (var g in games)
+            {
+                newGames.Add(Map(g));
+            }
+            return newGames;
+        }
+        public static List<Games> Map(IEnumerable<DataAccess.Models.Games> games)
+        {
+            List<Games> newGames = new List<Games>();
+            foreach (var g in games)
+            {
+                newGames.Add(Map(g));
+            }
+            return newGames;
+        }
+        public static DataAccess.Models.GameApi Map(GameApi api)
+        {
+            return new DataAccess.Models.GameApi()
+            {
+                count = api.count,
+                results = Map(api.results),
+                next = api.next,
+                previous = api.previous
+            };
+        }
+        public static GameApi Map(DataAccess.Models.GameApi api)
+        {
+            return new GameApi()
+            {
+                count = api.count,
+                results = Map(api.results),
+                next = api.next,
+                previous = api.previous
+            };
+        }
+        #endregion
     }
 }
