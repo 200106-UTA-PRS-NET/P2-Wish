@@ -12,6 +12,8 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
+using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace MediaWish.WebApi
 {
@@ -24,7 +26,6 @@ namespace MediaWish.WebApi
         {
             Configuration = configuration;
         }
-        readonly string AllMyOrigins = "_allMyOrigins";
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddControllers();
@@ -41,24 +42,20 @@ namespace MediaWish.WebApi
 
             // Adding Dependency to your Controller to use Db
             services.AddTransient<IUsersRepo, UsersRepo>();
+            services.AddTransient<IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails>, MoviesRepo>();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
-
             services.AddSwaggerGen(options =>
-
             {
-
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "MediaWish Api", Version = "v1" });
 
             });
 
             services.AddCors(options =>
             {
-                options.AddPolicy(AllMyOrigins, b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                options.AddPolicy("AllOrigins", b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             });
 
-
-            services.AddTransient<IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails>, MoviesRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,7 +65,6 @@ namespace MediaWish.WebApi
              {
                  app.UseDeveloperExceptionPage();
              }
-            
 
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
@@ -96,9 +92,10 @@ namespace MediaWish.WebApi
 
             });
             //
-            app.UseCors(AllMyOrigins);
             app.UseRouting();
+            app.UseAuthorization();
 
+            app.UseCors("AllOrigins");
 
             app.UseEndpoints(endpoints =>
             {
