@@ -1,9 +1,7 @@
-﻿using MediaWish.Library.Entities;
-using System.Collections.Generic;
-
+﻿
 namespace MediaWish.Library.Interfaces
 {
-    public interface IGamesRepo<T, U>
+    public interface IGamesRepo<out T,out U>
     {
         public T GetAllGames(int page); // get all games from RawgDb
         public T GetGamesbyGenreID(int genreID, int page);  // returns list of games of specified genre given the id of the genre
