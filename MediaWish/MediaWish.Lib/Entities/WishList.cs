@@ -13,8 +13,9 @@ namespace MediaWish.Library.Entities
 
         public string? MediaPlatform { get; set; }
         public string? MediaDescription { get; set; }
+        public int MediaID { get; set; }
 
-        public virtual Medias medias { get; set; }
+        public virtual Medias mediaTypes { get; set; }
         public virtual Users users { get; set; }
     }
 }
