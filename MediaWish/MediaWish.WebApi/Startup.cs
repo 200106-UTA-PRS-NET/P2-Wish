@@ -45,11 +45,8 @@ namespace MediaWish.WebApi
             // Register the Swagger generator, defining 1 or more Swagger documents
 
             services.AddSwaggerGen(options =>
-
             {
-
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "MediaWish Api", Version = "v1" });
-
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "MediaWish API", Version = "v1" });
             });
 
             services.AddCors(options =>
@@ -74,9 +71,7 @@ namespace MediaWish.WebApi
             // Enable middleware to serve generated Swagger as a JSON endpoint.
 
             var swaggerOptions = new SwaggerOptions();
-
             Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
-
             app.UseSwagger(options =>
             {
 
