@@ -12,8 +12,6 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
-using System.Web.Http;
-using System.Web.Http.Cors;
 
 namespace MediaWish.WebApi
 {
@@ -47,14 +45,15 @@ namespace MediaWish.WebApi
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(options =>
             {
+
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "MediaWish API", Version = "v1" });
 
             });
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllOrigins", b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-            });
+            //services.AddCors(options =>
+            //{
+            //   options.AddPolicy("AllOrigins", b => b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            //});
 
         }
 
@@ -90,10 +89,12 @@ namespace MediaWish.WebApi
 
             });
             //
+            app.UseHttpsRedirection();
+
             app.UseRouting();
+
             app.UseAuthorization();
 
-            app.UseCors("AllOrigins");
 
             app.UseEndpoints(endpoints =>
             {
