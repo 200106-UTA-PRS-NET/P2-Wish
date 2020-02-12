@@ -9,5 +9,6 @@ namespace MediaWish.WebApi.Controllers
     [ApiController]
     public class WishListsController : ControllerBase
     {
+
     }
 }
