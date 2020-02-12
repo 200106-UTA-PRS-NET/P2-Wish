@@ -19,10 +19,12 @@ namespace MediaWish.WebApi.Controllers
         }
 
         // Get popular movies
-        [HttpGet]
+        //[HttpGet]
         [Route("movies")]
         [Route("movies/popular")]
         [Route("movies/popular/{page}")]
+        [HttpGet] //added these HttpGet 's to see documentation for swagger, needed to be on top of IaAction result
+
         public IActionResult Popular(int page=1)
         {
             try
@@ -37,6 +39,8 @@ namespace MediaWish.WebApi.Controllers
 
         // Get movie details by movie id
         [Route("movies/details/{id}")] // movieID 0,1 are nonexistent so movie 2 is 
+        [HttpGet]
+
         public IActionResult Details(int id=2)
         {
             var movie = Mapper.Map(_moviesRepo.GetMovieByID(id));
@@ -51,8 +55,10 @@ namespace MediaWish.WebApi.Controllers
         }
 
         // Get movies by genre id
-        [HttpGet]
+       // [HttpGet]
         [Route("movies/genre/{id?}/{page?}")]
+        [HttpGet]
+
         public IActionResult Genre(int id, int page=1)
         {
             var movies = _moviesRepo.GetMoviesByGenre(id, page);
