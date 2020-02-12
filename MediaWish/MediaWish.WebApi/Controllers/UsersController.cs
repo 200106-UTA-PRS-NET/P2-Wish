@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Http.Cors;
 using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -6,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MediaWish.WebApi.Controller
 {
     [ApiController]
-    [System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UsersController : ControllerBase
     {
         private readonly IUsersRepo _usersRepo;
