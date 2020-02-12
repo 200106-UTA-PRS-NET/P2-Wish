@@ -1,12 +1,12 @@
-﻿using MediaWish.Library.Entities;
-using MediaWish.Library.Interfaces;
+﻿using MediaWish.WebApi.Models;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Linq;
 
 namespace MediaWish.Test.MockRepositories
 {
-    public class MockUsersRepo : IUsersRepo
+    public class MockApiUsersRepo
     {
         static IEnumerable<Users> users = new List<Users>()
         {

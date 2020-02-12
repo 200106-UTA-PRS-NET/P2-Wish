@@ -17,7 +17,7 @@ namespace MediaWish.Test
         public void GetUsers_TypeofUsers_WithMockData()
         {
             // Arrange
-            IUsersRepo mockRepo = new MockUsersRepo();
+            IUsersRepo mockRepo = new MockLibUsersRepo();
 
             // Act
             var users = mockRepo.GetUsers();
@@ -38,8 +38,6 @@ namespace MediaWish.Test
             Assert.Equal(name, user.Name);
         }
 
-
-
         [Fact]
         public void Name_Users_Null()
         {
@@ -51,7 +49,7 @@ namespace MediaWish.Test
         public void GetUserById_TypeofUsers_WithMockData()
         {
             // Arrange
-            IUsersRepo mockRepo = new MockUsersRepo();
+            IUsersRepo mockRepo = new MockLibUsersRepo();
 
             // Act
             var user = mockRepo.GetUserById(1);
@@ -63,7 +61,7 @@ namespace MediaWish.Test
         [Fact]
         public void GetUserById_EmptyValue_ThrowsInvalidOperationException()
         {
-            IUsersRepo mockRepo = new MockUsersRepo();
+            IUsersRepo mockRepo = new MockLibUsersRepo();
 
             Assert.ThrowsAny<InvalidOperationException>(() => mockRepo.GetUserById(44));
         }
@@ -79,7 +77,7 @@ namespace MediaWish.Test
         [Fact]
         public void GetUserById_ReturnsAllUsers_WithMockData()
         {
-            IUsersRepo mockRepo = new MockUsersRepo();
+            IUsersRepo mockRepo = new MockLibUsersRepo();
 
             var users = mockRepo.GetUsers();
             Assert.Collection<Users>(users, u => Assert.Contains("Banana Man", u.Name),
