@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.Extensions.Logging;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace MediaWish.WebApi
 {
@@ -40,9 +43,13 @@ namespace MediaWish.WebApi
             services.AddTransient<IUsersRepo, UsersRepo>();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen(c =>
+
+            services.AddSwaggerGen(options =>
+
             {
-                c.SwaggerDoc("v1", new OpenApiInfo() { Title = "MediaWish API", Version = "v1" });
+
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "MediaWish Api", Version = "v1" });
+
             });
 
             services.AddCors(options =>
@@ -57,29 +64,41 @@ namespace MediaWish.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            } 
+           if (env.IsDevelopment())
+             {
+                 app.UseDeveloperExceptionPage();
+             }
+            
 
-            /*
+
             // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger(options => {
-                options.RouteTemplate = "/swagger/{documentName}/swagger.json";
-            });
-            */
 
-            app.UseSwagger();
+            var swaggerOptions = new SwaggerOptions();
+
+            Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
+
+            app.UseSwagger(options =>
+            {
+
+                options.RouteTemplate = swaggerOptions.JsonRoute;
+
+            });
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
+
+            app.UseSwaggerUI(options =>
             {
-                c.SwaggerEndpoint("swagger/v1/swagger.json", "MediaWish API");
+
+                //options.SwaggerEndpoint("/swagger/v1/swagger.json", swaggerOptions.Description);
+
+                options.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
+
             });
             //
             app.UseCors(AllMyOrigins);
             app.UseRouting();
+
 
             app.UseEndpoints(endpoints =>
             {
