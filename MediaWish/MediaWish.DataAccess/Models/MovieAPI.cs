@@ -25,7 +25,7 @@ namespace MediaWish.DataAccess.Models
     // class for when searching for individual movies by id
     public class MovieDetails
     {
-        public List<Genre> genres { get; set; }
+        public List<MovieGenre> genres { get; set; }
         public int id { get; set; }
         public string overview { get; set; }
         public string release_date { get; set; }
@@ -34,7 +34,7 @@ namespace MediaWish.DataAccess.Models
     }
 
     // class for MovieDetails genre
-    public class Genre
+    public class MovieGenre
     {
         public int id { get; set; }
         public string name { get; set; }

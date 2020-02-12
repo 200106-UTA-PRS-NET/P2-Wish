@@ -4,7 +4,7 @@ namespace MediaWish.WebApi.Models
 {
     public class MovieDetails
     {
-        public List<DataAccess.Models.Genre> genres { get; set; }
+        public List<DataAccess.Models.MovieGenre> genres { get; set; }
         public int id { get; set; }
         public string overview { get; set; }
         public string release_date { get; set; }

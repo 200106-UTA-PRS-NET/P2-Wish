@@ -15,10 +15,8 @@ namespace MediaWish.WebApi.Controller
             _usersRepo = usersRepo;
         }
 
-        //[HttpGet]
         [Route("users/info/{id}")]
         [HttpGet]//added these HttpGet 's to see documentation for swagger, needed to be on top of IaAction result
-
         public IActionResult Info(int id)
         {
             try
@@ -33,10 +31,8 @@ namespace MediaWish.WebApi.Controller
 
         }
 
-        //[HttpPost]
         [Route("users/create")]
         [HttpPost]
-
         public IActionResult Create([FromBody, Bind("id,name,username,password,email")]Users user)
         {
             int newid = _usersRepo.CreateUser(Mapper.Map(user));

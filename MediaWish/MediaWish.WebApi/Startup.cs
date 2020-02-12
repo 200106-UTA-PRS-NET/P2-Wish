@@ -41,6 +41,8 @@ namespace MediaWish.WebApi
             // Adding Dependency to your Controller to use Db
             services.AddTransient<IUsersRepo, UsersRepo>();
             services.AddTransient<IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails>, MoviesRepo>();
+            services.AddTransient<IGamesRepo<DataAccess.Models.GameApi>, GamesRepo>();
+
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(options =>
