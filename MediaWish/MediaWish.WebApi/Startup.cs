@@ -12,8 +12,6 @@ using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
-using System.Web.Http;
-using System.Web.Http.Cors;
 
 namespace MediaWish.WebApi
 {
@@ -91,10 +89,12 @@ namespace MediaWish.WebApi
 
             });
             //
+            app.UseHttpsRedirection();
+
             app.UseRouting();
+
             app.UseAuthorization();
 
-            //app.UseCors("AllOrigins");
 
             app.UseEndpoints(endpoints =>
             {
