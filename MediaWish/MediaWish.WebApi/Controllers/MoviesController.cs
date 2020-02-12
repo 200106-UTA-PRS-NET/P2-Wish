@@ -3,7 +3,6 @@ using System.Linq;
 using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Cors;
 
 namespace MediaWish.WebApi.Controllers
 {
