@@ -24,7 +24,14 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult All(int page=1)
         {
             var games = Mapper.Map(_gamesRepo.GetAllGames(page));
-            return Ok(games);
+            if (games.count == 0 || games == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(games);
+            }
         }
 
         [Route("games/genre/{genreID}/{page?}")]
@@ -32,7 +39,14 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult Genre(int genreID, int page=1)
         {
             var games = Mapper.Map(_gamesRepo.GetGamesbyGenreID(genreID, page));
-            return Ok(games);
+            if (games.count == 0 || games == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(games);
+            }
         }
 
         [Route("games/search/{searchGame}")]
@@ -40,7 +54,29 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult Search(string searchGame)
         {
             var games = Mapper.Map(_gamesRepo.SearchGame(searchGame));
-            return Ok(games);
+            if (games == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(games);
+            }
+        }
+
+        [Route("games/platform/{platformID}/{page?}")]
+        [HttpGet]
+        public IActionResult Platform(int platformID, int page=1)
+        {
+            var games = Mapper.Map(_gamesRepo.GetGamesByPlatformId(platformID, page));
+            if (games.count == 0 || games == null)
+            {
+                return NotFound();
+            } 
+            else
+            {
+                return Ok(games);
+            }         
         }
     }
 }

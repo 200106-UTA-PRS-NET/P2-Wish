@@ -44,7 +44,20 @@ namespace MediaWish.DataAccess.Repositories
             var gameApi = JsonConvert.DeserializeObject<GameApi>(response.Content);
             return gameApi;
         }
-        
+
+        public GameApi GetGamesByPlatformId(int platformID, int page)
+        {
+            string strRequest = $"{DOMAIN}/games?platforms={platformID}&page={page}";
+            var client = new RestClient(strRequest);
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("x-rapidapi-host", HOST);
+            request.AddHeader("x-rapidapi-key", APIKEY);
+            IRestResponse response = client.Execute(request);
+
+            var gameApi = JsonConvert.DeserializeObject<GameApi>(response.Content);
+            return gameApi;
+        }
+
         // rawg api
         public Games SearchGame(string game)
         {
