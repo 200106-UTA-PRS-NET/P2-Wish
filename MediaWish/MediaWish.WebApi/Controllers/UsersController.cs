@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Web.Http.Cors;
 using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;

@@ -4,7 +4,6 @@ using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
-using System.Web.Http.Cors;
 
 namespace MediaWish.WebApi.Controllers
 {
