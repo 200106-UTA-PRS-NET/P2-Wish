@@ -27,6 +27,24 @@ namespace MediaWish.WebApi.Models
                 Password = users.Password,
             };
         }
+        public static IEnumerable<Users> Map(IEnumerable<Library.Entities.Users> users)
+        {
+            List<Users> newUsers = new List<Users>();
+            foreach(var u in users)
+            {
+                newUsers.Add(Map(u));
+            }
+            return newUsers;
+        }
+        public static IEnumerable<Library.Entities.Users> Map(IEnumerable<Users> users)
+        {
+            List<Library.Entities.Users> newUsers = new List<Library.Entities.Users>();
+            foreach (var u in users)
+            {
+                newUsers.Add(Map(u));
+            }
+            return newUsers;
+        }
         #endregion
 
         #region Movies
