@@ -75,5 +75,21 @@ namespace MediaWish.WebApi.Controllers
                 return Ok(games);
             }         
         }
+
+        [Route("wishlists/game/add")]
+        [HttpPost]
+        public IActionResult AddGame([FromBody, Bind("userID, mediaID")]WishList wishList)
+        {
+            _gamesRepo.AddGameToWishlist(wishList.MediaID, wishList.userID);
+            return Ok();
+        }
+
+        [Route("games/{gameID?}")]
+        [HttpGet]
+        public IActionResult Id(int gameID)
+        {
+            Games game = Mapper.Map(_gamesRepo.GetGameByID(gameID));
+            return Ok(game);
+        }
     }
 }
