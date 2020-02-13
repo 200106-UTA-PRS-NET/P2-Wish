@@ -37,6 +37,7 @@ namespace MediaWish.WebApi
             services.AddTransient<IUsersRepo, UsersRepo>();
             services.AddTransient<IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails>, MoviesRepo>();
             services.AddTransient<IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games>, GamesRepo>();
+            services.AddTransient<IWishListRepo, WishListsRepo>();
 
 
             // Register the Swagger generator, defining 1 or more Swagger documents
