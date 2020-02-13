@@ -77,9 +77,6 @@ namespace MediaWish.Library.Migrations
                     b.Property<string>("MediaTitle")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("mediaTypesId")
                         .HasColumnType("int");
 

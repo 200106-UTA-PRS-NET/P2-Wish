@@ -1,0 +1,69 @@
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
+WORKDIR /MediaWish
+COPY MediaWish.sln ./
+COPY MediaWish.DataAccess/*.csproj ./MediaWish.DataAccess/
+COPY MediaWish.Lib/*.csproj ./MediaWish.Lib/
+COPY MediaWish.Test/*.csproj ./MediaWish.Test/
+COPY MediaWish.WebApi/*.csproj ./MediaWish.WebApi/
+
+RUN dotnet restore
+COPY . .
+WORKDIR /MediaWish/MediaWish.DataAccess
+RUN dotnet build -c Release -o /app
+
+WORKDIR /MediaWish/MediaWish.Lib
+RUN dotnet build -c Release -o /app
+
+WORKDIR /MediaWish/MediaWish.Test
+RUN dotnet build -c Release -o /app
+
+WORKDIR /MediaWish/MediaWish.WebApi
+RUN dotnet build -c Release -o /app
+
+FROM build-env AS publish
+RUN dotnet publish -c Release -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
+ENTRYPOINT ["dotnet", "MediaWish.WebApi.dll"]
+
+#docker build -t <Docker Hub ID><Project Name><Version>
+#docker build -t jcm2321/mediawish.webapi .
+#docker run -p 8080:80 jcm2321/mediawish.webapi .
+
+
+
+
+
+
+
+#        registry          repo/image      tag
+#  (default, docker hub)                  (latest)
+#   |                 |                   |    |
+#FROM mcr.microsoft.com/dotnet/core/runtime:3.1
+
+#FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
+#WORKDIR /app
+
+
+#not ready for release
+#COPY *.csproj ./
+#RUN dotnet restore
+
+#COPY . ./
+#RUN dotnet publish -c Release -o out
+
+#FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+#WORKDIR /app
+#EXPOSE 80
+#COPY --from=build-env /app/out .
+#ENTRYPOINT [ "dotnet", "MediaWish.WebApi.dll" ]
+
+#docker build -t <Docker Hub ID><Project Name><Version>
+#docker build -t jcm2321/mediawish.webapi .
