@@ -46,5 +46,15 @@ namespace MediaWish.Test.MockRepositories
         {
             return users.Select(u => u).ToList();
         }
+
+        public Users Login(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Register(Users u)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

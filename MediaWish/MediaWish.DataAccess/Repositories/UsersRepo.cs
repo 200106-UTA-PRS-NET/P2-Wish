@@ -34,5 +34,22 @@ namespace MediaWish.DataAccess.Repositories
             return users;
         }
 
+        public Users Login(string username, string password)
+        {
+            try
+            {
+                var user = _db.users.Where(u => u.Username == username && u.Password == password).Single();
+                return user;
+            }
+            catch (InvalidOperationException)
+            {
+                return null;
+            }
+        }
+
+        public bool Register(Users u)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
