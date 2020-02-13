@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200212205655_new migration.cs" />
     <Compile Remove="Migrations\20200212205655_new migration.Designer.cs" />
+    <Compile Remove="Migrations\20200213184421_changed mediatype to int.cs" />
+    <Compile Remove="Migrations\20200213184421_changed mediatype to int.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

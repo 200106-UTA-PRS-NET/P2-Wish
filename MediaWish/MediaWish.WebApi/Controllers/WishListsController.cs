@@ -18,14 +18,6 @@ namespace MediaWish.WebApi.Controllers
             _wishListRepo = wishListRepo;
         }
 
-        [Route("wishlists/game/add")]
-        [HttpPost]
-        public IActionResult AddGame([FromBody, Bind("userID, mediaID") ]WishList wishList)
-        {
-            _wishListRepo.AddGameToWishlist(wishList.MediaID, wishList.userID);
-            return Ok();
-        }
-
         [Route("wishlists/viewall/{userID?}")]
         [HttpGet]
         public IActionResult ViewAll(int userID)
@@ -33,5 +25,6 @@ namespace MediaWish.WebApi.Controllers
             var wishlists = _wishListRepo.GetUserWishList(userID);
             return Ok(wishlists);
         }
+
     }
 }

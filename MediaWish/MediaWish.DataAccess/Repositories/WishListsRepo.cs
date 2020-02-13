@@ -20,17 +20,7 @@ namespace MediaWish.DataAccess.Repositories
             _db = db ?? throw new ArgumentNullException(nameof(db));
         }
 
-        public void AddGameToWishlist(int gameID, int userID)
-        {
-            WishList wishList = new WishList()
-            {
-                users = _db.users.Where(u => u.Id == userID).Single(),
-                MediaID = gameID,
-                mediaTypes = _db.medias.Where(m => m.Id == GAMEMEDIA).Single()
-            };
-            _db.wishLists.Add(wishList);
-            _db.SaveChanges();
-        }
+
 
         public void AddMovieToWishList(int movieID, int userID)
         {
@@ -57,6 +47,20 @@ namespace MediaWish.DataAccess.Repositories
         {
             var wishlists = _db.wishLists.Where(w => w.users.Id == userID).ToList();
             return wishlists;
+        }
+
+        public bool RemoveItemFromWishlist(int mediaID, int mediaTypeID, int userID)
+        {
+            try
+            {
+                var wishlist = _db.wishLists.Where(w => w.MediaID == mediaID && w.mediaTypes.Id == mediaTypeID && w.users.Id == userID).Single();
+                _db.wishLists.Remove(wishlist);
+                return true;
+            }
+            catch (InvalidOperationException)
+            {
+                return false;
+            }
         }
     }
 }

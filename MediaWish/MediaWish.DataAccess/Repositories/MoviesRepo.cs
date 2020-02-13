@@ -1,7 +1,10 @@
 ﻿using MediaWish.DataAccess.Models;
+using MediaWish.Library.Entities;
 using MediaWish.Library.Interfaces;
 using Newtonsoft.Json;
 using RestSharp;
+using System.Linq;
+using System;
 
 namespace MediaWish.DataAccess.Repositories
 {
@@ -11,6 +14,30 @@ namespace MediaWish.DataAccess.Repositories
         const string DOMAIN = "https://api.themoviedb.org";
         const string LANGUAGE = "en-US";
         const string REGION = "US";
+        const string MOVIEMEDIA = "2";
+
+        readonly MediaWishContext _db;
+
+        public MoviesRepo(MediaWishContext db)
+        {
+            _db = db ?? throw new ArgumentNullException(nameof(db));
+        }
+
+        public void AddMovieToWishList(int movieID, int userID)
+        {
+            MovieDetails movie = GetMovieByID(movieID);
+
+            WishList wishList = new WishList()
+            {
+                users = _db.users.Where(u => u.Id == userID).Single(),
+                MediaID = movieID,
+                mediaTypes = _db.medias.Where(m => m.MediaType == MOVIEMEDIA).Single(),
+                MediaTitle = movie.title,
+                MediaDescription = movie.overview
+            };
+            _db.wishLists.Add(wishList);
+            _db.SaveChanges();
+        }
 
         public MovieDetails GetMovieByID(int movieID)
         {
