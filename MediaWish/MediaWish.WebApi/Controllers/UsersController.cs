@@ -15,6 +15,29 @@ namespace MediaWish.WebApi.Controller
             _usersRepo = usersRepo;
         }
 
+        [Route("users/login")]
+        [HttpPost]
+        public IActionResult Login([FromBody, Bind("username,password")]Users user)
+        {
+            var u = _usersRepo.Login(user.Username, user.Password);
+            if (u != null)
+            {
+                // User to only show id, name, and username
+                Users loggedinUser = new Users()
+                {
+                    Id = u.Id,
+                    Name = u.Name,
+                    Username = u.Name
+                };
+                return Ok(loggedinUser);
+            } 
+            else
+            {
+                return Ok(null);
+            }
+        }
+
+
         [Route("users/info/{id}")]
         [HttpGet]//added these HttpGet 's to see documentation for swagger, needed to be on top of IaAction result
         public IActionResult Info(int id)

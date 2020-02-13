@@ -266,6 +266,7 @@ namespace MediaWish.WebApi.Models
             return new WishList()
             {
                 Id = wishList.Id,
+                MediaTitle = wishList.MediaTitle,
                 MediaID = wishList.MediaID,
                 mediaTypeID = wishList.mediaTypes.Id,
                 userID = Map(wishList.users).Id
