@@ -8,11 +8,8 @@ namespace MediaWish.Library.Entities
         {
             wishLists = new HashSet<WishList>();
         }
-
         public int Id { get; set; }
-
         public string MediaType { get; set; }
-
         public virtual ICollection<WishList> wishLists { get; set; }
 
     }
