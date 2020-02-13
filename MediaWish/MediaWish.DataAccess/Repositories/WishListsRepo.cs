@@ -1,6 +1,7 @@
 ﻿using MediaWish.Library.Entities;
 using MediaWish.Library.Interfaces;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 
@@ -21,12 +22,41 @@ namespace MediaWish.DataAccess.Repositories
 
         public void AddGameToWishlist(int gameID, int userID)
         {
-
+            WishList wishList = new WishList()
+            {
+                users = _db.users.Where(u => u.Id == userID).Single(),
+                MediaID = gameID,
+                mediaTypes = _db.medias.Where(m => m.Id == GAMEMEDIA).Single()
+            };
+            _db.wishLists.Add(wishList);
+            _db.SaveChanges();
         }
 
         public void AddMovieToWishList(int movieID, int userID)
         {
-            throw new NotImplementedException();
+            WishList wishList = new WishList()
+            {
+                users = _db.users.Where(u => u.Id == userID).Single(),
+                MediaID = movieID,
+                mediaTypes = _db.medias.Where(m => m.Id == MOVIEMEDIA).Single()
+            };
+            _db.wishLists.Add(wishList);
+        }
+
+        public WishList CreateWishList(int gameID, int userID)
+        {
+            return new WishList()
+            {
+                users = _db.users.Where(u => u.Id == userID).Single(),
+                MediaID = gameID,
+                mediaTypes = _db.medias.Where(m => m.Id == GAMEMEDIA).Single()
+            };
+        }
+
+        public IEnumerable<WishList> GetUserWishList(int userID)
+        {
+            var wishlists = _db.wishLists.Where(w => w.users.Id == userID).ToList();
+            return wishlists;
         }
     }
 }

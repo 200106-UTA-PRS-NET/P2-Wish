@@ -259,5 +259,26 @@ namespace MediaWish.WebApi.Models
             };
         }
         #endregion
+
+        #region WishLists
+        public static WishList Map(Library.Entities.WishList wishList)
+        {
+            return new WishList()
+            {
+                Id = wishList.Id,
+                MediaID = wishList.MediaID,
+                mediaTypeID = wishList.mediaTypes.Id,
+                userID = Map(wishList.users).Id
+            };
+        }
+        public static Library.Entities.WishList Map(WishList wishList)
+        {
+            return new Library.Entities.WishList()
+            {
+                Id = wishList.Id,
+                MediaID = wishList.MediaID,
+            };
+        }
+        #endregion
     }
 }
