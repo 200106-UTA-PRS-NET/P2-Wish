@@ -14,7 +14,7 @@ namespace MediaWish.DataAccess.Repositories
         const string DOMAIN = "https://api.themoviedb.org";
         const string LANGUAGE = "en-US";
         const string REGION = "US";
-        const string MOVIEMEDIA = "2";
+        const string MOVIEMEDIA = "Movies";
 
         readonly MediaWishContext _db;
 
