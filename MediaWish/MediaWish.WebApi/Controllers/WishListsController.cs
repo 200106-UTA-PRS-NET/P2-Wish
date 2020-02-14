@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+
 
 namespace MediaWish.WebApi.Controllers
 {
@@ -16,6 +18,15 @@ namespace MediaWish.WebApi.Controllers
         public WishListsController(IWishListRepo wishListRepo)
         {
             _wishListRepo = wishListRepo;
+
+
+        }
+
+        private readonly ILogger<WishListsController> _logger;
+
+        public WishListsController(ILogger<WishListsController> logger)
+        {
+            _logger = logger;
         }
 
         [Route("wishlists/viewall/{userID?}")]

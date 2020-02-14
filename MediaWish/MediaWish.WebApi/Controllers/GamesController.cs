@@ -2,6 +2,7 @@
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using Microsoft.Extensions.Logging;
 
 namespace MediaWish.WebApi.Controllers
 {
@@ -13,6 +14,12 @@ namespace MediaWish.WebApi.Controllers
         public GamesController(IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games> gamesRepo)
         {
             _gamesRepo = gamesRepo;
+        }
+        private readonly ILogger<GamesController> _logger;
+
+        public GamesController(ILogger<GamesController> logger)
+        {
+            _logger = logger;
         }
 
         [Route("games")]
