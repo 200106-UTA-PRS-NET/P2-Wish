@@ -21,6 +21,7 @@ namespace MediaWish.WebApi.Models
         public double rating { get; set; }
         public List<Platform> platforms { get; set; }
         public List<GameGenre> genres { get; set; }
+        public string description { get; set; }
     }
 
     public class Platform
