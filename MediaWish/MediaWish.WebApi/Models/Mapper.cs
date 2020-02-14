@@ -206,6 +206,7 @@ namespace MediaWish.WebApi.Models
                 released = game.released,
                 genres = Map(game.genres),
                 rating = game.rating,
+                description_raw = game.description
             };
         }
         public static Games Map(DataAccess.Models.Games game)
@@ -217,7 +218,8 @@ namespace MediaWish.WebApi.Models
                 released = game.released,
                 genres = Map(game.genres),
                 rating = game.rating,
-                platforms = Map(game.platforms)
+                platforms = Map(game.platforms),
+                description = game.description_raw
             };
         }
         public static List<DataAccess.Models.Games> Map(IEnumerable<Games> games)

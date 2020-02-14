@@ -13,7 +13,7 @@ namespace MediaWish.DataAccess.Repositories
         const string DOMAIN = "https://rawg-video-games-database.p.rapidapi.com";
         const string APIKEY = "18d888b8e8mshfd51db13a18bc87p1a2b6bjsn4b77c635255c";
         const string HOST = "rawg-video-games-database.p.rapidapi.com";
-        const string GAMEMEDIA = "1";
+        const string GAMEMEDIA = "Video Games";
 
 
         readonly MediaWishContext _db;
@@ -106,13 +106,21 @@ namespace MediaWish.DataAccess.Repositories
         {
             Games game = GetGameByID(gameID);
 
+            var _users = _db.users.Where(u => u.Id == userID).Single();
+            var _MediaID = gameID;
+            var _mediaTypes = _db.medias.Where(m => m.MediaType == GAMEMEDIA).Single();
+            var _MediaTitle = game.name;
+            var _MediaPlatform = game.platforms.First().platform.name;
+            var _MediaDescription = game.description_raw;
+
             WishList wishList = new WishList()
             {
-                users = _db.users.Where(u => u.Id == userID).Single(),
-                MediaID = gameID,
-                mediaTypes = _db.medias.Where(m => m.MediaType == GAMEMEDIA).Single(),
-                MediaTitle = game.name,
-                MediaPlatform = game.platforms.First().platform.name,
+                users = _users,
+                MediaID = _MediaID,
+                mediaTypes = _mediaTypes,
+                MediaTitle = _MediaTitle,
+                MediaPlatform = _MediaPlatform,
+                MediaDescription = _MediaDescription
             };
             _db.wishLists.Add(wishList);
             _db.SaveChanges();
