@@ -10,17 +10,15 @@ namespace MediaWish.WebApi.Controllers
     public class GamesController : ControllerBase
     {
         private readonly IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games> _gamesRepo;
-
-        public GamesController(IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games> gamesRepo)
-        {
-            _gamesRepo = gamesRepo;
-        }
         private readonly ILogger<GamesController> _logger;
 
-        public GamesController(ILogger<GamesController> logger)
+
+        public GamesController(IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games> gamesRepo, ILogger<GamesController> logger)
         {
+            _gamesRepo = gamesRepo;
             _logger = logger;
         }
+
 
         [Route("games")]
         [Route("games/all/{page?}")]
@@ -28,21 +26,6 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult All(int page=1)
         {
             var games = Mapper.Map(_gamesRepo.GetAllGames(page));
-            if (games.count == 0)
-            {
-                return NotFound();
-            }
-            else
-            {
-                return Ok(games);
-            }
-        }
-
-        [Route("games/genre/{genreID}/{page?}")]
-        [HttpGet]
-        public IActionResult Genre(int genreID, int page=1)
-        {
-            var games = Mapper.Map(_gamesRepo.GetGamesbyGenreID(genreID, page));
             if (games.count == 0)
             {
                 return NotFound();
@@ -65,6 +48,36 @@ namespace MediaWish.WebApi.Controllers
             catch (Exception)
             {
                 throw;
+            }
+        }
+
+        [Route("games/genre={genreID}&platform={platformID}/{page?}")]
+        [HttpGet]
+        public IActionResult PlatformAndGenre(int platformID, int genreID, int page = 1)
+        {
+            var games = Mapper.Map(_gamesRepo.GetGamesByPlatformAndGenreId(platformID, genreID, page));
+            if (games.count == 0)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(games);
+            }
+        }
+
+        [Route("games/genre/{genreID}/{page?}")]
+        [HttpGet]
+        public IActionResult Genre(int genreID, int page = 1)
+        {
+            var games = Mapper.Map(_gamesRepo.GetGamesbyGenreID(genreID, page));
+            if (games.count == 0)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(games);
             }
         }
 

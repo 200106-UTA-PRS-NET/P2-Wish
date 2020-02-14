@@ -8,6 +8,7 @@ namespace MediaWish.Library.Interfaces
         public U GetGameByID(int gameID); // returns the game object given the id of the game
         public U SearchGame(string game); // returns game given the string
         public T GetGamesByPlatformId(int platformID, int page);
+        public T GetGamesByPlatformAndGenreId(int platformID, int genreID, int page);
         public void AddGameToWishlist(int gameID, int userID);  // add a game to current user's wishlist
     }
 }

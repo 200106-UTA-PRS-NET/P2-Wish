@@ -75,6 +75,19 @@ namespace MediaWish.DataAccess.Repositories
             return gameApi;
         }
 
+        public GameApi GetGamesByPlatformAndGenreId(int platformID, int genreID, int page)
+        {
+            string strRequest = $"{DOMAIN}/games?platforms={platformID}&genres={genreID}&page={page}";
+            var client = new RestClient(strRequest);
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("x-rapidapi-host", HOST);
+            request.AddHeader("x-rapidapi-key", APIKEY);
+            IRestResponse response = client.Execute(request);
+
+            var gameApi = JsonConvert.DeserializeObject<GameApi>(response.Content);
+            return gameApi;
+        }
+
         // rawg api
         public Games SearchGame(string game)
         {
@@ -104,5 +117,6 @@ namespace MediaWish.DataAccess.Repositories
             _db.wishLists.Add(wishList);
             _db.SaveChanges();
         }
+
     }
 }
