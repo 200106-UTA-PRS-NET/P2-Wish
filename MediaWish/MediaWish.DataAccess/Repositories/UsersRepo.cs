@@ -46,10 +46,5 @@ namespace MediaWish.DataAccess.Repositories
                 return null;
             }
         }
-
-        public bool Register(Users u)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

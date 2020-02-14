@@ -20,19 +20,6 @@ namespace MediaWish.DataAccess.Repositories
             _db = db ?? throw new ArgumentNullException(nameof(db));
         }
 
-
-
-        public void AddMovieToWishList(int movieID, int userID)
-        {
-            WishList wishList = new WishList()
-            {
-                users = _db.users.Where(u => u.Id == userID).Single(),
-                MediaID = movieID,
-                mediaTypes = _db.medias.Where(m => m.Id == MOVIEMEDIA).Single()
-            };
-            _db.wishLists.Add(wishList);
-        }
-
         public WishList CreateWishList(int gameID, int userID)
         {
             return new WishList()
