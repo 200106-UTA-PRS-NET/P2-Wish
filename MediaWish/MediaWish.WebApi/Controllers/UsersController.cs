@@ -51,7 +51,6 @@ namespace MediaWish.WebApi.Controller
             {
                 return NotFound();
             }
-
         }
 
         [Route("users/create")]
