@@ -3,6 +3,8 @@ using System.Linq;
 using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace MediaWish.WebApi.Controllers
 {
@@ -10,11 +12,16 @@ namespace MediaWish.WebApi.Controllers
     public class MoviesController : ControllerBase
     {
         private readonly IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails> _moviesRepo;
+        private readonly ILogger<MoviesController> _logger;
 
-        public MoviesController(IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails> moviesRepo)
+
+        public MoviesController(IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails> moviesRepo)//, Logger<MoviesController> logger
         {
             _moviesRepo = moviesRepo;
+           // _logger = logger;
+
         }
+
 
         // Get popular movies
         [Route("movies")]
@@ -25,6 +32,8 @@ namespace MediaWish.WebApi.Controllers
         {
             try
             {
+                Log.Information("Starting up MoviesController Logggggggggg");
+
                 var movies = _moviesRepo.GetPopularMovies(page);
                 return Ok(movies);
             } catch (Exception)
@@ -41,10 +50,13 @@ namespace MediaWish.WebApi.Controllers
             var movie = Mapper.Map(_moviesRepo.GetMovieByID(id));
             if (movie == null || movie.title == null)
             {
+
                 return NotFound();
             }
             else
             {
+                Log.Information("Starting up MoviesController Logggggggggg");
+
                 return Ok(movie);
             }
         }
@@ -61,6 +73,8 @@ namespace MediaWish.WebApi.Controllers
             }
             else
             {
+                Log.Information("Starting up MoviesController Logggggggggg");
+
                 return Ok(movies);
             }
         }
@@ -77,6 +91,8 @@ namespace MediaWish.WebApi.Controllers
             }
             else
             {
+                Log.Information("Starting up MoviesController Logggggggggg");
+
                 return Ok(movies);
             }
         }
