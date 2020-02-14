@@ -9,11 +9,11 @@ namespace MediaWish.WebApi.Controllers
     [ApiController]
     public class GamesController : ControllerBase
     {
-        private readonly IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games> _gamesRepo;
+        private readonly IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games, DataAccess.Models.GameChickenApi> _gamesRepo;
         private readonly ILogger<GamesController> _logger;
 
 
-        public GamesController(IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games> gamesRepo, ILogger<GamesController> logger)
+        public GamesController(IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games, DataAccess.Models.GameChickenApi> gamesRepo, ILogger<GamesController> logger)
         {
             _gamesRepo = gamesRepo;
             _logger = logger;
@@ -36,6 +36,7 @@ namespace MediaWish.WebApi.Controllers
             }
         }
 
+        // Rawg api
         [Route("games/search/{searchGame}")]
         [HttpGet]
         public IActionResult Search(string searchGame)
@@ -49,6 +50,17 @@ namespace MediaWish.WebApi.Controllers
             {
                 throw;
             }
+        }
+
+        // Chicken Coop api
+        [Route("games/searchC/{searchGame}")]
+        [HttpGet]
+        public IActionResult SearchChickenCoop(string searchGame)
+        {
+
+                var games = Mapper.Map(_gamesRepo.SearchGameChickenCoop(searchGame));
+                return Ok(games);
+
         }
 
         [Route("games/genre={genreID}&platform={platformID}/{page?}")]

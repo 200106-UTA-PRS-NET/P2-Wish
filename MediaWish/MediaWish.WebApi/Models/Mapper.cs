@@ -206,7 +206,7 @@ namespace MediaWish.WebApi.Models
                 released = game.released,
                 genres = Map(game.genres),
                 rating = game.rating,
-                description_raw = game.description
+                description_raw = game.description,
             };
         }
         public static Games Map(DataAccess.Models.Games game)
@@ -219,7 +219,7 @@ namespace MediaWish.WebApi.Models
                 genres = Map(game.genres),
                 rating = game.rating,
                 platforms = Map(game.platforms),
-                description = game.description_raw
+                description = game.description_raw,
             };
         }
         public static List<DataAccess.Models.Games> Map(IEnumerable<Games> games)
@@ -247,7 +247,8 @@ namespace MediaWish.WebApi.Models
                 count = api.count,
                 results = Map(api.results),
                 next = api.next,
-                previous = api.previous
+                previous = api.previous,
+                //result = Map(api.result)
             };
         }
         public static GameApi Map(DataAccess.Models.GameApi api)
@@ -257,7 +258,61 @@ namespace MediaWish.WebApi.Models
                 count = api.count,
                 results = Map(api.results),
                 next = api.next,
-                previous = api.previous
+                previous = api.previous,
+                //result = Map(api.result)
+            };
+        }
+        #endregion
+
+        #region GameChickenCoop
+        public static GamesChicken Map(DataAccess.Models.GamesChicken game)
+        {
+            return new GamesChicken()
+            {
+                platform = game.platform,
+                title = game.title
+            };
+        }
+        public static DataAccess.Models.GamesChicken Map(GamesChicken game)
+        {
+            return new DataAccess.Models.GamesChicken()
+            {
+                platform = game.platform,
+                title = game.title
+            };
+        }
+        public static List<GamesChicken> Map(IEnumerable<DataAccess.Models.GamesChicken> games)
+        {
+            List<GamesChicken> newGames = new List<GamesChicken>();
+            foreach(var g in games)
+            {
+                newGames.Add(Map(g));
+            }
+            return newGames;
+        }
+        public static List<DataAccess.Models.GamesChicken> Map(IEnumerable<GamesChicken> games)
+        {
+            List<DataAccess.Models.GamesChicken> newGames = new List<DataAccess.Models.GamesChicken>();
+            foreach (var g in games)
+            {
+                newGames.Add(Map(g));
+            }
+            return newGames;
+        }
+        public static GameChickenApi Map(DataAccess.Models.GameChickenApi api)
+        {
+            return new GameChickenApi()
+            {
+                countResult = api.countResult,
+                result = Map(api.result)
+            };
+        }
+        public static DataAccess.Models.GameChickenApi Map(GameChickenApi api)
+        {
+            return new DataAccess.Models.GameChickenApi()
+            {
+                countResult = api.countResult,
+                result = Map(api.result)
             };
         }
         #endregion

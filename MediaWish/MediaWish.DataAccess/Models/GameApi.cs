@@ -10,6 +10,19 @@ namespace MediaWish.DataAccess.Models
         public List<Games> results { get; set; }
     }
 
+    public class GameChickenApi
+    {
+        public List<GamesChicken> result { get; set; }
+        public int countResult { get; set; }
+    }
+
+
+    public class GamesChicken
+    {
+        public string title { get; set; }
+        public string platform { get; set; }
+    }
+
     public class Games
     {
         public int id { get; set; }

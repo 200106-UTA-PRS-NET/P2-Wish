@@ -5,18 +5,35 @@ using System.Threading.Tasks;
 
 namespace MediaWish.WebApi.Models
 {
+
+    public class GameChickenApi
+    {
+        public List<GamesChicken> result { get; set; }
+        public int countResult { get; set; }
+    }
+
+
+    public class GamesChicken
+    {
+        public string title { get; set; }
+        public string platform { get; set; }
+    }
+
     public class GameApi
     {
         public int count { get; set; }
         public string next { get; set; }
         public object previous { get; set; }
         public List<Games> results { get; set; }
+        public List<Games> result { get; set; } // chicken coop
     }
 
     public class Games
     {
         public int id { get; set; }
         public string name { get; set; }
+        public string title { get; set; } // chicken coop
+        public string platform { get; set; } // chicken coop
         public string released { get; set; }
         public double rating { get; set; }
         public List<Platform> platforms { get; set; }

@@ -80,5 +80,13 @@ namespace MediaWish.WebApi.Controllers
                 return Ok(movies);
             }
         }
+
+        [Route("wishlists/movie/add")]
+        [HttpPost]
+        public IActionResult AddMovieToWishList([FromBody, Bind("userID, mediaID")]WishList wishList)
+        {
+            _moviesRepo.AddMovieToWishList(wishList.MediaID, wishList.userID);
+            return Ok();
+        }
     }
 }
