@@ -51,7 +51,6 @@ namespace MediaWish.WebApi.Controllers
             }
         }
 
-        [Route("games/genre/{genreID}/platform/{platformID}/{page?}")]
         [Route("games/genre={genreID}&platform={platformID}/{page?}")]
         [HttpGet]
         public IActionResult PlatformAndGenre(int platformID, int genreID, int page = 1)
