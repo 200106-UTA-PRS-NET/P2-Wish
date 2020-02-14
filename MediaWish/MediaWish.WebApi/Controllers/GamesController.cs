@@ -3,6 +3,7 @@ using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace MediaWish.WebApi.Controllers
 {
@@ -13,10 +14,10 @@ namespace MediaWish.WebApi.Controllers
         private readonly ILogger<GamesController> _logger;
 
 
-        public GamesController(IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games> gamesRepo, ILogger<GamesController> logger)
+        public GamesController(IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games> gamesRepo) // ILogger<GamesController> logger
         {
             _gamesRepo = gamesRepo;
-            _logger = logger;
+           // _logger = logger;
         }
 
 
@@ -25,6 +26,8 @@ namespace MediaWish.WebApi.Controllers
         [HttpGet]
         public IActionResult All(int page=1)
         {
+
+
             var games = Mapper.Map(_gamesRepo.GetAllGames(page));
             if (games.count == 0)
             {
@@ -32,8 +35,12 @@ namespace MediaWish.WebApi.Controllers
             }
             else
             {
+                Log.Information("Starting up GamesController Loggggggg");
+
                 return Ok(games);
+
             }
+
         }
 
         [Route("games/search/{searchGame}")]
@@ -42,6 +49,8 @@ namespace MediaWish.WebApi.Controllers
         {
             try
             {
+                Log.Information("Starting up GamesController Loggggggg");
+
                 var games = Mapper.Map(_gamesRepo.SearchGame(searchGame));
                 return Ok(games);
             }
@@ -62,6 +71,8 @@ namespace MediaWish.WebApi.Controllers
             }
             else
             {
+                Log.Information("Starting up GamesController Loggggggggg");
+
                 return Ok(games);
             }
         }
@@ -77,6 +88,8 @@ namespace MediaWish.WebApi.Controllers
             }
             else
             {
+                Log.Information("Starting up GamesController Logggggggggggggg");
+
                 return Ok(games);
             }
         }
@@ -92,6 +105,8 @@ namespace MediaWish.WebApi.Controllers
             } 
             else
             {
+                Log.Information("Starting up GamesController Logggggggggggggg");
+
                 return Ok(games);
             }         
         }
@@ -100,6 +115,8 @@ namespace MediaWish.WebApi.Controllers
         [HttpPost]
         public IActionResult AddGameToWishList([FromBody, Bind("userID, mediaID")]WishList wishList)
         {
+            Log.Information("Starting up GamesController Log");
+
             _gamesRepo.AddGameToWishlist(wishList.MediaID, wishList.userID);
             return Ok();
         }
@@ -108,6 +125,8 @@ namespace MediaWish.WebApi.Controllers
         [HttpGet]
         public IActionResult Id(int gameID)
         {
+            Log.Information("Starting up GamesController Loggggggggggg");
+
             Games game = Mapper.Map(_gamesRepo.GetGameByID(gameID));
             return Ok(game);
         }

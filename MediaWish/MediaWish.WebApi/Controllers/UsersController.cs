@@ -2,6 +2,8 @@
 using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace MediaWish.WebApi.Controller
 {
@@ -9,11 +11,16 @@ namespace MediaWish.WebApi.Controller
     public class UsersController : ControllerBase
     {
         private readonly IUsersRepo _usersRepo;
+        private readonly ILogger<UsersController> _logger;
 
-        public UsersController(IUsersRepo usersRepo)
+
+        public UsersController(IUsersRepo usersRepo)//, Logger<UsersController> logger
         {
             _usersRepo = usersRepo;
+           // _logger = logger;
+
         }
+
 
         [Route("users/login")]
         [HttpPost]
@@ -22,6 +29,8 @@ namespace MediaWish.WebApi.Controller
             var u = _usersRepo.Login(user.Username, user.Password);
             if (u != null)
             {
+                Log.Information("Starting up UsersController Loggggggggggggggggg");
+
                 // User to only show id, name, and username
                 Users loggedinUser = new Users()
                 {
@@ -44,6 +53,8 @@ namespace MediaWish.WebApi.Controller
         {
             try
             {
+                Log.Information("Starting up UsersController Loggggggggggggggg");
+
                 var user = Mapper.Map(_usersRepo.GetUserById(id));
                 return Ok(user);
             }
@@ -57,6 +68,8 @@ namespace MediaWish.WebApi.Controller
         [HttpPost]
         public IActionResult Create([FromBody, Bind("id,name,username,password,email")]Users user)
         {
+            Log.Information("Starting up UsersController Loggggggggggggg");
+
             int newid = _usersRepo.CreateUser(Mapper.Map(user));
             return CreatedAtRoute("users/info", new { id = newid });
         }
