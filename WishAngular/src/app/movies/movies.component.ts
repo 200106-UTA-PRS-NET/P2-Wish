@@ -23,7 +23,9 @@ export class MoviesComponent implements OnInit {
   genreForm: FormGroup;
   queryString: string;
   movies: Object;
+  movies2: Object;
   counter: number;
+  counter2: number;
 
 
   genres: Genre[] = [
@@ -55,47 +57,60 @@ export class MoviesComponent implements OnInit {
 
   getMovie(f: NgForm): void 
   {
-    this.counter = 1;
+    this.counter2 = 1;
+    console.log(f.value);
+
+    this.queryString = `/genre/${f.value.GenreID}/${this.counter2}`;
+    console.log(this.queryString);
+    this._http.getMovies(this.queryString).subscribe(data => {
+      this.movies2 = data;
+      console.log(data);
+      console.log(this.movies);
+    });
+    
+  }
+
+  getMovieF(f: NgForm): void 
+  {
+    this.counter2++;
+    console.log(f.value);
+
+    this.queryString = `/genre/${f.value.GenreID}/${this.counter2}`;
+    console.log(this.queryString);
+    this._http.getMovies(this.queryString).subscribe(data => {
+      this.movies2 = data;
+      console.log(data);
+      console.log(this.movies);
+    });
+    
+  }
+
+  getMovieP(f: NgForm): void 
+  {
+    if(this.counter2>1)
+    {
+      this.counter2--;
+    }
 
     console.log(f.value);
-    /*
 
-    if(f.value.GenreID == "" && g.value.PlatformID == "")
-    {
-      console.log("Must enter a value");
-    }
-    else if(f.value.GenreID == "" || g.value.PlatformID == "")
-    {
-      if(f.value.GenreID == "")
-      {
-        this.queryString = `/platform/${g.value.PlatformID}/${this.counter}`;
-        console.log(this.queryString);
-      }
-      else
-      {
-        this.queryString = `/genre/${f.value.GenreID}/${this.counter}`;
-        console.log(this.queryString);
-      }
-    }
-    else
-    {
-      this.queryString = `/genre=${f.value.GenreID}&platform=${g.value.PlatformID}/${this.counter}`;
-      console.log(this.queryString);
-    }
-
-    this._http.getGames(this.queryString).subscribe(data => {
-      this.games = data;
+    this.queryString = `/genre/${f.value.GenreID}/${this.counter2}`;
+    console.log(this.queryString);
+    this._http.getMovies(this.queryString).subscribe(data => {
+      this.movies2 = data;
       console.log(data);
-      console.log(this.games);
+      console.log(this.movies);
     });
-    */
+    
   }
+
+
+
 
   getPopular(): void
   {
-    this.counter=1;
+    this.counter = 1;
     this.queryString = `/popular/${this.counter}`;
-    //this.queryString = `/genre/14`;
     console.log(this.queryString);
     this._http.getMovies(this.queryString).subscribe(data => {
       this.movies = data;

@@ -24,6 +24,7 @@ interface GameItem {
 
 }
 
+
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
@@ -33,8 +34,10 @@ export class GamesComponent implements OnInit {
 
   genreForm: FormGroup;
   queryString: string;
+
   games: Object;
-  
+  games2: Object;
+
   MediaID: number;
   counter: number;
 
@@ -81,12 +84,12 @@ export class GamesComponent implements OnInit {
   findGame(e: NgForm): void{
     console.log(e.value.Name);
 
-    this.queryString = `/searchC/${e.value.Name}`;
+    this.queryString = `/search/${e.value.Name}`;
     console.log(this.queryString);
     this._http.getGames(this.queryString).subscribe(data => {
-      this.games = data;
+      this.games2 = data;
       console.log(data);
-      console.log(this.games);
+      console.log(this.games2);
   });
   
 }
