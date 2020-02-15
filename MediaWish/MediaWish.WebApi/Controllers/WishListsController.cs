@@ -26,8 +26,6 @@ namespace MediaWish.WebApi.Controllers
         }
         
 
-
-
         [Route("wishlists/viewall/{userID?}")]
         [HttpGet]
         public IActionResult ViewAll(int userID)

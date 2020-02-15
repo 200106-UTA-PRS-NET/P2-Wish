@@ -119,6 +119,9 @@ export class MoviesComponent implements OnInit {
     
   }
 
+  getMovieDetail(id: number) {
+    console.log(id);
+  }
 
 
 
