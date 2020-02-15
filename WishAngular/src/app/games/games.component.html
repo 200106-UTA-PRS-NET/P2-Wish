@@ -1,0 +1,50 @@
+<p>games works!</p>
+
+
+<!--
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <input name="first" ngModel required #first="ngModel">
+    <input name="last" ngModel>
+    <button>Submit</button>
+  </form>
+-->
+
+
+<form #e="ngForm">
+    <input name="Name" ngModel required #name="ngModel">
+    <button (click)="findGame(e)">Find Game</button>
+  </form>
+
+
+  <form #f="ngForm">
+    <label>Genre</label>
+        <select name="GenreID" ngModel required #genreID="ngModel">
+        <option *ngFor="let genre of genres" [value]="genre.value">
+            {{genre.viewValue}}
+        </option>
+        </select>
+  </form>
+
+
+  <form #g="ngForm">
+    <label>Platform</label>
+        <select name="PlatformID" ngModel required #platformID="ngModel">
+        <option *ngFor="let platform of platforms" [value]="platform.value">
+            {{platform.viewValue}}
+        </option>
+        </select>
+  </form>
+
+  <button (click)="getGame(f, g)">Submit</button>
+
+  <br>
+  <hr>
+  <ul *ngIf="games">
+    <li *ngFor="let game of games">
+    <p class="name">Title: {{ game.name }}</p>
+    <p class="release">Released: {{ game.released }}</p>
+    <p class="rating">Rating: {{ game.rating }}</p>
+    <p class="genre">Genres: {{ game.genres.name }}</p>
+    <p class="description">{{ game.description }}</p>
+    </li>
+  </ul>
