@@ -24,6 +24,7 @@ export class MoviesComponent implements OnInit {
   queryString: string;
   movies: Object;
   movies2: Object;
+  movies3: Object;
   counter: number;
   counter2: number;
 
@@ -54,6 +55,20 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+  findMovie(e: NgForm): void{
+    console.log(e.value.Name);
+
+    this.queryString = `/search/${e.value.Name}`;
+    console.log(this.queryString);
+    this._http.getMovies(this.queryString).subscribe(data => {
+      this.movies3 = data;
+      console.log(data);
+      console.log(this.movies3);
+  });
+}
+
 
   getMovie(f: NgForm): void 
   {
@@ -143,6 +158,11 @@ getPopularF(): void
     this.movies = data;
     console.log(this.movies);
 });
+}
+
+submitGame(MediaID: number): void
+{
+  console.log(MediaID);
 }
 
 

@@ -19,11 +19,6 @@ interface Platform {
   viewValue: string;
 }
 
-interface GameItem {
-  MediaID: number;
-
-}
-
 
 @Component({
   selector: 'app-games',
@@ -216,10 +211,9 @@ export class GamesComponent implements OnInit {
     
   }
 
-  submitGame(MediaID): void
+  submitGame(MediaID: number): void
   {
-    console.log(this.MediaID);
-    console.log("nice try");
+    console.log(MediaID);
   }
 
 
