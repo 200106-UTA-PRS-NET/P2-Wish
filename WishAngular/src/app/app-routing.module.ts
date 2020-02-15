@@ -11,6 +11,7 @@ import { MovielistComponent } from './movielist/movielist.component';
 
 
 const routes: Routes = [
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'options', component: OptionsComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},

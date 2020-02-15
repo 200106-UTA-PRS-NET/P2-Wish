@@ -1,6 +1,15 @@
 <h2>Movie Selection</h2>
 
 
+
+<form #e="ngForm">
+  <input name="Name" ngModel required #name="ngModel">
+  <button (click)="findMovie(e)">Find Game</button>
+</form>
+
+<br>
+<br>
+
 <form #f="ngForm">
     <label>Genre</label>
         <select name="GenreID" ngModel required #genreID="ngModel">
@@ -28,6 +37,7 @@
     <p class="release">Released: {{ movie.release_date }}</p>
     <p class="rating">Rating: {{ movie.vote_average }}</p>
     <p class="description">{{ movie.overview }}</p>
+    <button (click)="submitGame(movie.id)">Add to WishList</button>
     <br>
     <br>
     </li>
@@ -44,11 +54,24 @@
     <p class="release">Released: {{ movie.release_date }}</p>
     <p class="rating">Rating: {{ movie.vote_average }}</p>
     <p class="description">{{ movie.overview }}</p>
-    <button (click)="getMovieDetail(movie.id)">aa</button>
 
+    <button (click)="submitGame(movie.id)">Add to WishList</button>
     <br>
     <br>
     </li>
     <button (click)="getMovieP(f)">Previous Page</button>
     <button (click)="getMovieF(f)">Next Page</button>
+  </ul>
+
+
+  <ul *ngIf="movies3">
+    <li *ngFor="let movie of movies3">
+    <p class="name">Title: {{ movie.title }}</p>
+    <p class="release">Released: {{ movie.release_date }}</p>
+    <p class="rating">Rating: {{ movie.vote_average }}</p>
+    <p class="description">{{ movie.overview }}</p>
+    <button (click)="submitGame(movie.id)">Add to WishList</button>
+    <br>
+    <br>
+    </li>
   </ul>
