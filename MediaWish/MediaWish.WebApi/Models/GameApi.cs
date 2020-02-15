@@ -25,15 +25,12 @@ namespace MediaWish.WebApi.Models
         public string next { get; set; }
         public object previous { get; set; }
         public List<Games> results { get; set; }
-        public List<Games> result { get; set; } // chicken coop
     }
 
     public class Games
     {
         public int id { get; set; }
         public string name { get; set; }
-        public string title { get; set; } // chicken coop
-        public string platform { get; set; } // chicken coop
         public string released { get; set; }
         public double rating { get; set; }
         public List<Platform> platforms { get; set; }

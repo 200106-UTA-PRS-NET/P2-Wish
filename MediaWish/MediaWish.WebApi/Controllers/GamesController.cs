@@ -32,7 +32,7 @@ namespace MediaWish.WebApi.Controllers
             {
                 Log.Information("Starting up GamesController Loggggggg");
 
-                return Ok(games);
+                return Ok(games.results);
 
             }
 
@@ -63,7 +63,7 @@ namespace MediaWish.WebApi.Controllers
         {
 
                 var games = Mapper.Map(_gamesRepo.SearchGameChickenCoop(searchGame));
-                return Ok(games);
+                return Ok(games.result);
 
         }
 
@@ -80,7 +80,7 @@ namespace MediaWish.WebApi.Controllers
             {
                 Log.Information("Starting up GamesController Loggggggggg");
 
-                return Ok(games);
+                return Ok(games.results);
             }
         }
 
@@ -97,7 +97,7 @@ namespace MediaWish.WebApi.Controllers
             {
                 Log.Information("Starting up GamesController Logggggggggggggg");
 
-                return Ok(games);
+                return Ok(games.results);
             }
         }
 
@@ -114,7 +114,7 @@ namespace MediaWish.WebApi.Controllers
             {
                 Log.Information("Starting up GamesController Logggggggggggggg");
 
-                return Ok(games);
+                return Ok(games.results);
             }         
         }
 

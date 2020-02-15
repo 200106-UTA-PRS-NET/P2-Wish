@@ -169,3 +169,21 @@ System.InvalidOperationException: Unable to resolve service for type 'Microsoft.
 2020-02-14 17:11:35.712 -06:00 [INF] Request finished in 732.423ms 200 application/json; charset=utf-8
 2020-02-14 17:11:35.742 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/favicon.ico  
 2020-02-14 17:11:35.746 -06:00 [INF] Request finished in 3.1647ms 404 
+2020-02-14 17:33:39.058 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-14 17:33:39.069 -06:00 [INF] Hosting environment: Development
+2020-02-14 17:33:39.071 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-14 17:33:39.072 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-14 17:33:39.113 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-14 17:33:39.134 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-14 17:33:39.235 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-14 17:33:39.584 -06:00 [INF] Executing ObjectResult, writing value of type 'MediaWish.DataAccess.Models.MovieAPI'.
+2020-02-14 17:33:39.617 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 478.7396ms
+2020-02-14 17:33:39.619 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-14 17:33:39.624 -06:00 [INF] Request finished in 555.6323ms 200 application/json; charset=utf-8
+2020-02-14 17:33:44.881 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/games/searchC/goat  
+2020-02-14 17:33:44.883 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.GamesController.SearchChickenCoop (MediaWish.WebApi)'
+2020-02-14 17:33:44.890 -06:00 [INF] Route matched with {action = "SearchChickenCoop", controller = "Games"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SearchChickenCoop(System.String) on controller MediaWish.WebApi.Controllers.GamesController (MediaWish.WebApi).
+2020-02-14 17:33:46.475 -06:00 [INF] Executing ObjectResult, writing value of type 'MediaWish.WebApi.Models.GameChickenApi'.
+2020-02-14 17:33:46.478 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.GamesController.SearchChickenCoop (MediaWish.WebApi) in 1588.3429ms
+2020-02-14 17:33:46.479 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.GamesController.SearchChickenCoop (MediaWish.WebApi)'
+2020-02-14 17:33:46.479 -06:00 [INF] Request finished in 1597.8061ms 200 application/json; charset=utf-8
