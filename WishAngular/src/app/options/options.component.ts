@@ -13,11 +13,8 @@ export class OptionsComponent implements OnInit {
   constructor(private _http: HttpService) { }
 
   ngOnInit(): void {
-    this._http.getMovies().subscribe(data => {
-      this.movies = data;
-      console.log(this.movies);
-    });
+    }
 
 
-  }
 }
+

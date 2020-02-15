@@ -1,1 +1,36 @@
-<p>movies works!</p>
+<h2>Movie Selection</h2>
+
+
+<form #f="ngForm">
+    <label>Genre</label>
+        <select name="GenreID" ngModel required #genreID="ngModel">
+        <option *ngFor="let genre of genres" [value]="genre.value">
+            {{genre.viewValue}}
+        </option>
+        </select>
+  </form>
+  <button (click)="getMovie(f)">Submit</button>
+
+  <br>
+  <button (click)="getPopular()">New Releases</button>
+  <br>
+  <br>
+  <button class="nav-item nav-link-edit" [routerLink]="['/options']">Return to Options</button >
+
+
+  <br>
+  <hr>
+  <ul *ngIf="movies">
+    <button (click)="getPopularP()">Previous Page</button>
+    <button (click)="getPopularF()">Next Page</button>
+    <li *ngFor="let movie of movies">
+    <p class="name">Title: {{ movie.title }}</p>
+    <p class="release">Released: {{ movie.release_date }}</p>
+    <p class="rating">Rating: {{ movie.vote_average }}</p>
+    <p class="description">{{ movie.overview }}</p>
+    <br>
+    <br>
+    </li>
+    <button (click)="getPopularP()">Previous Page</button>
+    <button (click)="getPopularF()">Next Page</button>
+  </ul>

@@ -8,15 +8,13 @@ import { filterData } from './filterObj';
 })
 export class HttpService {
 
-  url='http://mediawish.azurewebsites.net/movies/popular/1';
 
   constructor(private http: HttpClient) { }
 
 
-  getMovies()
+  getMovies(filterM: string)
   {
-    //return this.http.get('https://api.themoviedb.org/3/movie/122?api_key=9e5b0ab89fd681ae90099669cd36adc8&language=en-US')
-    return this.http.get(this.url)
+    return this.http.get('http://mediawish.azurewebsites.net/movies'+filterM);
   }
 
   checkUser (userD: userData)
@@ -29,6 +27,10 @@ export class HttpService {
     return this.http.get('http://mediawish.azurewebsites.net/games'+filterD);
   }
 
+  getList(filterId: string)
+  {
+    return this.http.get('http://mediawish.azurewebsites.net/wishlists/viewall/'+filterId);
+  }
 
 
 }

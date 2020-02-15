@@ -1,4 +1,4 @@
-<p>games works!</p>
+<h2>Game Selection</h2>
 
 
 <!--
@@ -38,13 +38,25 @@
   <button (click)="getGame(f, g)">Submit</button>
 
   <br>
+  <br>
+  <button class="nav-item nav-link-edit" [routerLink]="['/options']">Return to Options</button >
+
+  <br>
   <hr>
   <ul *ngIf="games">
+    <button (click)="getGameR(f, g)">Previous Page</button>
+    <button (click)="getGameF(f, g)">Next Page</button>
     <li *ngFor="let game of games">
     <p class="name">Title: {{ game.name }}</p>
     <p class="release">Released: {{ game.released }}</p>
     <p class="rating">Rating: {{ game.rating }}</p>
     <p class="genre">Genres: {{ game.genres.name }}</p>
     <p class="description">{{ game.description }}</p>
+    <button (click)="submitGame(game.id)">Add to WishList</button>
+    <br>
+    <br>
     </li>
+    <button (click)="getGameR(f, g)">Previous Page</button>
+    <button (click)="getGameF(f, g)">Next Page</button>
   </ul>
+

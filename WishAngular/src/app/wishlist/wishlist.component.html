@@ -1,1 +1,12 @@
-<p>wishlist works!</p>
+<h1>WishList</h1>
+<ul *ngIf="list">
+    <button class="nav-item nav-link-edit" [routerLink]="['/options']">Return to Options</button >
+    <li *ngFor="let lit of list">
+    <p class="title">Title: {{ lit.mediaTitle }}</p>
+    <p class="platform">Platform: {{ lit.mediaPlatform }}</p>
+    <p class="description">Description: {{ lit.mediaDescription }}</p>
+    <br>
+    <br>
+    </li>
+    <button class="nav-item nav-link-edit" [routerLink]="['/options']">Return to Options</button >
+  </ul>
