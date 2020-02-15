@@ -2506,3 +2506,37 @@ WHERE [u].[Id] = @__userID_0
 2020-02-15 15:38:42.392 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.WishListsController.ViewAll (MediaWish.WebApi) in 2076.6118ms
 2020-02-15 15:38:42.392 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.WishListsController.ViewAll (MediaWish.WebApi)'
 2020-02-15 15:38:42.398 -06:00 [INF] Request finished in 2092.1404ms 200 application/json; charset=utf-8
+2020-02-15 16:09:39.365 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 16:09:39.384 -06:00 [INF] Hosting environment: Development
+2020-02-15 16:09:39.385 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 16:09:39.390 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 16:09:39.431 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 16:09:39.469 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 16:09:39.671 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 16:09:40.024 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 16:09:40.051 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 578.3578ms
+2020-02-15 16:09:40.052 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 16:09:40.054 -06:00 [INF] Request finished in 666.6413ms 200 application/json; charset=utf-8
+2020-02-15 16:26:06.880 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 16:26:06.888 -06:00 [INF] Hosting environment: Development
+2020-02-15 16:26:06.889 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 16:26:06.901 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 16:26:06.949 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 16:26:06.979 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 16:26:07.116 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 16:26:07.618 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 16:26:07.649 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 666.223ms
+2020-02-15 16:26:07.650 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 16:26:07.652 -06:00 [INF] Request finished in 754.3595ms 200 application/json; charset=utf-8
+2020-02-15 16:26:29.249 -06:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:44335/wishlists/remove application/json 9
+2020-02-15 16:26:29.251 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.WishListsController.Remove (MediaWish.WebApi)'
+2020-02-15 16:26:29.254 -06:00 [INF] Route matched with {action = "Remove", controller = "WishLists"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Remove(MediaWish.WebApi.Models.WishList) on controller MediaWish.WebApi.Controllers.WishListsController (MediaWish.WebApi).
+2020-02-15 16:26:30.117 -06:00 [INF] Entity Framework Core 3.1.1 initialized 'MediaWishContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-02-15 16:26:31.682 -06:00 [INF] Executed DbCommand (119ms) [Parameters=[@__wishlistsID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [w].[Id], [w].[MediaDescription], [w].[MediaID], [w].[MediaPlatform], [w].[MediaTitle], [w].[mediaTypesId], [w].[usersId]
+FROM [wishLists] AS [w]
+WHERE [w].[Id] = @__wishlistsID_0
+2020-02-15 16:26:31.823 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2020-02-15 16:26:31.827 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.WishListsController.Remove (MediaWish.WebApi) in 2573.2209ms
+2020-02-15 16:26:31.827 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.WishListsController.Remove (MediaWish.WebApi)'
+2020-02-15 16:26:31.830 -06:00 [INF] Request finished in 2581.485ms 200 application/json; charset=utf-8

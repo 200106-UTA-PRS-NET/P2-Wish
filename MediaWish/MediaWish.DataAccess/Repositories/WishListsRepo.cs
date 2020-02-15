@@ -49,5 +49,20 @@ namespace MediaWish.DataAccess.Repositories
                 return false;
             }
         }
+
+        public bool RemoveItemFromWishlist(int wishlistsID)
+        {
+            try
+            {
+                var wishlist = _db.wishLists.Where(w => w.Id == wishlistsID).Single();
+                _db.wishLists.Remove(wishlist);
+                _db.SaveChanges();
+                return true;
+            }
+            catch (InvalidOperationException)
+            {
+                return false;
+            }
+        }
     }
 }

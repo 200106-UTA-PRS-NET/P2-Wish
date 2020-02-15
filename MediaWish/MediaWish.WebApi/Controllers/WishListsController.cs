@@ -36,5 +36,30 @@ namespace MediaWish.WebApi.Controllers
             return Ok(wishlists);
         }
 
+        [Route("wishlists/remove")]
+        [HttpDelete]
+        public IActionResult Remove([FromBody, Bind("Id")]WishList wishList)
+        {
+            try
+            {
+                var isRemoved = _wishListRepo.RemoveItemFromWishlist(wishList.Id);
+                if (isRemoved)
+                {
+                    // item removed
+                    return Ok(isRemoved);
+                }
+                else
+                {
+                    // item not removed
+                    return NotFound();
+                }
+
+            }
+            catch (NullReferenceException)
+            {
+                return NotFound();
+            }
+        }
+
     }
 }
