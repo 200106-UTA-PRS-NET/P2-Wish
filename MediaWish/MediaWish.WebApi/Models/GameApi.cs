@@ -5,6 +5,20 @@ using System.Threading.Tasks;
 
 namespace MediaWish.WebApi.Models
 {
+
+    public class GameChickenApi
+    {
+        public List<GamesChicken> result { get; set; }
+        public int countResult { get; set; }
+    }
+
+
+    public class GamesChicken
+    {
+        public string title { get; set; }
+        public string platform { get; set; }
+    }
+
     public class GameApi
     {
         public int count { get; set; }

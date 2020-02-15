@@ -35,7 +35,7 @@ namespace MediaWish.WebApi.Controllers
                 Log.Information("Starting up MoviesController Logggggggggg");
 
                 var movies = _moviesRepo.GetPopularMovies(page);
-                return Ok(movies);
+                return Ok(movies.results);
             } catch (Exception)
             {
                 return NotFound();
@@ -75,7 +75,7 @@ namespace MediaWish.WebApi.Controllers
             {
                 Log.Information("Starting up MoviesController Logggggggggg");
 
-                return Ok(movies);
+                return Ok(movies.results);
             }
         }
 
@@ -93,8 +93,16 @@ namespace MediaWish.WebApi.Controllers
             {
                 Log.Information("Starting up MoviesController Logggggggggg");
 
-                return Ok(movies);
+                return Ok(movies.results);
             }
+        }
+
+        [Route("wishlists/movie/add")]
+        [HttpPost]
+        public IActionResult AddMovieToWishList([FromBody, Bind("userID, mediaID")]WishList wishList)
+        {
+            _moviesRepo.AddMovieToWishList(wishList.MediaID, wishList.userID);
+            return Ok();
         }
     }
 }

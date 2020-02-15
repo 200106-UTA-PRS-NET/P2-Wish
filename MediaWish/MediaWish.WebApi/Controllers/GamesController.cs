@@ -10,14 +10,11 @@ namespace MediaWish.WebApi.Controllers
     [ApiController]
     public class GamesController : ControllerBase
     {
-        private readonly IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games> _gamesRepo;
-        private readonly ILogger<GamesController> _logger;
+        private readonly IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games, DataAccess.Models.GameChickenApi> _gamesRepo;
 
-
-        public GamesController(IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games> gamesRepo) // ILogger<GamesController> logger
+        public GamesController(IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games, DataAccess.Models.GameChickenApi> gamesRepo)
         {
             _gamesRepo = gamesRepo;
-           // _logger = logger;
         }
 
 
@@ -26,8 +23,6 @@ namespace MediaWish.WebApi.Controllers
         [HttpGet]
         public IActionResult All(int page=1)
         {
-
-
             var games = Mapper.Map(_gamesRepo.GetAllGames(page));
             if (games.count == 0)
             {
@@ -37,12 +32,13 @@ namespace MediaWish.WebApi.Controllers
             {
                 Log.Information("Starting up GamesController Loggggggg");
 
-                return Ok(games);
+                return Ok(games.results);
 
             }
 
         }
 
+        // Rawg api
         [Route("games/search/{searchGame}")]
         [HttpGet]
         public IActionResult Search(string searchGame)
@@ -60,6 +56,17 @@ namespace MediaWish.WebApi.Controllers
             }
         }
 
+        // Chicken Coop api
+        [Route("games/searchC/{searchGame}")]
+        [HttpGet]
+        public IActionResult SearchChickenCoop(string searchGame)
+        {
+
+                var games = Mapper.Map(_gamesRepo.SearchGameChickenCoop(searchGame));
+                return Ok(games.result);
+
+        }
+
         [Route("games/genre={genreID}&platform={platformID}/{page?}")]
         [HttpGet]
         public IActionResult PlatformAndGenre(int platformID, int genreID, int page = 1)
@@ -73,7 +80,7 @@ namespace MediaWish.WebApi.Controllers
             {
                 Log.Information("Starting up GamesController Loggggggggg");
 
-                return Ok(games);
+                return Ok(games.results);
             }
         }
 
@@ -90,7 +97,7 @@ namespace MediaWish.WebApi.Controllers
             {
                 Log.Information("Starting up GamesController Logggggggggggggg");
 
-                return Ok(games);
+                return Ok(games.results);
             }
         }
 
@@ -107,7 +114,7 @@ namespace MediaWish.WebApi.Controllers
             {
                 Log.Information("Starting up GamesController Logggggggggggggg");
 
-                return Ok(games);
+                return Ok(games.results);
             }         
         }
 
