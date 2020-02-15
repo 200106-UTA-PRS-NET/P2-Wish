@@ -2,7 +2,6 @@
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using Microsoft.Extensions.Logging;
 using Serilog;
 
 namespace MediaWish.WebApi.Controllers
@@ -23,17 +22,15 @@ namespace MediaWish.WebApi.Controllers
         [HttpGet]
         public IActionResult All(int page=1)
         {
-            var games = Mapper.Map(_gamesRepo.GetAllGames(page));
-            if (games.count == 0)
+            try
             {
-                return NotFound();
-            }
-            else
-            {
-                Log.Information("Starting up GamesController Loggggggg");
-
+                var games = Mapper.Map(_gamesRepo.GetAllGames(page));
                 return Ok(games.results);
-
+            }
+            catch (NullReferenceException e)
+            {
+                Log.Error(e, $"Error accessing page {page}");
+                return NotFound();
             }
 
         }
@@ -45,14 +42,13 @@ namespace MediaWish.WebApi.Controllers
         {
             try
             {
-                Log.Information("Starting up GamesController Loggggggg");
-
                 var games = Mapper.Map(_gamesRepo.SearchGame(searchGame));
                 return Ok(games);
             }
-            catch (Exception)
+            catch (NullReferenceException e)
             {
-                throw;
+                Log.Error(e, $"Error searching for \'{searchGame}\'");
+                return NotFound();
             }
         }
 
@@ -61,26 +57,31 @@ namespace MediaWish.WebApi.Controllers
         [HttpGet]
         public IActionResult SearchChickenCoop(string searchGame)
         {
-
+            try
+            {
                 var games = Mapper.Map(_gamesRepo.SearchGameChickenCoop(searchGame));
                 return Ok(games.result);
-
+            }
+            catch (ArgumentException e)
+            {
+                Log.Error(e, $"Error searching for \'{searchGame}\'");
+                return NotFound();
+            }
         }
 
         [Route("games/genre={genreID}&platform={platformID}/{page?}")]
         [HttpGet]
         public IActionResult PlatformAndGenre(int platformID, int genreID, int page = 1)
         {
-            var games = Mapper.Map(_gamesRepo.GetGamesByPlatformAndGenreId(platformID, genreID, page));
-            if (games.count == 0)
+            try
             {
-                return NotFound();
-            }
-            else
-            {
-                Log.Information("Starting up GamesController Loggggggggg");
-
+                var games = Mapper.Map(_gamesRepo.GetGamesByPlatformAndGenreId(platformID, genreID, page));
                 return Ok(games.results);
+            } 
+            catch (NullReferenceException e)
+            {
+                Log.Information(e.Message);
+                return NotFound();
             }
         }
 
@@ -88,16 +89,15 @@ namespace MediaWish.WebApi.Controllers
         [HttpGet]
         public IActionResult Genre(int genreID, int page = 1)
         {
-            var games = Mapper.Map(_gamesRepo.GetGamesbyGenreID(genreID, page));
-            if (games.count == 0)
+            try
             {
-                return NotFound();
-            }
-            else
-            {
-                Log.Information("Starting up GamesController Logggggggggggggg");
-
+                var games = Mapper.Map(_gamesRepo.GetGamesbyGenreID(genreID, page));
                 return Ok(games.results);
+            }
+            catch (NullReferenceException e)
+            {
+                Log.Error(e, "no results found");
+                return NotFound();
             }
         }
 
@@ -105,17 +105,16 @@ namespace MediaWish.WebApi.Controllers
         [HttpGet]
         public IActionResult Platform(int platformID, int page=1)
         {
-            var games = Mapper.Map(_gamesRepo.GetGamesByPlatformId(platformID, page));
-            if (games.count == 0)
+            try
             {
-                return NotFound();
-            } 
-            else
-            {
-                Log.Information("Starting up GamesController Logggggggggggggg");
-
+                var games = Mapper.Map(_gamesRepo.GetGamesByPlatformId(platformID, page));
                 return Ok(games.results);
-            }         
+            }
+            catch (NullReferenceException e)
+            {
+                Log.Error(e, "no results found");
+                return NotFound();
+            }
         }
 
         [Route("wishlists/game/add")]
@@ -132,10 +131,16 @@ namespace MediaWish.WebApi.Controllers
         [HttpGet]
         public IActionResult Id(int gameID)
         {
-            Log.Information("Starting up GamesController Loggggggggggg");
-
-            Games game = Mapper.Map(_gamesRepo.GetGameByID(gameID));
-            return Ok(game);
+            try
+            {
+                Games game = Mapper.Map(_gamesRepo.GetGameByID(gameID));
+                return Ok(game);
+            }
+            catch (NullReferenceException e)
+            {
+                Log.Error(e, "no results found");
+                return NotFound();
+            }
         }
     }
 }

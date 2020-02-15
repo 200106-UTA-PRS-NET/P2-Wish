@@ -24,8 +24,6 @@ namespace MediaWish.DataAccess.Repositories
         const string cDOMAIN = "https://chicken-coop.p.rapidapi.com";
 
 
-
-
         readonly MediaWishContext _db;
 
         public GamesRepo(MediaWishContext db)
@@ -94,8 +92,17 @@ namespace MediaWish.DataAccess.Repositories
             request.AddHeader("x-rapidapi-key", APIKEY);
             IRestResponse response = client.Execute(request);
 
-            var gameApi = JsonConvert.DeserializeObject<GameApi>(response.Content);
-            return gameApi;
+            try
+            {
+                var gameApi = JsonConvert.DeserializeObject<GameApi>(response.Content);
+                return gameApi;
+            }
+            catch (JsonReaderException)
+            {
+                // weird input or
+                throw;
+            }
+
         }
 
         // rawg api
@@ -108,23 +115,37 @@ namespace MediaWish.DataAccess.Repositories
             request.AddHeader("x-rapidapi-key", APIKEY);
             IRestResponse response = client.Execute(request);
 
-            var games = JsonConvert.DeserializeObject<Games>(response.Content);
-            return games;
+            try
+            {
+                var games = JsonConvert.DeserializeObject<Games>(response.Content);
+                return games;
+            }
+            catch (JsonReaderException)
+            {
+                // search input is weird
+                throw new NullReferenceException();
+            }
         }
 
         // chicken coop api
         public GameChickenApi SearchGameChickenCoop(string game)
         {
-            //string strRequest = $"{cDOMAIN}/games?title={game}";
-            string strRequest = "https://chicken-coop.p.rapidapi.com/games?title=goat";
+            string strRequest = $"{cDOMAIN}/games?title={game}";
             var client = new RestClient(strRequest);
             var request = new RestRequest(Method.GET);
             request.AddHeader("x-rapidapi-host", cHOST);
             request.AddHeader("x-rapidapi-key", APIKEY);
             IRestResponse response = client.Execute(request);
 
-            var gameApi = JsonConvert.DeserializeObject<GameChickenApi>(response.Content);
-            return gameApi;
+            try
+            {
+                var gameApi = JsonConvert.DeserializeObject<GameChickenApi>(response.Content);
+                return gameApi;
+            } 
+            catch (JsonSerializationException)
+            {
+                throw new ArgumentException();
+            }
         }
 
         public void AddGameToWishlist(int gameID, int userID)
