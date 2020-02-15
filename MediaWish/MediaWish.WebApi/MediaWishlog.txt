@@ -1881,3 +1881,628 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2020-02-15 12:27:12.628 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 42.6523ms
 2020-02-15 12:27:12.628 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
 2020-02-15 12:27:12.628 -06:00 [INF] Request finished in 50.1819ms 200 application/json; charset=utf-8
+2020-02-15 12:36:15.018 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 12:36:15.026 -06:00 [INF] Hosting environment: Development
+2020-02-15 12:36:15.027 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 12:36:15.030 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 12:36:15.071 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 12:36:15.095 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 12:36:15.191 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 12:36:15.507 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 12:36:15.531 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 431.9859ms
+2020-02-15 12:36:15.533 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 12:36:15.536 -06:00 [INF] Request finished in 508.4089ms 200 application/json; charset=utf-8
+2020-02-15 12:36:22.640 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/123  
+2020-02-15 12:36:22.642 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 12:36:22.644 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 12:36:22.644 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 12:36:22.777 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 12:36:22.779 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 134.9969ms
+2020-02-15 12:36:22.779 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 12:36:22.779 -06:00 [INF] Request finished in 139.1594ms 200 application/json; charset=utf-8
+2020-02-15 12:44:56.884 -06:00 [INF] Application is shutting down...
+2020-02-15 13:10:18.942 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 13:10:18.955 -06:00 [INF] Hosting environment: Development
+2020-02-15 13:10:18.956 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 13:10:18.996 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 13:10:19.057 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:19.083 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:10:19.431 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:10:20.247 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:10:20.285 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 1193.2934ms
+2020-02-15 13:10:20.286 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:20.289 -06:00 [INF] Request finished in 1293.7355ms 200 application/json; charset=utf-8
+2020-02-15 13:10:26.109 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/6123132  
+2020-02-15 13:10:26.111 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:26.113 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:10:26.114 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:10:26.213 -06:00 [INF] Executing ObjectResult, writing value of type 'null'.
+2020-02-15 13:10:26.213 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 100.2117ms
+2020-02-15 13:10:26.213 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:26.214 -06:00 [INF] Request finished in 105.2031ms 204 
+2020-02-15 13:10:31.408 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/22  
+2020-02-15 13:10:31.410 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:31.411 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:10:31.413 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:10:31.488 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:10:31.489 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 78.8379ms
+2020-02-15 13:10:31.490 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:31.490 -06:00 [INF] Request finished in 81.6728ms 200 application/json; charset=utf-8
+2020-02-15 13:10:36.617 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/;;av  
+2020-02-15 13:10:36.617 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:36.618 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:10:36.621 -06:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-02-15 13:10:36.623 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 4.6998ms
+2020-02-15 13:10:36.623 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:36.624 -06:00 [INF] Request finished in 7.4456ms 400 application/problem+json; charset=utf-8
+2020-02-15 13:10:55.728 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/'/  
+2020-02-15 13:10:55.728 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:55.729 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:10:55.730 -06:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-02-15 13:10:55.730 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 1.3665ms
+2020-02-15 13:10:55.730 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:55.730 -06:00 [INF] Request finished in 2.6587ms 400 application/problem+json; charset=utf-8
+2020-02-15 13:10:59.757 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/999  
+2020-02-15 13:10:59.758 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:59.758 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:10:59.759 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:10:59.846 -06:00 [INF] Executing ObjectResult, writing value of type 'null'.
+2020-02-15 13:10:59.846 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 87.9296ms
+2020-02-15 13:10:59.846 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:10:59.847 -06:00 [INF] Request finished in 89.7575ms 204 
+2020-02-15 13:11:04.391 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/122  
+2020-02-15 13:11:04.391 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:04.392 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:11:04.392 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:11:04.523 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:11:04.525 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 133.0275ms
+2020-02-15 13:11:04.525 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:04.526 -06:00 [INF] Request finished in 134.8925ms 200 application/json; charset=utf-8
+2020-02-15 13:11:06.863 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/1221  
+2020-02-15 13:11:06.864 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:06.864 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:11:06.865 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:11:06.956 -06:00 [INF] Executing ObjectResult, writing value of type 'null'.
+2020-02-15 13:11:06.956 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 92.3679ms
+2020-02-15 13:11:06.957 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:06.957 -06:00 [INF] Request finished in 94.2072ms 204 
+2020-02-15 13:11:09.670 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/1225  
+2020-02-15 13:11:09.671 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:09.671 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:11:09.672 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:11:09.758 -06:00 [INF] Executing ObjectResult, writing value of type 'null'.
+2020-02-15 13:11:09.758 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 86.2305ms
+2020-02-15 13:11:09.758 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:09.758 -06:00 [INF] Request finished in 87.7684ms 204 
+2020-02-15 13:11:12.511 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/1222  
+2020-02-15 13:11:12.512 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:12.512 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:11:12.512 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:11:12.592 -06:00 [INF] Executing ObjectResult, writing value of type 'null'.
+2020-02-15 13:11:12.592 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 80.1795ms
+2020-02-15 13:11:12.592 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:12.592 -06:00 [INF] Request finished in 81.3057ms 204 
+2020-02-15 13:11:16.777 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/nm2  
+2020-02-15 13:11:16.778 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:16.778 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:11:16.779 -06:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-02-15 13:11:16.779 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 1.512ms
+2020-02-15 13:11:16.779 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:16.780 -06:00 [INF] Request finished in 2.5216ms 400 application/problem+json; charset=utf-8
+2020-02-15 13:11:21.187 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/6623  
+2020-02-15 13:11:21.187 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:21.188 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:11:21.189 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:11:21.301 -06:00 [INF] Executing ObjectResult, writing value of type 'null'.
+2020-02-15 13:11:21.301 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 113.1796ms
+2020-02-15 13:11:21.301 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:21.301 -06:00 [INF] Request finished in 114.5602ms 204 
+2020-02-15 13:11:28.148 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 13:11:28.158 -06:00 [INF] Hosting environment: Development
+2020-02-15 13:11:28.159 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 13:11:28.162 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 13:11:28.218 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:28.240 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:11:28.318 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:11:28.600 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:11:28.619 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 373.8643ms
+2020-02-15 13:11:28.620 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:28.621 -06:00 [INF] Request finished in 462.0126ms 200 application/json; charset=utf-8
+2020-02-15 13:11:34.169 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/p12  
+2020-02-15 13:11:34.172 -06:00 [INF] Request finished in 2.9539ms 404 
+2020-02-15 13:11:40.021 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/123123  
+2020-02-15 13:11:40.023 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:40.025 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:11:40.026 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:11:40.260 -06:00 [INF] Executing ObjectResult, writing value of type 'null'.
+2020-02-15 13:11:40.261 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 235.6849ms
+2020-02-15 13:11:40.261 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:11:40.263 -06:00 [INF] Request finished in 241.463ms 204 
+2020-02-15 13:13:29.485 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 13:13:29.500 -06:00 [INF] Hosting environment: Development
+2020-02-15 13:13:29.501 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 13:13:29.506 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 13:13:29.548 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:13:29.568 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:13:30.012 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:13:30.043 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 465.9202ms
+2020-02-15 13:13:30.045 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:13:30.048 -06:00 [INF] Request finished in 546.8429ms 200 application/json; charset=utf-8
+2020-02-15 13:13:44.141 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/details/  
+2020-02-15 13:13:44.144 -06:00 [INF] Request finished in 3.1913ms 404 
+2020-02-15 13:13:47.707 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/details/1  
+2020-02-15 13:13:47.709 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:13:47.711 -06:00 [INF] Route matched with {action = "Details", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Details(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:13:47.809 -06:00 [INF] Executing ObjectResult, writing value of type 'MediaWish.WebApi.Models.MovieDetails'.
+2020-02-15 13:13:47.811 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi) in 100.5671ms
+2020-02-15 13:13:47.812 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:13:47.812 -06:00 [INF] Request finished in 104.6764ms 200 application/json; charset=utf-8
+2020-02-15 13:13:51.276 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/details/2  
+2020-02-15 13:13:51.277 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:13:51.277 -06:00 [INF] Route matched with {action = "Details", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Details(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:13:51.405 -06:00 [INF] Executing ObjectResult, writing value of type 'MediaWish.WebApi.Models.MovieDetails'.
+2020-02-15 13:13:51.408 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi) in 130.6625ms
+2020-02-15 13:13:51.409 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:13:51.409 -06:00 [INF] Request finished in 133.6055ms 200 application/json; charset=utf-8
+2020-02-15 13:13:55.920 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/details/9  
+2020-02-15 13:13:55.921 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:13:55.921 -06:00 [INF] Route matched with {action = "Details", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Details(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:13:56.018 -06:00 [INF] Executing ObjectResult, writing value of type 'MediaWish.WebApi.Models.MovieDetails'.
+2020-02-15 13:13:56.018 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi) in 96.6373ms
+2020-02-15 13:13:56.018 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:13:56.019 -06:00 [INF] Request finished in 98.8ms 200 application/json; charset=utf-8
+2020-02-15 13:13:59.491 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/details/;'  
+2020-02-15 13:13:59.491 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:13:59.492 -06:00 [INF] Route matched with {action = "Details", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Details(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:13:59.494 -06:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-02-15 13:13:59.495 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi) in 3.4449ms
+2020-02-15 13:13:59.495 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:13:59.496 -06:00 [INF] Request finished in 4.9494ms 400 application/problem+json; charset=utf-8
+2020-02-15 13:14:32.492 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 13:14:32.503 -06:00 [INF] Hosting environment: Development
+2020-02-15 13:14:32.504 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 13:14:32.514 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 13:14:32.559 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:14:32.588 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:14:32.993 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:14:33.013 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 420.6732ms
+2020-02-15 13:14:33.014 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:14:33.018 -06:00 [INF] Request finished in 506.8026ms 200 application/json; charset=utf-8
+2020-02-15 13:14:34.947 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/details/  
+2020-02-15 13:14:34.952 -06:00 [INF] Request finished in 5.4544ms 404 
+2020-02-15 13:14:42.808 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/details/;;'  
+2020-02-15 13:14:42.810 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:14:42.812 -06:00 [INF] Route matched with {action = "Details", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Details(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:14:42.815 -06:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2020-02-15 13:14:42.816 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi) in 3.897ms
+2020-02-15 13:14:42.816 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:14:42.816 -06:00 [INF] Request finished in 8.5299ms 400 application/problem+json; charset=utf-8
+2020-02-15 13:14:50.857 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/details/99999  
+2020-02-15 13:14:50.857 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:14:50.858 -06:00 [INF] Route matched with {action = "Details", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Details(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:14:51.000 -06:00 [INF] Executing ObjectResult, writing value of type 'MediaWish.WebApi.Models.MovieDetails'.
+2020-02-15 13:14:51.004 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi) in 145.8841ms
+2020-02-15 13:14:51.004 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:14:51.004 -06:00 [INF] Request finished in 147.7402ms 200 application/json; charset=utf-8
+2020-02-15 13:14:54.811 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/details/999991  
+2020-02-15 13:14:54.811 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:14:54.811 -06:00 [INF] Route matched with {action = "Details", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Details(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:14:54.909 -06:00 [INF] Executing ObjectResult, writing value of type 'MediaWish.WebApi.Models.MovieDetails'.
+2020-02-15 13:14:54.910 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi) in 98.4447ms
+2020-02-15 13:14:54.910 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Details (MediaWish.WebApi)'
+2020-02-15 13:14:54.910 -06:00 [INF] Request finished in 99.7677ms 200 application/json; charset=utf-8
+2020-02-15 13:23:13.725 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 13:23:13.733 -06:00 [INF] Hosting environment: Development
+2020-02-15 13:23:13.734 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 13:23:13.739 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 13:23:13.778 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:23:13.801 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:23:14.218 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:23:14.242 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 437.5298ms
+2020-02-15 13:23:14.243 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:23:14.245 -06:00 [INF] Request finished in 510.6659ms 200 application/json; charset=utf-8
+2020-02-15 13:23:21.514 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/genre/12/  
+2020-02-15 13:23:21.517 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi)'
+2020-02-15 13:23:21.519 -06:00 [INF] Route matched with {action = "Genre", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Genre(Int32, Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:23:21.724 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:23:21.726 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:23:21.727 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi) in 207.9959ms
+2020-02-15 13:23:21.727 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi)'
+2020-02-15 13:23:21.727 -06:00 [INF] Request finished in 213.3794ms 200 application/json; charset=utf-8
+2020-02-15 13:24:07.761 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/genre/10749/  
+2020-02-15 13:24:07.763 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi)'
+2020-02-15 13:24:07.764 -06:00 [INF] Route matched with {action = "Genre", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Genre(Int32, Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:24:07.870 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:24:07.870 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:24:07.871 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi) in 107.585ms
+2020-02-15 13:24:07.871 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi)'
+2020-02-15 13:24:07.872 -06:00 [INF] Request finished in 110.8978ms 200 application/json; charset=utf-8
+2020-02-15 13:24:30.933 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/genre/28/  
+2020-02-15 13:24:30.934 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi)'
+2020-02-15 13:24:30.934 -06:00 [INF] Route matched with {action = "Genre", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Genre(Int32, Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:24:31.059 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:24:31.059 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:24:31.060 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi) in 125.9084ms
+2020-02-15 13:24:31.060 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi)'
+2020-02-15 13:24:31.060 -06:00 [INF] Request finished in 127.7836ms 200 application/json; charset=utf-8
+2020-02-15 13:51:16.055 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 13:51:16.074 -06:00 [INF] Hosting environment: Development
+2020-02-15 13:51:16.075 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 13:51:16.088 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 13:51:16.178 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:51:16.237 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:51:16.486 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:51:17.477 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:51:17.522 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 1278.4272ms
+2020-02-15 13:51:17.524 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:51:17.529 -06:00 [INF] Request finished in 1445.097ms 200 application/json; charset=utf-8
+2020-02-15 13:51:29.680 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/search/dog  
+2020-02-15 13:51:29.684 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Search (MediaWish.WebApi)'
+2020-02-15 13:51:29.687 -06:00 [INF] Route matched with {action = "Search", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Search(System.String, Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:51:29.821 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:51:29.822 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:51:29.823 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Search (MediaWish.WebApi) in 135.5557ms
+2020-02-15 13:51:29.824 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Search (MediaWish.WebApi)'
+2020-02-15 13:51:29.825 -06:00 [INF] Request finished in 145.5545ms 200 application/json; charset=utf-8
+2020-02-15 13:55:30.162 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/genre/35  
+2020-02-15 13:55:30.170 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi)'
+2020-02-15 13:55:30.175 -06:00 [INF] Route matched with {action = "Genre", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Genre(Int32, Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:55:30.354 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:55:30.355 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:55:30.357 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi) in 182.5122ms
+2020-02-15 13:55:30.358 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi)'
+2020-02-15 13:55:30.358 -06:00 [INF] Request finished in 196.2582ms 200 application/json; charset=utf-8
+2020-02-15 13:55:50.086 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/genre/35  
+2020-02-15 13:55:50.087 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi)'
+2020-02-15 13:55:50.088 -06:00 [INF] Route matched with {action = "Genre", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Genre(Int32, Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:55:50.252 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:55:50.253 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:55:50.256 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi) in 167.0118ms
+2020-02-15 13:55:50.256 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Genre (MediaWish.WebApi)'
+2020-02-15 13:55:50.257 -06:00 [INF] Request finished in 170.8411ms 200 application/json; charset=utf-8
+2020-02-15 13:56:45.895 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 13:56:45.917 -06:00 [INF] Hosting environment: Development
+2020-02-15 13:56:45.919 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 13:56:45.926 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 13:56:46.025 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:56:46.067 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 13:56:46.278 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 13:56:47.098 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 13:56:47.142 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 1063.2503ms
+2020-02-15 13:56:47.144 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 13:56:47.148 -06:00 [INF] Request finished in 1226.6637ms 200 application/json; charset=utf-8
+2020-02-15 14:30:41.040 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 14:30:41.055 -06:00 [INF] Hosting environment: Development
+2020-02-15 14:30:41.057 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 14:30:41.068 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 14:30:41.141 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 14:30:41.180 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 14:30:41.341 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 14:30:41.921 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 14:30:41.959 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 772.2788ms
+2020-02-15 14:30:41.961 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 14:30:41.967 -06:00 [INF] Request finished in 903.0511ms 200 application/json; charset=utf-8
+2020-02-15 15:22:29.282 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 15:22:29.321 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 15:22:29.332 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 15:22:29.352 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 15:22:29.591 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 15:22:29.605 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 271.6911ms
+2020-02-15 15:22:29.605 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 15:22:29.609 -06:00 [INF] Request finished in 336.8127ms 200 application/json; charset=utf-8
+2020-02-15 15:22:38.926 -06:00 [INF] Request starting HTTP/1.1 POST https://localhost:44335/wishlists/game/add application/json 30
+2020-02-15 15:22:38.930 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.GamesController.AddGameToWishList (MediaWish.WebApi)'
+2020-02-15 15:22:38.939 -06:00 [INF] Route matched with {action = "AddGameToWishList", controller = "Games"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddGameToWishList(MediaWish.WebApi.Models.WishList) on controller MediaWish.WebApi.Controllers.GamesController (MediaWish.WebApi).
+2020-02-15 15:22:38.967 -06:00 [INF] Starting up GamesController Log
+2020-02-15 15:22:43.446 -06:00 [INF] Entity Framework Core 3.1.1 initialized 'MediaWishContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-02-15 15:22:46.876 -06:00 [INF] Executed DbCommand (297ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Username]
+FROM [users] AS [u]
+WHERE [u].[Id] = @__userID_0
+2020-02-15 15:22:47.243 -06:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[MediaType]
+FROM [medias] AS [m]
+WHERE [m].[MediaType] = N'Video Games'
+2020-02-15 15:22:48.042 -06:00 [ERR] Failed executing DbCommand (96ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [wishLists] ([MediaDescription], [MediaID], [MediaPlatform], [MediaTitle], [mediaTypesId], [usersId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [wishLists]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-02-15 15:22:48.442 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'MediaWish.Library.Entities.MediaWishContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ__wishList__6DDFAE04F55E74DE'. Cannot insert duplicate key in object 'dbo.wishLists'. The duplicate key value is (4, 1959, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:a23d466f-1565-49b8-a3c1-3b38d4f6b125
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ__wishList__6DDFAE04F55E74DE'. Cannot insert duplicate key in object 'dbo.wishLists'. The duplicate key value is (4, 1959, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:a23d466f-1565-49b8-a3c1-3b38d4f6b125
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2020-02-15 15:22:48.460 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.GamesController.AddGameToWishList (MediaWish.WebApi) in 9519.9671ms
+2020-02-15 15:22:48.466 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.GamesController.AddGameToWishList (MediaWish.WebApi)'
+2020-02-15 15:22:48.483 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ__wishList__6DDFAE04F55E74DE'. Cannot insert duplicate key in object 'dbo.wishLists'. The duplicate key value is (4, 1959, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:a23d466f-1565-49b8-a3c1-3b38d4f6b125
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at MediaWish.DataAccess.Repositories.GamesRepo.AddGameToWishlist(Int32 gameID, Int32 userID) in C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.DataAccess\Repositories\GamesRepo.cs:line 172
+   at MediaWish.WebApi.Controllers.GamesController.AddGameToWishList(WishList wishList) in C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi\Controllers\GamesController.cs:line 126
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-15 15:22:48.713 -06:00 [INF] Request finished in 9788.7057ms 500 text/plain
+2020-02-15 15:23:18.300 -06:00 [INF] Request starting HTTP/1.1 POST https://localhost:44335/wishlists/game/add application/json 30
+2020-02-15 15:23:18.304 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.GamesController.AddGameToWishList (MediaWish.WebApi)'
+2020-02-15 15:23:18.305 -06:00 [INF] Route matched with {action = "AddGameToWishList", controller = "Games"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddGameToWishList(MediaWish.WebApi.Models.WishList) on controller MediaWish.WebApi.Controllers.GamesController (MediaWish.WebApi).
+2020-02-15 15:23:18.317 -06:00 [INF] Starting up GamesController Log
+2020-02-15 15:23:19.085 -06:00 [INF] Entity Framework Core 3.1.1 initialized 'MediaWishContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-02-15 15:23:19.137 -06:00 [INF] Executed DbCommand (35ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Username]
+FROM [users] AS [u]
+WHERE [u].[Id] = @__userID_0
+2020-02-15 15:23:19.172 -06:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[MediaType]
+FROM [medias] AS [m]
+WHERE [m].[MediaType] = N'Video Games'
+2020-02-15 15:23:19.250 -06:00 [INF] Executed DbCommand (33ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [wishLists] ([MediaDescription], [MediaID], [MediaPlatform], [MediaTitle], [mediaTypesId], [usersId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [wishLists]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-02-15 15:23:19.478 -06:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2020-02-15 15:23:19.479 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.GamesController.AddGameToWishList (MediaWish.WebApi) in 1173.7588ms
+2020-02-15 15:23:19.480 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.GamesController.AddGameToWishList (MediaWish.WebApi)'
+2020-02-15 15:23:19.485 -06:00 [INF] Request finished in 1185.4709ms 200 
+2020-02-15 15:23:40.208 -06:00 [INF] Request starting HTTP/1.1 POST https://localhost:44335/wishlists/game/add application/json 30
+2020-02-15 15:23:40.209 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.GamesController.AddGameToWishList (MediaWish.WebApi)'
+2020-02-15 15:23:40.210 -06:00 [INF] Route matched with {action = "AddGameToWishList", controller = "Games"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddGameToWishList(MediaWish.WebApi.Models.WishList) on controller MediaWish.WebApi.Controllers.GamesController (MediaWish.WebApi).
+2020-02-15 15:23:40.223 -06:00 [INF] Starting up GamesController Log
+2020-02-15 15:23:40.970 -06:00 [INF] Entity Framework Core 3.1.1 initialized 'MediaWishContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-02-15 15:23:41.020 -06:00 [INF] Executed DbCommand (37ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Username]
+FROM [users] AS [u]
+WHERE [u].[Id] = @__userID_0
+2020-02-15 15:23:41.058 -06:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[MediaType]
+FROM [medias] AS [m]
+WHERE [m].[MediaType] = N'Video Games'
+2020-02-15 15:23:41.141 -06:00 [ERR] Failed executing DbCommand (36ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [wishLists] ([MediaDescription], [MediaID], [MediaPlatform], [MediaTitle], [mediaTypesId], [usersId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [wishLists]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-02-15 15:23:41.272 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'MediaWish.Library.Entities.MediaWishContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ__wishList__6DDFAE04F55E74DE'. Cannot insert duplicate key in object 'dbo.wishLists'. The duplicate key value is (4, 1959, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:a23d466f-1565-49b8-a3c1-3b38d4f6b125
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ__wishList__6DDFAE04F55E74DE'. Cannot insert duplicate key in object 'dbo.wishLists'. The duplicate key value is (4, 1959, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:a23d466f-1565-49b8-a3c1-3b38d4f6b125
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2020-02-15 15:23:41.275 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.GamesController.AddGameToWishList (MediaWish.WebApi) in 1065.0465ms
+2020-02-15 15:23:41.275 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.GamesController.AddGameToWishList (MediaWish.WebApi)'
+2020-02-15 15:23:41.277 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ__wishList__6DDFAE04F55E74DE'. Cannot insert duplicate key in object 'dbo.wishLists'. The duplicate key value is (4, 1959, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:a23d466f-1565-49b8-a3c1-3b38d4f6b125
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges()
+   at MediaWish.DataAccess.Repositories.GamesRepo.AddGameToWishlist(Int32 gameID, Int32 userID) in C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.DataAccess\Repositories\GamesRepo.cs:line 172
+   at MediaWish.WebApi.Controllers.GamesController.AddGameToWishList(WishList wishList) in C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi\Controllers\GamesController.cs:line 126
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-15 15:23:41.289 -06:00 [INF] Request finished in 1081.5488ms 500 text/plain
+2020-02-15 15:24:52.218 -06:00 [INF] Application is shutting down...
+2020-02-15 15:38:27.689 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 15:38:27.709 -06:00 [INF] Hosting environment: Development
+2020-02-15 15:38:27.711 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 15:38:27.715 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 15:38:27.823 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 15:38:27.882 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 15:38:28.176 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 15:38:28.836 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 15:38:28.880 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 989.9173ms
+2020-02-15 15:38:28.884 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 15:38:28.888 -06:00 [INF] Request finished in 1178.9818ms 200 application/json; charset=utf-8
+2020-02-15 15:38:40.306 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/wishlists/viewall/4  
+2020-02-15 15:38:40.311 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.WishListsController.ViewAll (MediaWish.WebApi)'
+2020-02-15 15:38:40.315 -06:00 [INF] Route matched with {action = "ViewAll", controller = "WishLists"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ViewAll(Int32) on controller MediaWish.WebApi.Controllers.WishListsController (MediaWish.WebApi).
+2020-02-15 15:38:40.318 -06:00 [INF] Starting up WishListController Loggggggggggggggg
+2020-02-15 15:38:41.054 -06:00 [INF] Entity Framework Core 3.1.1 initialized 'MediaWishContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-02-15 15:38:42.254 -06:00 [INF] Executed DbCommand (128ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[MediaDescription], [w].[MediaID], [w].[MediaPlatform], [w].[MediaTitle], [w].[mediaTypesId], [w].[usersId]
+FROM [wishLists] AS [w]
+LEFT JOIN [users] AS [u] ON [w].[usersId] = [u].[Id]
+WHERE [u].[Id] = @__userID_0
+2020-02-15 15:38:42.388 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.Library.Entities.WishList, MediaWish.Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 15:38:42.392 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.WishListsController.ViewAll (MediaWish.WebApi) in 2076.6118ms
+2020-02-15 15:38:42.392 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.WishListsController.ViewAll (MediaWish.WebApi)'
+2020-02-15 15:38:42.398 -06:00 [INF] Request finished in 2092.1404ms 200 application/json; charset=utf-8

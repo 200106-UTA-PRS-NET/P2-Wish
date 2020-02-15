@@ -44,6 +44,8 @@
     <p class="release">Released: {{ movie.release_date }}</p>
     <p class="rating">Rating: {{ movie.vote_average }}</p>
     <p class="description">{{ movie.overview }}</p>
+    <button (click)="getMovieDetail(movie.id)">aa</button>
+
     <br>
     <br>
     </li>
