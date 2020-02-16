@@ -2,6 +2,7 @@
 using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
@@ -66,12 +67,19 @@ namespace MediaWish.WebApi.Controller
 
         [Route("users/create")]
         [HttpPost]
-        public IActionResult Create([FromBody, Bind("id,name,username,password,email")]Users user)
+        public IActionResult Create([FromBody, Bind("name,username,password,email")]Users user)
         {
-            Log.Information("Starting up UsersController Loggggggggggggg");
-
-            int newid = _usersRepo.CreateUser(Mapper.Map(user));
-            return CreatedAtRoute("users/info", new { id = newid });
+            try
+            {
+                int newid = _usersRepo.CreateUser(Mapper.Map(user));
+                return Ok(true);
+            } catch (DbUpdateException)
+            {
+                return Ok(false);
+            } catch (ArgumentException)
+            {
+                return Ok(false);
+            }
         }
     }
 }
