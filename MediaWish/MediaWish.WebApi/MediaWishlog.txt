@@ -3180,3 +3180,119 @@ Error Number:2627,State:1,Class:14
    at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
    at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2020-02-15 19:14:36.237 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-15 19:14:36.247 -06:00 [INF] Hosting environment: Development
+2020-02-15 19:14:36.249 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-15 19:14:36.251 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-15 19:14:36.297 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 19:14:36.322 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 19:14:36.432 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-15 19:14:36.756 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-15 19:14:36.780 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 450.6522ms
+2020-02-15 19:14:36.781 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-15 19:14:36.783 -06:00 [INF] Request finished in 535.3551ms 200 application/json; charset=utf-8
+2020-02-15 19:14:41.039 -06:00 [INF] Request starting HTTP/1.1 POST https://localhost:44335/wishlists/movie/add application/json 31
+2020-02-15 19:14:41.041 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.AddMovieToWishList (MediaWish.WebApi)'
+2020-02-15 19:14:41.045 -06:00 [INF] Route matched with {action = "AddMovieToWishList", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddMovieToWishList(MediaWish.WebApi.Models.WishList) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 19:14:41.575 -06:00 [INF] Entity Framework Core 3.1.1 initialized 'MediaWishContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-02-15 19:14:42.248 -06:00 [INF] Executed DbCommand (87ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Username]
+FROM [users] AS [u]
+WHERE [u].[Id] = @__userID_0
+2020-02-15 19:14:42.345 -06:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[MediaType]
+FROM [medias] AS [m]
+WHERE [m].[MediaType] = N'Movies'
+2020-02-15 19:14:42.536 -06:00 [ERR] Failed executing DbCommand (35ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [wishLists] ([MediaDescription], [MediaID], [MediaPlatform], [MediaTitle], [mediaTypesId], [usersId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [wishLists]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-02-15 19:14:42.592 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'MediaWish.Library.Entities.MediaWishContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ__wishList__6DDFAE04F55E74DE'. Cannot insert duplicate key in object 'dbo.wishLists'. The duplicate key value is (4, 419704, 2).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:f99d5366-6e46-42b4-9d30-b7d5a42a3fb7
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of UNIQUE KEY constraint 'UQ__wishList__6DDFAE04F55E74DE'. Cannot insert duplicate key in object 'dbo.wishLists'. The duplicate key value is (4, 419704, 2).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:f99d5366-6e46-42b4-9d30-b7d5a42a3fb7
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(DbContext _, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2020-02-15 19:14:42.595 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2020-02-15 19:14:42.597 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.AddMovieToWishList (MediaWish.WebApi) in 1551.8454ms
+2020-02-15 19:14:42.597 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.AddMovieToWishList (MediaWish.WebApi)'
+2020-02-15 19:14:42.599 -06:00 [INF] Request finished in 1560.7115ms 200 application/json; charset=utf-8
+2020-02-15 19:15:05.605 -06:00 [INF] Request starting HTTP/1.1 POST https://localhost:44335/wishlists/movie/add application/json 31
+2020-02-15 19:15:05.612 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.AddMovieToWishList (MediaWish.WebApi)'
+2020-02-15 19:15:05.614 -06:00 [INF] Route matched with {action = "AddMovieToWishList", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddMovieToWishList(MediaWish.WebApi.Models.WishList) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-15 19:15:05.769 -06:00 [INF] Entity Framework Core 3.1.1 initialized 'MediaWishContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2020-02-15 19:15:05.811 -06:00 [INF] Executed DbCommand (32ms) [Parameters=[@__userID_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Username]
+FROM [users] AS [u]
+WHERE [u].[Id] = @__userID_0
+2020-02-15 19:15:05.844 -06:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[MediaType]
+FROM [medias] AS [m]
+WHERE [m].[MediaType] = N'Movies'
+2020-02-15 19:15:05.910 -06:00 [INF] Executed DbCommand (32ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [wishLists] ([MediaDescription], [MediaID], [MediaPlatform], [MediaTitle], [mediaTypesId], [usersId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [wishLists]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2020-02-15 19:15:05.981 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2020-02-15 19:15:05.981 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.AddMovieToWishList (MediaWish.WebApi) in 365.0893ms
+2020-02-15 19:15:05.981 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.AddMovieToWishList (MediaWish.WebApi)'
+2020-02-15 19:15:05.981 -06:00 [INF] Request finished in 379.9504ms 200 application/json; charset=utf-8

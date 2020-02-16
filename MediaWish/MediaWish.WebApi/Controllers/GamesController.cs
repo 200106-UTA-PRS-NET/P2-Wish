@@ -126,7 +126,11 @@ namespace MediaWish.WebApi.Controllers
                 _gamesRepo.AddGameToWishlist(wishList.MediaID, wishList.userID);
                 return Ok(true);
             }
-            catch (NullReferenceException)
+            catch (InvalidOperationException)
+            {
+                return Ok(false);
+            }
+            catch (ArgumentNullException)
             {
                 return Ok(false);
             }

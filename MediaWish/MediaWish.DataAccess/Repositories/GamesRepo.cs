@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using System.Linq;
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace MediaWish.DataAccess.Repositories
 {
@@ -168,8 +169,17 @@ namespace MediaWish.DataAccess.Repositories
                 MediaPlatform = _MediaPlatform,
                 MediaDescription = _MediaDescription
             };
-            _db.wishLists.Add(wishList);
-            _db.SaveChanges();
+
+            try
+            {
+                _db.wishLists.Add(wishList);
+                _db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                throw new InvalidOperationException();
+            }
+
         }
 
     }
