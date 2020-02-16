@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using System.Linq;
 using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace MediaWish.DataAccess.Repositories
 {
@@ -27,16 +28,30 @@ namespace MediaWish.DataAccess.Repositories
         {
             MovieDetails movie = GetMovieByID(movieID);
 
+            var _users = _db.users.Where(u => u.Id == userID).Single();
+            var _MediaID = movieID;
+            var _mediaTypes = _db.medias.Where(m => m.MediaType == MOVIEMEDIA).Single();
+            var _MediaTitle = movie.title;
+            var _MediaDescription = movie.overview;
+
             WishList wishList = new WishList()
             {
-                users = _db.users.Where(u => u.Id == userID).Single(),
-                MediaID = movieID,
-                mediaTypes = _db.medias.Where(m => m.MediaType == MOVIEMEDIA).Single(),
-                MediaTitle = movie.title,
-                MediaDescription = movie.overview
+                users = _users,
+                MediaID = _MediaID,
+                mediaTypes = _mediaTypes,
+                MediaTitle = _MediaTitle,
+                MediaDescription = _MediaDescription
             };
-            _db.wishLists.Add(wishList);
-            _db.SaveChanges();
+            try
+            {
+                _db.wishLists.Add(wishList);
+                _db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                throw new InvalidOperationException();
+            }
+
         }
 
         public MovieDetails GetMovieByID(int movieID)

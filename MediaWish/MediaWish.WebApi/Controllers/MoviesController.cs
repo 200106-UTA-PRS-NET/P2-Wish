@@ -101,8 +101,20 @@ namespace MediaWish.WebApi.Controllers
         [HttpPost]
         public IActionResult AddMovieToWishList([FromBody, Bind("userID, mediaID")]WishList wishList)
         {
-            _moviesRepo.AddMovieToWishList(wishList.MediaID, wishList.userID);
-            return Ok();
+            try
+            {
+                _moviesRepo.AddMovieToWishList(wishList.MediaID, wishList.userID);
+                return Ok(true);
+            } 
+            catch(ArgumentNullException)
+            {
+                return Ok(false);
+            }
+            catch(InvalidOperationException)
+            {
+                return Ok(false);
+            }
+
         }
     }
 }
