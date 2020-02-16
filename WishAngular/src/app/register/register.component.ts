@@ -40,34 +40,30 @@ export class RegisterComponent implements OnInit {
 
     onSubmit() {
       console.log(this.loginForm.value);
-      if (this.loginForm.invalid) {
-        return;
-      }
-      /*
-      this.submitted = true;
-      this._http.checkUser(this.loginForm.value).subscribe((res : respData)=>
-      {
-        this.resData = res;
-        console.log(this.resData);
-        if(this.resData == null)
+
+
+        this._http.registerAdd(this.loginForm.value).subscribe((check: boolean)=>
         {
-          console.log("invalid username or password");
+          console.log(check);
+          if(check == true)
+          {
+            console.log("success");
+            this.router.navigate(['/login']);
+          }
+          else
+          {
+            console.log("invalid username or email");
+          }
+        });
+    
+    
+        // reset alerts on submit
+    
+        // stop here if form is invalid
+        if (this.loginForm.invalid) {
+            return;
         }
-        else
-        {
-          this.router.navigate(['/options']);
-        }
-      });
-  
-  
-      // reset alerts on submit
-  
-      // stop here if form is invalid
-      if (this.loginForm.invalid) {
-          return;
-      }
-      */
-  
-  }
+    
+    }
 }
 
