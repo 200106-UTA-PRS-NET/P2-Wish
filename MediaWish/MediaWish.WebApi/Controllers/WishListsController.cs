@@ -37,7 +37,7 @@ namespace MediaWish.WebApi.Controllers
         }
 
         [Route("wishlists/remove")]
-        [HttpDelete]
+        [HttpPost]
         public IActionResult Remove([FromBody, Bind("Id")]WishList wishList)
         {
             try
@@ -51,13 +51,13 @@ namespace MediaWish.WebApi.Controllers
                 else
                 {
                     // item not removed
-                    return NotFound();
+                    return Ok(isRemoved);
                 }
 
             }
             catch (NullReferenceException)
             {
-                return NotFound();
+                return NotFound(false);
             }
         }
 
