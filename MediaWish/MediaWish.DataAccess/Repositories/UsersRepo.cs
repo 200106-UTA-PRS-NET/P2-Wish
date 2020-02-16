@@ -1,5 +1,6 @@
 ﻿using MediaWish.Library.Entities;
 using MediaWish.Library.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,17 @@ namespace MediaWish.DataAccess.Repositories
 
         public int CreateUser(Users user)
         {
-            _db.Add(user);
-            _db.SaveChanges();
-            return user.Id;
+            try
+            {
+                _db.Add(user);
+                _db.SaveChanges();
+                return user.Id;
+            }
+            catch (DbUpdateException)
+            {
+                throw;
+            }
+
         }
 
         public Users GetUserById(int id)
