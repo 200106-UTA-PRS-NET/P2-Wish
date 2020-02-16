@@ -121,10 +121,17 @@ namespace MediaWish.WebApi.Controllers
         [HttpPost]
         public IActionResult AddGameToWishList([FromBody, Bind("userID, mediaID")]WishList wishList)
         {
-            Log.Information("Starting up GamesController Log");
+            try
+            {
+                _gamesRepo.AddGameToWishlist(wishList.MediaID, wishList.userID);
+                return Ok(true);
+            }
+            catch (NullReferenceException)
+            {
+                return Ok(false);
+            }
 
-            _gamesRepo.AddGameToWishlist(wishList.MediaID, wishList.userID);
-            return Ok();
+
         }
 
         [Route("games/{gameID?}")]
