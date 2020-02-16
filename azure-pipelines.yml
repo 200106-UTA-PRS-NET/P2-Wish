@@ -29,8 +29,8 @@ steps:
     scannerMode: 'MSBuild'
     projectKey: 'wish'
     extraProperties: |
-        sonar.cs.opencover.reportsPaths="$(Build.ArtifactStagingDirectory)/coverage/*"
-        sonar.cs.vstest.reportsPaths="$(Build.ArtifactStagingDirectory)/MediaWish.Test/*.trx"
+      sonar.cs.opencover.reportsPaths="$(Build.ArtifactStagingDirectory)/coverage/*"
+      sonar.cs.vstest.reportsPaths="$(Build.ArtifactStagingDirectory)/MediaWish.Test/*.trx"
 
 
 - script: 
@@ -43,6 +43,7 @@ steps:
     --configuration $(buildConfiguration)
     --no-build
     --results-directory $(Build.ArtifactStagingDirectory)/MediaWish.Test/
+    --logger trx
     /p:CollectCoverage=true
     /p:CoverletOutputFormat=opencover
     /p:CoverletOutput="$(Build.ArtifactStagingDirectory)/coverage/"
