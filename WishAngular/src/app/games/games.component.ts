@@ -36,6 +36,9 @@ export class GamesComponent implements OnInit {
   MediaID: number;
   counter: number;
 
+  x: string;
+  y: number;
+
   gmData: gameData;
 
 
@@ -214,7 +217,32 @@ export class GamesComponent implements OnInit {
   submitGame(MediaID: number): void
   {
     console.log(MediaID);
+    this.x = localStorage.getItem('loggedInUserID');
+    console.log(this.x);
+    this.y = +this.x;
+    console.log(this.y);
+  
+    let objGame = {userID: this.y, mediaID: MediaID};
+  
+    console.log(objGame);
+    
+  
+    
+      this._http.addGame(objGame).subscribe((check : boolean)=>
+      {
+        console.log(check);
+        if(check == true)
+        {
+          console.log("Game Added");
+        }
+        else
+        {
+          console.log("You already have this Game");
+        }
+  
+  
+      }); 
+    
   }
-
 
 }

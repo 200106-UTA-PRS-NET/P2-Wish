@@ -169,7 +169,7 @@ getPopularF(): void
 });
 }
 
-submitGame(MediaID: number): void
+submitMovie(MediaID: number): void
 {
   console.log(MediaID);
   this.x = localStorage.getItem('loggedInUserID');
@@ -182,19 +182,21 @@ submitGame(MediaID: number): void
   console.log(objGame);
   
 
-  /*
-    this._http.addGame(objGame).subscribe((res : respData)=>
+  
+    this._http.addMovie(objGame).subscribe((check : boolean)=>
     {
-      this.resData = res;
-      console.log(this.resData);
-      if(this.resData == null)
+      console.log(check);
+      if(check == true)
       {
-
+        console.log("Movie Added");
+      }
+      else
+      {
+        console.log("You already have this Movie");
       }
 
-    });
-    */
-    
+
+    }); 
   
 }
 
