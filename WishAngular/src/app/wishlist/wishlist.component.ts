@@ -22,5 +22,11 @@ export class WishlistComponent implements OnInit {
       console.log(this.list);
     });
 
+    console.log(localStorage.getItem('loggedInUserID'));
+    console.log(sessionStorage.getItem('loggedInUserID'));
+    console.log(localStorage.getItem('loggedInName'));
+    console.log(sessionStorage.getItem('loggedInName'));
+
 }
+
 }

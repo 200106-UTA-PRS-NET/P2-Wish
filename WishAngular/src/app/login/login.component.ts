@@ -56,6 +56,10 @@ onSubmit() {
       }
       else
       {
+        localStorage.setItem('loggedInUserID', this.resData.id);
+        sessionStorage.setItem('loggedInUserID', this.resData.id);
+        localStorage.setItem('loggedInName', this.resData.name);
+        sessionStorage.setItem('loggedInName', this.resData.name);
         this.router.navigate(['/options']);
       }
     });

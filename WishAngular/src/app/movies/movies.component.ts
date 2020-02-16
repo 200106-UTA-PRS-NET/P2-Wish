@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { HttpService } from '../http.service';
 import { filterData } from '../filterObj';
 import { gameData } from '../gamesObj';
+import { addData } from '../addObj';
 import { Identifiers } from '@angular/compiler';
 
 
@@ -27,6 +28,11 @@ export class MoviesComponent implements OnInit {
   movies3: Object;
   counter: number;
   counter2: number;
+
+  x: string;
+  y: number;
+
+  addD: addData;
 
 
   genres: Genre[] = [
@@ -59,6 +65,10 @@ export class MoviesComponent implements OnInit {
 
   findMovie(e: NgForm): void{
     console.log(e.value.Name);
+
+
+    this.movies2 = null;
+    this.movies = null;
 
     this.queryString = `/search/${e.value.Name}`;
     console.log(this.queryString);
@@ -119,10 +129,6 @@ export class MoviesComponent implements OnInit {
     
   }
 
-  getMovieDetail(id: number) {
-    console.log(id);
-  }
-
 
 
   getPopular(): void
@@ -166,6 +172,27 @@ getPopularF(): void
 submitGame(MediaID: number): void
 {
   console.log(MediaID);
+  this.x = localStorage.getItem('loggedInUserID');
+  console.log(this.x);
+  this.y = +this.x;
+  console.log(this.y);
+
+  /*
+  this.addD.userID = this.y;
+  this.addD.mediaID = MediaID;
+  console.log(this.addD.userID);
+  */
+
+  /*
+    this._http.checkUser(this.loginForm.value).subscribe((res : respData)=>
+    {
+      this.resData = res;
+      console.log(this.resData);
+      if(this.resData == null)
+
+    });
+    */
+  
 }
 
 
