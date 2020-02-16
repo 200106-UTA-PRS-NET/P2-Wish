@@ -19,6 +19,25 @@ interface Platform {
   viewValue: string;
 }
 
+interface Genre2 {
+  id: number;
+  name: string;
+}
+
+interface Platform2 {
+  id: number;
+  name: string;
+}
+
+interface Game{
+  id: number;
+  name: string;
+  released: string;
+  rating: number;
+  platforms: Platform2[];
+  genres: Genre2[];
+  description: string;
+}
 
 @Component({
   selector: 'app-games',
@@ -31,7 +50,6 @@ export class GamesComponent implements OnInit {
   queryString: string;
 
   games: Object;
-  games2: Object;
 
   MediaID: number;
   counter: number;
@@ -40,6 +58,7 @@ export class GamesComponent implements OnInit {
   y: number;
 
   gmData: gameData;
+  game: Game;
 
 
   genres: Genre[] = [
@@ -80,14 +99,14 @@ export class GamesComponent implements OnInit {
 
 
   findGame(e: NgForm): void{
+    this.games = null;
     console.log(e.value.Name);
 
     this.queryString = `/search/${e.value.Name}`;
     console.log(this.queryString);
     this._http.getGames(this.queryString).subscribe(data => {
-      this.games2 = data;
-      console.log(data);
-      console.log(this.games2);
+      this.game = data as Game;
+      console.log(this.game);
   });
   
 }
@@ -95,6 +114,7 @@ export class GamesComponent implements OnInit {
 
   getGame(f: NgForm, g: NgForm): void 
   {
+    this.game = null;
     this.counter = 1;
 
     console.log(f.value);

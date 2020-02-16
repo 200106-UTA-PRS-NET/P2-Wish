@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { userData, respData } from './dataObj';
+import { userData, respData, regData } from './dataObj';
 import { idData } from './deleteObj';
 import { filterData } from './filterObj';
 import { addData } from './addObj';
@@ -34,12 +34,12 @@ export class HttpService {
     return this.http.get('http://mediawish.azurewebsites.net/wishlists/viewall/'+filterId);
   }
 
-  /*
-  deleteList(id: idData)
+  
+  deleteList(id: string)
   {
-    return this.http.delete('http://mediawish.azurewebsites.net/wishlists/remove', id);
+    return this.http.delete('http://mediawish.azurewebsites.net/wishlists/remove'+id);
   }
-  */
+  
 
   addGame(add: addData)
   {
@@ -49,6 +49,11 @@ export class HttpService {
   addMovie(add: addData)
   {
     return this.http.post('http://mediawish.azurewebsites.net/wishlists/movie/add', add);
+  }
+
+  registerAdd(add: regData)
+  {
+    return this.http.post('http://mediawish.azurewebsites.net/users/create', add);
   }
 
 

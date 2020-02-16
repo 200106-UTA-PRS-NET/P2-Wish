@@ -4,6 +4,14 @@ export class userData
   Password: string;
 }
 
+export class regData
+{
+  name: string;
+  username: string;
+  email: string;
+  password: string;
+}
+
 export interface respData
 {
   name: string;

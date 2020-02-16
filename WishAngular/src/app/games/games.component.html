@@ -50,7 +50,11 @@
     <p class="name">Title: {{ game.name }}</p>
     <p class="release">Released: {{ game.released }}</p>
     <p class="rating">Rating: {{ game.rating }}</p>
-    <p class="genre">Genres: {{ game.genres.name }}</p>
+    <label>Genres: </label>
+    <span *ngFor="let g of game.genres" class = "genre"> {{ g.name }} </span>
+    <br>
+    <label>Platforms: </label>
+    <span *ngFor="let p of game.platforms" class="platform"> {{ p.name }} </span>
     <p class="description">{{ game.description }}</p>
     <button (click)="submitGame(game.id)">Add to WishList</button>
     <br>
@@ -60,11 +64,17 @@
     <button (click)="getGameF(f, g)">Next Page</button>
   </ul>
 
-<!--
-  <ul *ngIf="games2">
-    {{game.name}}:{{game.released}}:{{game.rating}}:{{game.description}}
+  <div *ngIf="game">
+    <p class="name">Title: {{ game.name }}</p>
+    <p class="release">Released: {{ game.released }}</p>
+    <p class="rating">Rating: {{ game.rating }}</p>
+    <label>Genres: </label>
+    <span *ngFor="let g of game.genres" class = "genre"> {{ g.name }} </span>
+    <br>
+    <label>Platforms: </label>
+    <span *ngFor="let p of game.platforms" class="platform"> {{ p.name }} </span>
+    <p class = "description"> {{ game.description }}</p>
+    <button (click)="submitGame(game.id)">Add to WishList</button>
   </div>
-</ul>
--->
 
 
