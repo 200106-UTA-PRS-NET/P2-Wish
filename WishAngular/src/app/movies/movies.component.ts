@@ -32,7 +32,7 @@ export class MoviesComponent implements OnInit {
   x: string;
   y: number;
 
-  addD: addData;
+  //addD: addData;
 
 
   genres: Genre[] = [
@@ -177,21 +177,24 @@ submitGame(MediaID: number): void
   this.y = +this.x;
   console.log(this.y);
 
-  /*
-  this.addD.userID = this.y;
-  this.addD.mediaID = MediaID;
-  console.log(this.addD.userID);
-  */
+  let objGame = {userID: this.y, mediaID: MediaID};
+
+  console.log(objGame);
+  
 
   /*
-    this._http.checkUser(this.loginForm.value).subscribe((res : respData)=>
+    this._http.addGame(objGame).subscribe((res : respData)=>
     {
       this.resData = res;
       console.log(this.resData);
       if(this.resData == null)
+      {
+
+      }
 
     });
     */
+    
   
 }
 
