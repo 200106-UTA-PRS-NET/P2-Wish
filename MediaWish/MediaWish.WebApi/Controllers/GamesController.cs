@@ -134,8 +134,6 @@ namespace MediaWish.WebApi.Controllers
             {
                 return Ok(false);
             }
-
-
         }
 
         [Route("games/{gameID?}")]
