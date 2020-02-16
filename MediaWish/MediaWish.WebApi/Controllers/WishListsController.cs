@@ -36,13 +36,13 @@ namespace MediaWish.WebApi.Controllers
             return Ok(wishlists);
         }
 
-        [Route("wishlists/remove")]
+        [Route("wishlists/remove/{id}")]
         [HttpDelete]
-        public IActionResult Remove([FromBody, Bind("Id")]WishList wishList)
+        public IActionResult Remove(int id)
         {
             try
             {
-                var isRemoved = _wishListRepo.RemoveItemFromWishlist(wishList.Id);
+                var isRemoved = _wishListRepo.RemoveItemFromWishlist(id);
                 return Ok(true);
             }
             catch (NullReferenceException)
