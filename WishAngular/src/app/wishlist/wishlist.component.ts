@@ -20,6 +20,9 @@ export class WishlistComponent implements OnInit {
     private router: Router,) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('loggedInUserID') == null ) {
+      this.router.navigate(['/login']);
+    }
     this.queryString = localStorage.getItem('loggedInUserID');
     console.log(this.queryString);
     this._http.getList(this.queryString).subscribe(data => {

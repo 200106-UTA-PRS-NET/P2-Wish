@@ -24,7 +24,8 @@ export class AppComponent {
     ) { }
 
   findUserList(e: NgForm): void{
-    this.router.navigate(['/']);
+   // this.router.navigate(['/']);
+    this.router.navigate(['/publiclist']);
 
     console.log(e.value.Name);
 

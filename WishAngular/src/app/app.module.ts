@@ -14,6 +14,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { MovielistComponent } from './movielist/movielist.component';
 import { GamesComponent } from './games/games.component';
 import { GamelistComponent } from './gamelist/gamelist.component';
+import { PubliclistComponent } from './publiclist/publiclist.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GamelistComponent } from './gamelist/gamelist.component';
     MoviesComponent,
     MovielistComponent,
     GamesComponent,
-    GamelistComponent
+    GamelistComponent,
+    PubliclistComponent
   ],
   imports: [
     BrowserModule,

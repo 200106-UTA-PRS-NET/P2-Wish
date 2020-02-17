@@ -6,6 +6,8 @@ import { filterData } from '../filterObj';
 import { gameData } from '../gamesObj';
 import { addData } from '../addObj';
 import { Identifiers } from '@angular/compiler';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 
 interface Genre {
@@ -57,9 +59,14 @@ export class MoviesComponent implements OnInit {
     {value: '37', viewValue: 'Western'}
   ];
 
-  constructor(private _http: HttpService) { }
+  constructor(private _http: HttpService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('loggedInUserID') == null ) {
+      this.router.navigate(['/login']);
+    }
   }
 
 

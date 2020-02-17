@@ -2,12 +2,35 @@
 <br>
 <br>
 
-<button type="button" class="nav-item nav-link-edit btn btn-primary btn-lg btn-block" [routerLink]="['/movies']">Movies</button >
-<hr>
-<button type="button" class="nav-item nav-link-edit btn btn-primary btn-lg btn-block" [routerLink]="['/games']">Games</button >
-<hr>
-<button type="button" class="nav-item nav-link-edit btn btn-primary btn-lg btn-block" [routerLink]="['/wishlist']">My WishList</button >
-<br>
 
-<button class="nav-item nav-link-edit" [routerLink]="['/login']">Sign Out</button >
+<button class="nav-item nav-link-edit" (click)="signOut()">Sign Out</button >
 
+    <div class="card-deck ">
+
+    <a class="cardcolor" [routerLink]="['/movies']">
+        <div class="card text-white bg-dark mb-3">
+          <div class="card-body">
+            <h4 class="card-title">Movies</h4>
+            <p class="card-text">Movie Contents Description.</p>
+          </div>
+        </div>
+    </a>
+
+    <a class="cardcolor" [routerLink]="['/games']">
+        <div class="card text-white bg-dark mb-3">
+          <div class="card-body">
+            <h4 class="card-title">Games</h4>
+            <p class="card-text">Game Contents Description.</p>
+          </div>
+        </div>
+    </a>
+
+    <a class="cardcolor" [routerLink]="['/wishlist']">
+        <div class="card text-white bg-dark mb-3">
+          <div class="card-body">
+            <h4 class="card-title">My Wishlist</h4>
+            <p class="card-text">View your wishlist</p>
+          </div>
+        </div>
+    </a>
+      </div>

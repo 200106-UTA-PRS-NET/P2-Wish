@@ -37,7 +37,11 @@
     <p class="release">Released: {{ movie.release_date }}</p>
     <p class="rating">Rating: {{ movie.vote_average }}</p>
     <p class="description">{{ movie.overview }}</p>
+    <p class="path">PATH: {{ movie.poster_path }}</p>
+
     <button (click)="submitMovie(movie.id)">Add to WishList</button>
+
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
     <br>
     <br>
     </li>
@@ -54,6 +58,7 @@
     <p class="release">Released: {{ movie.release_date }}</p>
     <p class="rating">Rating: {{ movie.vote_average }}</p>
     <p class="description">{{ movie.overview }}</p>
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
 
     <button (click)="submitMovie(movie.id)">Add to WishList</button>
     <br>
@@ -70,6 +75,8 @@
     <p class="release">Released: {{ movie.release_date }}</p>
     <p class="rating">Rating: {{ movie.vote_average }}</p>
     <p class="description">{{ movie.overview }}</p>
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
+
     <button (click)="submitMovie(movie.id)">Add to WishList</button>
     <br>
     <br>

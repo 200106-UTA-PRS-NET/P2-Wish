@@ -10,5 +10,6 @@ namespace MediaWish.WebApi.Models
         public double vote_average { get; set; }
         public string overview { get; set; }
         public string release_date { get; set; }
+        public string poster_path { get; set; }
     }
 }
