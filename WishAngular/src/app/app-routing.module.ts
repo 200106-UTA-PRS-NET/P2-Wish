@@ -8,6 +8,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { GamelistComponent } from './gamelist/gamelist.component';
 import { MovielistComponent } from './movielist/movielist.component';
+import { PubliclistComponent } from './publiclist/publiclist.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'movies', component: MoviesComponent},
   {path: 'wishlist', component: WishlistComponent},
   {path: 'gamelist', component: GamelistComponent},
-  {path: 'movielist', component: MovielistComponent}
+  {path: 'movielist', component: MovielistComponent},
+  {path: 'publiclist', component: PubliclistComponent}
 ];
 
 @NgModule({

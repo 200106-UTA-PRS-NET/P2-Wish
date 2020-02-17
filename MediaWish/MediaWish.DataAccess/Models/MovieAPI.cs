@@ -20,6 +20,7 @@ namespace MediaWish.DataAccess.Models
         public double vote_average { get; set; }
         public string overview { get; set; }
         public string release_date { get; set; }
+        public string poster_path { get; set; }
     }
 
     // class for when searching for individual movies by id

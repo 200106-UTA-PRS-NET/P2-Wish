@@ -5,6 +5,7 @@ import { HttpService } from '../http.service';
 import { filterData } from '../filterObj';
 import { gameData } from '../gamesObj';
 import { Identifiers } from '@angular/compiler';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 
@@ -92,9 +93,14 @@ export class GamesComponent implements OnInit {
 
 
 
-  constructor(private _http: HttpService) { }
+  constructor(private _http: HttpService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('loggedInUserID') == null ) {
+      this.router.navigate(['/login']);
+    }
   }
 
 

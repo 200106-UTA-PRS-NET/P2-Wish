@@ -57,7 +57,8 @@ namespace MediaWish.WebApi.Models
                 title = movie.title,
                 vote_average = movie.vote_average,
                 overview = movie.overview,
-                release_date = movie.release_date
+                release_date = movie.release_date,
+                poster_path = movie.poster_path
             };
         }
         public static DataAccess.Models.Movies Map(Movies movie)
@@ -69,7 +70,8 @@ namespace MediaWish.WebApi.Models
                 title = movie.title,
                 vote_average = movie.vote_average,
                 overview = movie.overview,
-                release_date = movie.release_date
+                release_date = movie.release_date,
+                poster_path = movie.poster_path
             };
         }
         public static IEnumerable<Movies> Map(IEnumerable<DataAccess.Models.Movies> movies)
