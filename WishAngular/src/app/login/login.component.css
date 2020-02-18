@@ -1,0 +1,17 @@
+.smolcenter {
+    block-size: 10%;
+}
+
+button {
+    margin-top: 1em;
+    margin-right: 1em;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-group {
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    float: none;
+}

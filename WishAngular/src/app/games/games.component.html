@@ -43,6 +43,9 @@
 
   <br>
   <hr>
+
+  <div>
+    
   <ul *ngIf="games">
     <button (click)="getGameR(f, g)">Previous Page</button>
     <button (click)="getGameF(f, g)">Next Page</button>
@@ -64,6 +67,8 @@
     <button (click)="getGameR(f, g)">Previous Page</button>
     <button (click)="getGameF(f, g)">Next Page</button>
   </ul>
+
+</div>
 
   <div *ngIf="game">
     <p class="name">Title: {{ game.name }}</p>
