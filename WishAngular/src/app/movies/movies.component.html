@@ -29,56 +29,76 @@
 
   <br>
   <hr>
+
+<div class="container">
   <ul *ngIf="movies">
-    <button (click)="getPopularP()">Previous Page</button>
-    <button (click)="getPopularF()">Next Page</button>
-    <li *ngFor="let movie of movies">
-    <p class="name">Title: {{ movie.title }}</p>
-    <p class="release">Released: {{ movie.release_date }}</p>
-    <p class="rating">Rating: {{ movie.vote_average }}</p>
-    <p class="description">{{ movie.overview }}</p>
-    <p class="path">PATH: {{ movie.poster_path }}</p>
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <button class="btn btn-secondary" (click)="getPopularP()">Previous Page</button>
+      <button class="btn btn-secondary" (click)="getPopularF()">Next Page</button>
+      <hr>
+    </div>
 
-    <button (click)="submitMovie(movie.id)">Add to WishList</button>
-
-    <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
-    <br>
-    <br>
+    <li class="movielist container" *ngFor="let movie of movies">
+        <img class="img-thumbnail portrait" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
+        <div class="content">
+        <h3>{{ movie.title }}</h3>
+        <p class="release">Released: {{ movie.release_date }}</p>
+        <p class="rating">Rating: {{ movie.vote_average }}</p>
+        <p class="description">{{ movie.overview }}</p> 
+        <button class="btn btn-secondary" (click)="submitMovie(movie.id)">Add to WishList</button>
+      </div>
     </li>
-    <button (click)="getPopularP()">Previous Page</button>
-    <button (click)="getPopularF()">Next Page</button>
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <hr>
+      <button class="btn btn-secondary" (click)="getPopularP()">Previous Page</button>
+      <button class="btn btn-secondary" (click)="getPopularF()">Next Page</button>
+    </div>
   </ul>
+</div>
 
-
+<div class="container">
   <ul *ngIf="movies2">
-    <button (click)="getMovieP(f)">Previous Page</button>
-    <button (click)="getMovieF(f)">Next Page</button>
-    <li *ngFor="let movie of movies2">
-    <p class="name">Title: {{ movie.title }}</p>
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <button class="btn btn-secondary" (click)="getMovieP(f)">Previous Page</button>
+      <button class="btn btn-secondary" (click)="getMovieF(f)">Next Page</button>
+      <hr>
+    </div>
+
+    <li class="movielist container" *ngFor="let movie of movies2">
+      <img class="img-thumbnail portrait" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
+      <div class="content">
+      <h3>{{ movie.title }}</h3>
     <p class="release">Released: {{ movie.release_date }}</p>
     <p class="rating">Rating: {{ movie.vote_average }}</p>
     <p class="description">{{ movie.overview }}</p>
-    <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
 
-    <button (click)="submitMovie(movie.id)">Add to WishList</button>
-    <br>
-    <br>
+    <button class="btn btn-secondary" (click)="submitMovie(movie.id)">Add to WishList</button>
+    </div>
     </li>
-    <button (click)="getMovieP(f)">Previous Page</button>
-    <button (click)="getMovieF(f)">Next Page</button>
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <hr>
+      <button class="btn btn-secondary" (click)="getMovieP(f)">Previous Page</button>
+      <button class="btn btn-secondary" (click)="getMovieF(f)">Next Page</button>
+    </div>
   </ul>
+</div>
 
+<div class="container">
 
   <ul *ngIf="movies3">
-    <li *ngFor="let movie of movies3">
-    <p class="name">Title: {{ movie.title }}</p>
+
+    <li class="movielist container" *ngFor="let movie of movies3">
+      <img class="img-thumbnail portrait" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
+      <div class="content">
+
+      <h3> {{movie.title}}</h3>
     <p class="release">Released: {{ movie.release_date }}</p>
     <p class="rating">Rating: {{ movie.vote_average }}</p>
     <p class="description">{{ movie.overview }}</p>
-    <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
 
-    <button (click)="submitMovie(movie.id)">Add to WishList</button>
-    <br>
-    <br>
+    <button class="btn btn-secondary" (click)="submitMovie(movie.id)">Add to WishList</button>
+    </div>
     </li>
   </ul>
+
+  </div>

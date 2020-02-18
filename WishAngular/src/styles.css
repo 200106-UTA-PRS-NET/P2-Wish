@@ -1,3 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+
+:root {
+    --background: #efefef;
+    --text: #ff3b3f;
+    --container: #fdffff;
+    --darktext: #a9a9a9;
+    --contrast: #caebf2;
+    --darktext: #111111;
+    --darkbackground: #444242;
+}
+
+* {
+    font-size: 99%;
+    font-family: 'Nunito', sans-serif;
+   }
+
+body {
+    background-color: var(--background);
+}
+
+.btn-outline-success {
+    border-color: var(--red);
+    color: var(--text);
+}
+
+.btn-outline-success:hover {
+    border-color: var(--red);
+    color: var(--text);
+    background-color: var(--text);
+}
+
+.navbar {
+    background-color: var(--container); 
+}
+
+form input {
+    border-color: var(--notsure);
+}
+
+.btn-primary {
+    color: white;
+    background-color: var(--text);
+    border-color: var(--red);
+}
+.btn-primary:hover {
+    color: white;
+    background-color: var(--text);
+    border-color: var(--red);
+    filter: grayscale(50%);
+}
+
+.btn-secondary {
+    color: white;
+    background-color: var(--darkbackground);
+}
+
+.btn-secondary:hover {
+    background-color: var(--text);
+    border-color: var(--red);
+}
+
+.logo {
+    font-weight: bolder;
+    color: var(--darktext)
+}
+.logo:hover {
+    font-weight: bolder;
+    color: var(--text)
+}
+
+.nav-link {
+    color: var(--darktext);
+}
+
+.nav-link:hover {
+    color: var(--text);
+}
+
+.form-group label {
+    color: var(--lightshade)
+}
+
+.form-group input:focus, .navbar-collapse input:focus {
+    border-color: var(--text);
+    box-shadow: var(--background);
+}
+
+.navbar-collapse button:hover {
+    color: aliceblue;
+    background-color: var(--text);
+}
+
+h2 {
+    text-align: center;
+    margin-top: 1em;
+    color: var(--red);
+    font-size: 220%;
+    font-weight: bolder;
+}
+
+h3 {
+    color: var(--red);
+    font-size: 180%;
+    font-weight: bolder;
+}
+
+.btns-center btn {
+    margin: auto;
+
+}
