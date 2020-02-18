@@ -14,6 +14,8 @@ export class WishlistComponent implements OnInit {
   x: string;
   y: number;
 
+  name: string;
+
   constructor(
     private _http: HttpService,
     private route: ActivatedRoute,
@@ -24,16 +26,12 @@ export class WishlistComponent implements OnInit {
       this.router.navigate(['/login']);
     }
     this.queryString = localStorage.getItem('loggedInUserID');
+    this.name = localStorage.getItem('loggedInName');
     console.log(this.queryString);
     this._http.getList(this.queryString).subscribe(data => {
       this.list = data;
       console.log(this.list);
-    });
-
-    console.log(localStorage.getItem('loggedInUserID'));
-    console.log(sessionStorage.getItem('loggedInUserID'));
-    console.log(localStorage.getItem('loggedInName'));
-    console.log(sessionStorage.getItem('loggedInName'));   
+    });  
 
 }
 deleteItem(id: number): void

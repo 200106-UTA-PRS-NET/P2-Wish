@@ -21,6 +21,9 @@ data: string;
 useData: userData;
 resData: respData;
 
+name: string;
+id: number;
+
 
 constructor(
     private formBuilder: FormBuilder,
@@ -32,6 +35,7 @@ constructor(
 }
 
 ngOnInit() {
+  localStorage.clear();
     this.loginForm = this.formBuilder.group({
         username: ['', Validators.required],
         password: ['', Validators.required]
@@ -57,9 +61,7 @@ onSubmit() {
       else
       {
         localStorage.setItem('loggedInUserID', this.resData.id);
-        sessionStorage.setItem('loggedInUserID', this.resData.id);
         localStorage.setItem('loggedInName', this.resData.name);
-        sessionStorage.setItem('loggedInName', this.resData.name);
         this.router.navigate(['/options']);
       }
     });

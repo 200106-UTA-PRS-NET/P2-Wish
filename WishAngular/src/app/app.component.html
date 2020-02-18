@@ -49,19 +49,6 @@
   <router-outlet></router-outlet>
 </div>
 
-
-<ul *ngIf="list">
-  <button class="nav-item nav-link-edit" [routerLink]="['/login']">Return to Login</button >
-  <li *ngFor="let lit of list">
-  <p class="title">Title: {{ lit.mediaTitle }}</p>
-  <p class="platform">Platform: {{ lit.mediaPlatform }}</p>
-  <p class="description">Description: {{ lit.mediaDescription }}</p>
-  <br>
-  <br>
-  </li>
-  <button class="nav-item nav-link-edit" [routerLink]="['/login']">Return to Login</button >
-</ul>
-
 </body>
 
 

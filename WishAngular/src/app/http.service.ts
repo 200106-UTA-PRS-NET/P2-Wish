@@ -24,6 +24,13 @@ export class HttpService {
     return this.http.post('http://mediawish.azurewebsites.net/users/login', userD);
   }
 
+  
+  checkUserId (id: string)
+  {
+    return this.http.get('http://mediawish.azurewebsites.net/users/info/'+id);
+  }
+  
+
   getGames(filterD: string)
   {
     return this.http.get('http://mediawish.azurewebsites.net/games'+filterD);

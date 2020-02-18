@@ -20,3 +20,12 @@ export interface respData
   password: string;
   email: string;
 }
+
+export interface publicData
+{
+  name: string;
+  userName: string;
+  id: string;
+  password: string;
+  email: string;
+}

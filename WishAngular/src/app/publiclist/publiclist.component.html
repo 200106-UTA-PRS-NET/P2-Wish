@@ -1,1 +1,34 @@
-<p>publiclist works!</p>
+<h1>{{ name }}'s WishList</h1>
+<!--
+<ul *ngIf="movies">
+    <button (click)="getPopularP()">Previous Page</button>
+    <button (click)="getPopularF()">Next Page</button>
+    <li *ngFor="let movie of movies">
+    <p class="name">Title: {{ movie.title }}</p>
+    <p class="release">Released: {{ movie.release_date }}</p>
+    <p class="rating">Rating: {{ movie.vote_average }}</p>
+    <p class="description">{{ movie.overview }}</p>
+    <p class="path">PATH: {{ movie.poster_path }}</p>
+
+    <button (click)="submitMovie(movie.id)">Add to WishList</button>
+
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
+    <br>
+    <br>
+    </li>
+    <button (click)="getPopularP()">Previous Page</button>
+    <button (click)="getPopularF()">Next Page</button>
+  </ul>
+-->
+
+<ul *ngIf="list">
+    <button class="nav-item nav-link-edit" [routerLink]="['/login']">Return to Login</button >
+    <li *ngFor="let lit of list">
+    <p class="title">Title: {{ lit.mediaTitle }}</p>
+    <p class="platform">Platform: {{ lit.mediaPlatform }}</p>
+    <p class="description">Description: {{ lit.mediaDescription }}</p>
+    <br>
+    <br>
+    </li>
+    <button class="nav-item nav-link-edit" [routerLink]="['/login']">Return to Login</button >
+  </ul>
