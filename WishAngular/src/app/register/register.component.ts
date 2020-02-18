@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
 import { userData, respData } from '../dataObj';
+import { AlertService } from '../alert.service';
 
 @Component({
   selector: 'app-register',
@@ -24,7 +25,8 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private _http: HttpService
+    private _http: HttpService,
+    private alert: AlertService
   ) { }
 
   ngOnInit() {
@@ -49,10 +51,12 @@ export class RegisterComponent implements OnInit {
           {
             console.log("success");
             this.router.navigate(['/login']);
+            this.alert.success("account created");
           }
           else
           {
             console.log("invalid username or email");
+            this.alert.warn("invalid username or email");
           }
         });
     

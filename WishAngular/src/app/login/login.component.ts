@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
 import { userData, respData } from '../dataObj';
+import { AlertService } from '../alert.service';
 
 
 @Component({
@@ -29,7 +30,8 @@ constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private _http: HttpService
+    private _http: HttpService,
+    private alert: AlertService
 ) {
     // redirect to home if already logged in
 }
@@ -57,6 +59,8 @@ onSubmit() {
       if(this.resData == null)
       {
         console.log("invalid username or password");
+        this.alert.warn("invalid username or password");
+
       }
       else
       {
