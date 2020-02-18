@@ -22,6 +22,8 @@ export class AppComponent {
 
 
   message:string;
+  message1:string;
+  name: string;
 
 
   constructor(
@@ -34,6 +36,16 @@ export class AppComponent {
 
     ngOnInit() {
       this.data.currentMessage.subscribe(message => this.message = message)
+      if(localStorage.getItem('loggedInUserID') != null)
+      {
+        this.queryString = localStorage.getItem('loggedInUserID');
+        this.name = localStorage.getItem('loggedInName');
+        this.message1 = (`${this.name}    ID:${this.queryString}`);
+      }
+      else
+      {
+        this.message1 = "";
+      }
     }
 
   findUserList(e: NgForm): void{

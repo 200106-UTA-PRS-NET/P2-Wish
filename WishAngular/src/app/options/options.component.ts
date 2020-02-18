@@ -27,6 +27,7 @@ export class OptionsComponent implements OnInit {
 
     signOut() {
       localStorage.clear();
+      window.location.reload();
       this.router.navigate(['/login']);
     }
 }
