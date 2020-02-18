@@ -2,15 +2,16 @@
 
 
 
+<div class="form-group container">
 <form #e="ngForm">
-  <input name="Name" ngModel required #name="ngModel">
-  <button (click)="findMovie(e)">Find Movie</button>
+  <input class="form-control mr-sm-2" name="Name" ngModel required #name="ngModel">
+  <button class="form-group btn btn-secondary" (click)="findMovie(e)">Find Movie</button>
 </form>
 
 <br>
 <br>
 
-<form #f="ngForm">
+<form class="form-group" #f="ngForm">
     <label>Genre</label>
         <select name="GenreID" ngModel required #genreID="ngModel">
         <option *ngFor="let genre of genres" [value]="genre.value">
@@ -18,14 +19,14 @@
         </option>
         </select>
   </form>
-  <button (click)="getMovie(f)">Submit</button>
+  <button class="form-group btn-secondary" (click)="getMovie(f)">Submit</button>
 
   <br>
-  <button (click)="getPopular()">New Releases</button>
+  <button class="form-group btn-secondary" (click)="getPopular()">New Releases</button>
   <br>
   <br>
-  <button class="nav-item nav-link-edit" [routerLink]="['/options']">Return to Options</button >
-
+  <button class="form-group nav-item nav-link-edit btn-secondary" [routerLink]="['/options']">Return to Options</button >
+  </div>
 
   <br>
   <hr>

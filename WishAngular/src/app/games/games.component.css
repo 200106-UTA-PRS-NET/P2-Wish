@@ -5,6 +5,7 @@
 
 
 
+
 .form-group {
     justify-content: center;
     width: 50%;
@@ -15,4 +16,9 @@
 
 .form-control {
     width: 100%;
+}
+
+.btn-group {
+    float: none;
+    justify-content: center;
 }

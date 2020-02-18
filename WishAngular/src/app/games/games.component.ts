@@ -6,6 +6,7 @@ import { filterData } from '../filterObj';
 import { gameData } from '../gamesObj';
 import { Identifiers } from '@angular/compiler';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AlertService } from '../alert.service';
 
 
 
@@ -102,6 +103,8 @@ export class GamesComponent implements OnInit {
 
   constructor(private _http: HttpService,
     private router: Router,
+    private alert: AlertService
+
     ) { }
 
   ngOnInit(): void {
@@ -117,10 +120,15 @@ export class GamesComponent implements OnInit {
 
     this.queryString = `/search/${e.value.Name}`;
     console.log(this.queryString);
-    this._http.getGames(this.queryString).subscribe(data => {
+    this._http.getGames(this.queryString).subscribe(
+      data => {
       this.game = data as Game;
       console.log(this.game);
-  });
+      },
+      error => {
+        this.alert.warn("Invalid search");
+      }
+  );
   
 }
 
@@ -271,10 +279,11 @@ export class GamesComponent implements OnInit {
         else
         {
           console.log("You already have this Game");
+          this.alert.warn("You already have this Game");
         }
-  
-  
-      }); 
+      },
+
+      ); 
     
   }
 
