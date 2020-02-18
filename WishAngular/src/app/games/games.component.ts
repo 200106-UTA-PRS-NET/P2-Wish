@@ -38,6 +38,7 @@ interface Game{
   platforms: Platform2[];
   genres: Genre2[];
   description: string;
+  background_image: string;
 }
 
 @Component({
