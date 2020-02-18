@@ -60,6 +60,10 @@ get f() { return this.loginForm.controls; }
 
 onSubmit() {
     this.submitted = true;
+
+    if (this.loginForm.invalid) {
+      return;
+  }
     this._http.checkUser(this.loginForm.value).subscribe((res : respData)=>
     {
       this.resData = res;
@@ -83,10 +87,6 @@ onSubmit() {
 
     // reset alerts on submit
 
-    // stop here if form is invalid
-    if (this.loginForm.invalid) {
-        return;
-    }
 
 }
 }

@@ -36,14 +36,24 @@ export class RegisterComponent implements OnInit {
         username: ['', Validators.required],
         password: ['', Validators.required]
     });
+
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
     get f() { return this.loginForm.controls; }
 
     onSubmit() {
+      this.submitted = true;
       console.log(this.loginForm.value);
-
-
+      if (this.loginForm.invalid) {
+        return;
+    }
+    /*
+        if(this.loginForm.value.name == "" || this.loginForm.value.username == "" || this.loginForm.value.password == "" || this.loginForm.value.email == "")
+        {
+          this.alert.error("7 characters minimum for username and password");
+        }
+        */
         this._http.registerAdd(this.loginForm.value).subscribe((check: boolean)=>
         {
           console.log(check);
@@ -58,15 +68,15 @@ export class RegisterComponent implements OnInit {
             console.log("invalid username or email");
             this.alert.warn("invalid username or email");
           }
-        });
-    
-    
+        },
+        error => {
+          this.alert.warn("7 characters minimum for username and password");
+        }
+        );
+     
         // reset alerts on submit
     
         // stop here if form is invalid
-        if (this.loginForm.invalid) {
-            return;
-        }
     
     }
 }
