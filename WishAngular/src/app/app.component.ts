@@ -67,7 +67,11 @@ export class AppComponent {
         this.router.navigate(['/publiclist']);
 
       }
-    });
+    },
+    error => {
+      this.alert.warn("Invalid search");
+    }
+    );
 
   }
 

@@ -9,14 +9,15 @@
   </form>
 -->
 
-<div class="form-group">
+<div class="form-group container">
 <form #e="ngForm">
     <input class="form-control mr-sm-2" name="Name" ngModel required #name="ngModel">
-    <button class="form-group" (click)="findGame(e)">Find Game</button>
+    <button class="form-group btn btn-secondary" (click)="findGame(e)">Find Game</button>
   </form>
 
 
 <br>
+
 <br>
 
   <form class="form-group" #f="ngForm">
@@ -38,9 +39,9 @@
         </select>
   </form>
 
-  <button class="form-group" (click)="getGame(f, g)">Submit</button>
+  <button class="btn form-group btn-secondary" (click)="getGame(f, g)">Submit</button>
   <br>
-  <button class="form-group" [routerLink]="['/options']">Return to Options</button >
+  <button class="btn form-group btn-secondary" [routerLink]="['/options']">Return to Options</button >
 
 </div>
 

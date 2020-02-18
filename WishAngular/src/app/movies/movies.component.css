@@ -1,29 +1,11 @@
-.cool-list img {
-    float: right;
-    max-width: 100%;
-    max-height: 100%;
-    display:block;
-    margin-left:10px;
+.form-group {
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    float: none;
+    text-align: center;
 }
 
-.cool-list .content{
-    margin: 1em;
-    list-style-position:outside;
-    height: 300px;
-}
-
-.portrait {
-    height: 330px;
-    width: 220px;
-}
-
-.cool-list {
-list-style-type: none;
-margin-left:0px;
-padding-left:0px;
-display: inline-block;
-height: 350px;
-}
-.cool-list .name {
-    font-weight: bolder;
+.form-control {
+    width: 100%;
 }

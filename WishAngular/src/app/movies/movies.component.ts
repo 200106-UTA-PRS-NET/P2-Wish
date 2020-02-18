@@ -7,6 +7,7 @@ import { gameData } from '../gamesObj';
 import { addData } from '../addObj';
 import { Identifiers } from '@angular/compiler';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AlertService } from '../alert.service';
 
 
 
@@ -61,6 +62,8 @@ export class MoviesComponent implements OnInit {
 
   constructor(private _http: HttpService,
     private router: Router,
+    private alert: AlertService
+
     ) { }
 
   ngOnInit(): void {
@@ -79,11 +82,16 @@ export class MoviesComponent implements OnInit {
 
     this.queryString = `/search/${e.value.Name}`;
     console.log(this.queryString);
-    this._http.getMovies(this.queryString).subscribe(data => {
+    this._http.getMovies(this.queryString).subscribe(
+      data => {
       this.movies3 = data;
       console.log(data);
       console.log(this.movies3);
-  });
+      },
+      error => {
+        this.alert.warn("Invalid search");
+      }
+  );
 }
 
 
@@ -200,6 +208,7 @@ submitMovie(MediaID: number): void
       else
       {
         console.log("You already have this Movie");
+        this.alert.warn("You already have this Movie");
       }
 
 
