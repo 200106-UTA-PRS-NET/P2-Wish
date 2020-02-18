@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AlertService } from '../alert.service';
 
 @Component({
   selector: 'app-wishlist',
@@ -22,11 +23,15 @@ export class WishlistComponent implements OnInit {
   constructor(
     private _http: HttpService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private alert: AlertService
+    ) { }
 
   ngOnInit(): void {
     if (localStorage.getItem('loggedInUserID') == null ) {
       this.router.navigate(['/login']);
+      this.alert.warn("Login first, ok");
+
     }
     this.queryString = localStorage.getItem('loggedInUserID');
     this.name = localStorage.getItem('loggedInName');

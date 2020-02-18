@@ -110,6 +110,7 @@ export class GamesComponent implements OnInit {
   ngOnInit(): void {
     if (localStorage.getItem('loggedInUserID') == null ) {
       this.router.navigate(['/login']);
+      this.alert.warn("Login first, ok");
     }
   }
 

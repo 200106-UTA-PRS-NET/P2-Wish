@@ -1,13 +1,15 @@
-<h1>{{name}}'s WishList</h1>
+<h2>{{name}}'s WishList</h2>
+
+<div class="container">
 <ul *ngIf="list">
     <button class="nav-item nav-link-edit" [routerLink]="['/options']">Return to Options</button >
     <li *ngFor="let lit of list">
-    <p class="title">Title: {{ lit.mediaTitle }}</p>
+    <h3>{{ lit.mediaTitle }}</h3>
     <p class="platform">Platform: {{ lit.mediaPlatform }}</p>
     <p class="description">Description: {{ lit.mediaDescription }}</p>
-    <button (click)="deleteItem(lit.id)">Delete from List</button>
+    <button class="btn btn-secondary" (click)="deleteItem(lit.id)">Delete from List</button>
     <br>
     <br>
     </li>
-    <button class="nav-item nav-link-edit" [routerLink]="['/options']">Return to Options</button >
   </ul>
+</div>

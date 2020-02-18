@@ -69,6 +69,8 @@ export class MoviesComponent implements OnInit {
   ngOnInit(): void {
     if (localStorage.getItem('loggedInUserID') == null ) {
       this.router.navigate(['/login']);
+      this.alert.warn("Login first, ok");
+
     }
   }
 
@@ -210,8 +212,6 @@ submitMovie(MediaID: number): void
         console.log("You already have this Movie");
         this.alert.warn("You already have this Movie");
       }
-
-
     }); 
   
 }
