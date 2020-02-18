@@ -1,3 +1,12 @@
+:root {
+    --background: #efefef;
+    --text: #ff3b3f;
+    --container: #fdffff;
+    --darktext: #a9a9a9;
+    --contrast: #caebf2;
+    --darktext: #111111;
+    --darkbackground: #444242;
+}
 
 .cardcolor {
 
@@ -5,3 +14,11 @@ height: 100%; width: 100%;
 }
 
 
+.card-body:hover {
+    background-color: var(--text);
+}
+
+
+.card {
+    background-color: var(--darkbackground);
+}

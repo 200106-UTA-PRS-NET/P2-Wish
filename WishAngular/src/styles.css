@@ -20,14 +20,7 @@
     
     }
         
-.card-body:hover {
-    background-color: var(--text);
-}
 
-
-.card {
-    background-color: var(--darkbackground);
-}
 
 * {
     font-size: 99%;
