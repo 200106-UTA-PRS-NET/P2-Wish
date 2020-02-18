@@ -36,6 +36,9 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/wishlist']">My Wishlists</a>
       </li>
+      <li>
+        <span class="navbar-text"> {{message}} </span>
+      </li>
     </ul>
     <form #e="ngForm" class="form-inline my-2 my-lg-0">
       <input name="Name" ngModel required #name="ngModel" class="form-control mr-sm-2" type="search" placeholder="Search by ID" aria-label="Search">

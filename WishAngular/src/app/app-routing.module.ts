@@ -6,8 +6,6 @@ import { RegisterComponent } from './register/register.component';
 import { GamesComponent } from './games/games.component';
 import { MoviesComponent } from './movies/movies.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
-import { GamelistComponent } from './gamelist/gamelist.component';
-import { MovielistComponent } from './movielist/movielist.component';
 import { PubliclistComponent } from './publiclist/publiclist.component';
 
 
@@ -19,8 +17,6 @@ const routes: Routes = [
   {path: 'games', component: GamesComponent},
   {path: 'movies', component: MoviesComponent},
   {path: 'wishlist', component: WishlistComponent},
-  {path: 'gamelist', component: GamelistComponent},
-  {path: 'movielist', component: MovielistComponent},
   {path: 'publiclist', component: PubliclistComponent}
 ];
 

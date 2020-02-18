@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
 import { userData, respData } from '../dataObj';
 import { AlertService } from '../alert.service';
+import { DataServiceService } from "../data-service.service";
+
 
 
 @Component({
@@ -18,12 +20,15 @@ loading = false;
 submitted = false;
 returnUrl: string;
 
-data: string;
+//data: string;
 useData: userData;
 resData: respData;
 
 name: string;
 id: number;
+
+message: string;
+setMessage: string;
 
 
 constructor(
@@ -31,7 +36,8 @@ constructor(
     private route: ActivatedRoute,
     private router: Router,
     private _http: HttpService,
-    private alert: AlertService
+    private alert: AlertService,
+    private data: DataServiceService
 ) {
     // redirect to home if already logged in
 }
@@ -42,6 +48,7 @@ ngOnInit() {
         username: ['', Validators.required],
         password: ['', Validators.required]
     });
+    this.data.currentMessage.subscribe(message => this.message = message)
 
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -66,6 +73,8 @@ onSubmit() {
       {
         localStorage.setItem('loggedInUserID', this.resData.id);
         localStorage.setItem('loggedInName', this.resData.name);
+        this.setMessage = `${this.resData.name}    ID:${this.resData.id}`
+        this.data.changeMessage(this.setMessage);
         this.router.navigate(['/options']);
       }
     });
