@@ -2,7 +2,7 @@
 
 <div class="container">
 <ul *ngIf="list">
-    <button class="nav-item nav-link-edit" [routerLink]="['/options']">Return to Options</button >
+    <button class="btn btn-secondary nav-item nav-link-edit" style="margin-bottom: 1em;" [routerLink]="['/options']">Return to Options</button >
     <li *ngFor="let lit of list">
     <h3>{{ lit.mediaTitle }}</h3>
     <p class="platform">Platform: {{ lit.mediaPlatform }}</p>
