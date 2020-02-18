@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DataServiceService } from "../data-service.service";
 
 @Component({
   selector: 'app-wishlist',
@@ -16,10 +17,14 @@ export class WishlistComponent implements OnInit {
 
   name: string;
 
+  message: string;
+  setMessage: string;
+
   constructor(
     private _http: HttpService,
     private route: ActivatedRoute,
-    private router: Router,) { }
+    private router: Router,
+    private data: DataServiceService) { }
 
   ngOnInit(): void {
     if (localStorage.getItem('loggedInUserID') == null ) {
@@ -27,11 +32,14 @@ export class WishlistComponent implements OnInit {
     }
     this.queryString = localStorage.getItem('loggedInUserID');
     this.name = localStorage.getItem('loggedInName');
+    this.setMessage = `${this.name}    ID:${this.queryString}`
+    this.data.changeMessage(this.setMessage);
     console.log(this.queryString);
     this._http.getList(this.queryString).subscribe(data => {
       this.list = data;
       console.log(this.list);
     });  
+    this.data.currentMessage.subscribe(message => this.message = message);
 
 }
 deleteItem(id: number): void

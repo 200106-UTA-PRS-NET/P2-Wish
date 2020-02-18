@@ -88,8 +88,14 @@ export class GamesComponent implements OnInit {
   platformForm: FormGroup;
   platforms: Platform[] = [
     {value: '1', viewValue: 'Xbox One'},
+    {value: '14', viewValue: 'Xbox 360'},
     {value: '18', viewValue: 'Playstation 4'},
-    {value: '4', viewValue: 'PC'}
+    {value: '16', viewValue: 'Playstation 3'},
+    {value: '15', viewValue: 'Playstation 2'},
+    {value: '7', viewValue: 'Nintendo Switch'},
+    {value: '8', viewValue: 'Nintendo 3Ds'},
+    {value: '105', viewValue: 'GameCube'},
+    {value: '83', viewValue: 'Nintendo 64'}
   ];
 
 

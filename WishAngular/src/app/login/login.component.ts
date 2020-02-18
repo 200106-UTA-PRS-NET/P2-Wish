@@ -49,6 +49,7 @@ ngOnInit() {
         password: ['', Validators.required]
     });
     this.data.currentMessage.subscribe(message => this.message = message)
+    this.data.changeMessage('');
 
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
