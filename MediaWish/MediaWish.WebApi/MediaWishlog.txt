@@ -3361,3 +3361,49 @@ WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
 2020-02-17 19:29:47.905 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.GamesController.Search (MediaWish.WebApi) in 1468.5958ms
 2020-02-17 19:29:47.908 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.GamesController.Search (MediaWish.WebApi)'
 2020-02-17 19:29:47.912 -06:00 [INF] Request finished in 1623.4241ms 200 application/json; charset=utf-8
+2020-02-17 21:47:03.955 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-17 21:47:03.967 -06:00 [INF] Hosting environment: Development
+2020-02-17 21:47:03.968 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-17 21:47:03.973 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-17 21:47:04.029 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-17 21:47:04.053 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-17 21:47:04.284 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-17 21:47:04.805 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-17 21:47:04.834 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 776.7048ms
+2020-02-17 21:47:04.835 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-17 21:47:04.837 -06:00 [INF] Request finished in 866.6571ms 200 application/json; charset=utf-8
+2020-02-17 21:47:08.878 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/search/forrest  
+2020-02-17 21:47:08.880 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Search (MediaWish.WebApi)'
+2020-02-17 21:47:08.881 -06:00 [INF] Route matched with {action = "Search", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Search(System.String, Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-17 21:47:09.033 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-17 21:47:09.035 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-17 21:47:09.037 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Search (MediaWish.WebApi) in 155.4278ms
+2020-02-17 21:47:09.037 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Search (MediaWish.WebApi)'
+2020-02-17 21:47:09.038 -06:00 [INF] Request finished in 160.2781ms 200 application/json; charset=utf-8
+2020-02-17 22:30:05.800 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-17 22:30:05.807 -06:00 [INF] Hosting environment: Development
+2020-02-17 22:30:05.808 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-17 22:30:05.811 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-17 22:30:05.853 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-17 22:30:05.874 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-17 22:30:05.959 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-17 22:30:06.319 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-17 22:30:06.341 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 462.6127ms
+2020-02-17 22:30:06.342 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-17 22:30:06.344 -06:00 [INF] Request finished in 535.4955ms 200 application/json; charset=utf-8
+2020-02-17 22:30:09.669 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-17 22:30:09.671 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-17 22:30:09.671 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-17 22:30:09.672 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-17 22:30:09.708 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-17 22:30:09.708 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 36.9551ms
+2020-02-17 22:30:09.708 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-17 22:30:09.708 -06:00 [INF] Request finished in 39.7798ms 200 application/json; charset=utf-8
+2020-02-17 22:30:14.207 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/323  
+2020-02-17 22:30:14.208 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-17 22:30:14.210 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-17 22:30:14.235 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-17 22:30:14.384 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-17 22:30:14.386 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 175.2067ms
+2020-02-17 22:30:14.386 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-17 22:30:14.386 -06:00 [INF] Request finished in 178.9355ms 200 application/json; charset=utf-8
