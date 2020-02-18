@@ -90,8 +90,8 @@
 
 </div>
 
-  <div *ngIf="game">
-    <p class="name">Title: {{ game.name }}</p>
+  <div class="container"   *ngIf="game">
+    <h3>{{ game.name }}</h3>
     <p class="release">Released: {{ game.released }}</p>
     <p class="rating">Rating: {{ game.rating }}</p>
     <label>Genres: </label>
@@ -100,7 +100,7 @@
     <label>Platforms: </label>
     <span *ngFor="let p of game.platforms" class="platform"> {{ p.name }} </span>
     <p class = "description"> {{ game.description }}</p>
-    <img [src]="game.background_image" >
+    <img class="img-thumbnail" [src]="game.background_image" >
     <button (click)="submitGame(game.id)">Add to WishList</button>
   </div>
 

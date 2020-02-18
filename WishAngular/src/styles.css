@@ -14,6 +14,21 @@
     --darkbackground: #444242;
 }
 
+.cardcolor {
+
+    height: 100%; width: 100%;
+    
+    }
+        
+.card-body:hover {
+    background-color: var(--text);
+}
+
+
+.card {
+    background-color: var(--darkbackground);
+}
+
 * {
     font-size: 99%;
     font-family: 'Nunito', sans-serif;
@@ -100,6 +115,10 @@ form input {
 .navbar-collapse button:hover {
     color: aliceblue;
     background-color: var(--text);
+}
+
+a:hover {
+    color: var(--text);
 }
 
 h2 {
