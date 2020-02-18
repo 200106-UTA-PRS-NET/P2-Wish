@@ -4,6 +4,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpService } from './http.service';
 import { userData, respData, publicData } from './dataObj';
 import { NgForm } from '@angular/forms';
+import { AlertService } from './alert.service';
+import { AlertComponent } from './alert/alert.component';
+
 
 @Component({
   selector: 'app-root',
@@ -22,11 +25,15 @@ export class AppComponent {
     private _http: HttpService,
     private route: ActivatedRoute,
     private router: Router,
+    private alert: AlertService,
     ) { }
 
   findUserList(e: NgForm): void{
     this.queryString = e.value.Name;
     console.log(e.value.Name);
+
+    this.alert.error("LEL");
+
     this._http.checkUserId(this.queryString).subscribe((p : publicData)=>
     {
       this.pData = p;
@@ -40,6 +47,7 @@ export class AppComponent {
         localStorage.setItem('publicUserID', this.pData.id);
         localStorage.setItem('publicUserName', this.pData.name);
         this.router.navigate(['/publiclist']);
+
       }
     });
 
