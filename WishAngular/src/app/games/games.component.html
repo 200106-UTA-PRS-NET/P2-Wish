@@ -56,6 +56,7 @@
     <label>Platforms: </label>
     <span *ngFor="let p of game.platforms" class="platform"> {{ p.name }} </span>
     <p class="description">{{ game.description }}</p>
+    <img [src]="game.background_image" >
     <button (click)="submitGame(game.id)">Add to WishList</button>
     <br>
     <br>
@@ -74,6 +75,7 @@
     <label>Platforms: </label>
     <span *ngFor="let p of game.platforms" class="platform"> {{ p.name }} </span>
     <p class = "description"> {{ game.description }}</p>
+    <img [src]="game.background_image" >
     <button (click)="submitGame(game.id)">Add to WishList</button>
   </div>
 

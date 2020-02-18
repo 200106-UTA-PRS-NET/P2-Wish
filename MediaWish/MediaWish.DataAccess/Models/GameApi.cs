@@ -32,6 +32,7 @@ namespace MediaWish.DataAccess.Models
         public List<Platform> platforms { get; set; }
         public List<GameGenre> genres { get; set; }
         public string description_raw { get; set; }
+        public string background_image { get; set; }
     }
     public class Platform
     {
