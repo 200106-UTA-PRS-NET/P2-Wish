@@ -89,5 +89,14 @@ namespace MediaWish.Test
 
             Assert.NotNull(games);
         }
+
+        [Theory]
+        [InlineData(1959, 4)]
+        public void AddAddGameToWishlist_AddDuplicate_InvalidOperationException(int gameID, int userID)
+        {
+            gamesRepo = new GamesRepo(new Library.Entities.MediaWishContext());
+
+            Assert.Throws<InvalidOperationException>(() => gamesRepo.AddGameToWishlist(gameID, userID));
+        }
     }
 }

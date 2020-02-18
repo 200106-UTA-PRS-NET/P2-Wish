@@ -1,21 +1,21 @@
-﻿using MediaWish.Library.Interfaces;
-using MediaWish.WebApi.Models;
+﻿using MediaWish.DataAccess.Models;
+using MediaWish.Library.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MediaWish.Test.MockRepositories
 {
-    public class MockMoviesRepo: IMoviesRepo<MovieAPI, MovieDetails>
+    public class MockDataMoviesRepo : IMoviesRepo<MovieAPI, Movies>
     {
-        static IEnumerable<Movies> movies = new List<Movies>()
+        static List<Movies> movies = new List<Movies>()
         {
 
             new Movies()
             {
                 id = 1,
                 title = "dog",
-                genre_ids = {1, 2},
+                genre_ids = { 1, 2 },
                 overview = "nice dog",
                 poster_path = "google.com",
                 vote_average = 2,
@@ -26,21 +26,21 @@ namespace MediaWish.Test.MockRepositories
             {
                 id = 2,
                 title = "cat",
-                genre_ids = {1, 3},
+                genre_ids = { 1, 3 },
                 overview = "bad cat",
                 poster_path = "bing.com",
                 vote_average = 3,
                 release_date = "june 13"
             },
-
         };
+
 
         public void AddMovieToWishList(int movieID, int userID)
         {
             throw new NotImplementedException();
         }
 
-        public MovieDetails GetMovieByID(int movieID)
+        public Movies GetMovieByID(int movieID)
         {
             throw new NotImplementedException();
         }
@@ -52,7 +52,10 @@ namespace MediaWish.Test.MockRepositories
 
         public MovieAPI GetPopularMovies(int page)
         {
-            throw new NotImplementedException();
+            return new MovieAPI()
+            {
+                results = movies
+            };
         }
 
         public MovieAPI SearchMovie(string movieStr, int page)

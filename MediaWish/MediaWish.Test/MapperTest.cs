@@ -1,4 +1,5 @@
-﻿using MediaWish.Library.Interfaces;
+﻿using MediaWish.DataAccess.Repositories;
+using MediaWish.Library.Interfaces;
 using MediaWish.Test.MockRepositories;
 using MediaWish.WebApi.Models;
 using System;
@@ -29,5 +30,15 @@ namespace MediaWish.Test
 
             Assert.IsAssignableFrom<IEnumerable<Library.Entities.Users>>(libModelUsers);
         }
+
+        [Fact]
+        public void MapException_MovieAPI()
+        {
+            IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.Movies> dataMoviesRepo = new MockDataMoviesRepo();
+
+            Assert.ThrowsAny<Exception>(() => Mapper.Map(dataMoviesRepo.GetPopularMovies(1).results));
+        }
+
+
     }
 }
