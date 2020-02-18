@@ -1,4 +1,4 @@
-.movielist img {
+.cool-list img {
     float: right;
     max-width: 100%;
     max-height: 100%;
@@ -6,7 +6,7 @@
     margin-left:10px;
 }
 
-.movielist .content{
+.cool-list .content{
     margin: 1em;
     list-style-position:outside;
     height: 300px;
@@ -17,13 +17,13 @@
     width: 220px;
 }
 
-.movielist {
+.cool-list {
 list-style-type: none;
 margin-left:0px;
 padding-left:0px;
 display: inline-block;
 height: 350px;
 }
-.movielist .name {
+.cool-list .name {
     font-weight: bolder;
 }

@@ -73,6 +73,13 @@ form input {
     color: var(--text)
 }
 
+.form-group {
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    float: none;
+}
+
 .nav-link {
     color: var(--darktext);
 }
@@ -112,4 +119,34 @@ h3 {
 .btns-center btn {
     margin: auto;
 
+}
+
+.cool-list img {
+    float: right;
+    max-width: 100%;
+    max-height: 100%;
+    display:block;
+    margin-left:10px;
+}
+
+.cool-list .content{
+    margin: 1em;
+    list-style-position:outside;
+    height: 300px;
+}
+
+.portrait {
+    height: 330px;
+    width: 220px;
+}
+
+.cool-list {
+list-style-type: none;
+margin-left:0px;
+padding-left:0px;
+display: inline-block;
+height: 350px;
+}
+.cool-list .name {
+    font-weight: bolder;
 }
