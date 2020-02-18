@@ -38,7 +38,7 @@
       <hr>
     </div>
 
-    <li class="movielist container" *ngFor="let movie of movies">
+    <li class="cool-list container" *ngFor="let movie of movies">
         <img class="img-thumbnail portrait" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
         <div class="content">
         <h3>{{ movie.title }}</h3>
@@ -64,7 +64,7 @@
       <hr>
     </div>
 
-    <li class="movielist container" *ngFor="let movie of movies2">
+    <li class="cool-list container" *ngFor="let movie of movies2">
       <img class="img-thumbnail portrait" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
       <div class="content">
       <h3>{{ movie.title }}</h3>
@@ -87,7 +87,7 @@
 
   <ul *ngIf="movies3">
 
-    <li class="movielist container" *ngFor="let movie of movies3">
+    <li class="cool-list container" *ngFor="let movie of movies3">
       <img class="img-thumbnail portrait" [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" >
       <div class="content">
 

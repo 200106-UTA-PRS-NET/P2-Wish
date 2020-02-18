@@ -9,16 +9,19 @@
   </form>
 -->
 
-
+<div class="form-group">
 <form #e="ngForm">
-    <input name="Name" ngModel required #name="ngModel">
-    <button (click)="findGame(e)">Find Game</button>
+    <input class="form-control mr-sm-2" name="Name" ngModel required #name="ngModel">
+    <button class="form-group" (click)="findGame(e)">Find Game</button>
   </form>
 
 
-  <form #f="ngForm">
+<br>
+<br>
+
+  <form class="form-group" #f="ngForm">
     <label>Genre</label>
-        <select name="GenreID" ngModel required #genreID="ngModel">
+        <select class="form-group" name="GenreID" ngModel required #genreID="ngModel">
         <option *ngFor="let genre of genres" [value]="genre.value">
             {{genre.viewValue}}
         </option>
@@ -26,46 +29,62 @@
   </form>
 
 
-  <form #g="ngForm">
+  <form class="form-group" #g="ngForm">
     <label>Platform</label>
-        <select name="PlatformID" ngModel required #platformID="ngModel">
+        <select class="form-group" name="PlatformID" ngModel required #platformID="ngModel">
         <option *ngFor="let platform of platforms" [value]="platform.value">
             {{platform.viewValue}}
         </option>
         </select>
   </form>
 
-  <button (click)="getGame(f, g)">Submit</button>
+  <button class="form-group" (click)="getGame(f, g)">Submit</button>
+  <br>
+  <button class="form-group" [routerLink]="['/options']">Return to Options</button >
+
+</div>
 
   <br>
   <br>
-  <button class="nav-item nav-link-edit" [routerLink]="['/options']">Return to Options</button >
 
   <br>
   <hr>
 
-  <div>
-    
+  <div class="container">
   <ul *ngIf="games">
-    <button (click)="getGameR(f, g)">Previous Page</button>
-    <button (click)="getGameF(f, g)">Next Page</button>
-    <li *ngFor="let game of games">
-    <p class="name">Title: {{ game.name }}</p>
-    <p class="release">Released: {{ game.released }}</p>
-    <p class="rating">Rating: {{ game.rating }}</p>
-    <label>Genres: </label>
-    <span *ngFor="let g of game.genres" class = "genre"> {{ g.name }} </span>
-    <br>
-    <label>Platforms: </label>
-    <span *ngFor="let p of game.platforms" class="platform"> {{ p.name }} </span>
-    <p class="description">{{ game.description }}</p>
-    <img [src]="game.background_image" >
-    <button (click)="submitGame(game.id)">Add to WishList</button>
-    <br>
-    <br>
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+    <button class="btn btn-secondary" (click)="getGameR(f, g)">Previous Page</button>
+    <button class="btn btn-secondary" (click)="getGameF(f, g)">Next Page</button>
+    </div>
+    <li class="container card-deck" *ngFor="let game of games">
+        <div class="card">
+          <div class="card-body card-img">
+            <img class="img-thumbnail" [src]="game.background_image" >
+            <div class="card-img">
+              <div class="content info-front">
+
+                <h3>{{game.name}}</h3>
+                  <p class="release">Released: {{ game.released }}</p>
+                  <p class="rating">Rating: {{ game.rating }}</p>
+                  <label>Genres: </label>
+                  <span *ngFor="let g of game.genres" class = "genre"> {{ g.name }} </span>
+                  <br>
+                  <label>Platforms: </label>
+                  <span *ngFor="let p of game.platforms" class="platform"> {{ p.name }} </span>
+                  <p class="description">{{ game.description }}</p>
+                  <button class="btn btn-secondary" (click)="submitGame(game.id)">Add to WishList</button>
+                </div>             
+               </div>
+
+          </div>
+    </div>
     </li>
-    <button (click)="getGameR(f, g)">Previous Page</button>
-    <button (click)="getGameF(f, g)">Next Page</button>
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+      <button class="btn btn-secondary" (click)="getGameR(f, g)">Previous Page</button>
+      <button class="btn btn-secondary" (click)="getGameF(f, g)">Next Page</button>
+      </div>
   </ul>
 
 </div>
