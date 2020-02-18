@@ -36,6 +36,7 @@ namespace MediaWish.WebApi.Models
         public List<Platform> platforms { get; set; }
         public List<GameGenre> genres { get; set; }
         public string description { get; set; }
+        public string background_image { get; set; }
     }
 
     public class Platform
