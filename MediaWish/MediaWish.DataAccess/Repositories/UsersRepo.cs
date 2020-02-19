@@ -28,7 +28,6 @@ namespace MediaWish.DataAccess.Repositories
             {
                 throw;
             }
-
         }
 
         public Users GetUserById(int id)
