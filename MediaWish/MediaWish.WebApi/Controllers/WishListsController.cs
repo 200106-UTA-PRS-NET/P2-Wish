@@ -1,10 +1,6 @@
 ﻿using MediaWish.Library.Interfaces;
-using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
@@ -15,14 +11,10 @@ namespace MediaWish.WebApi.Controllers
     public class WishListsController : ControllerBase
     {
         private readonly IWishListRepo _wishListRepo;
-        private readonly ILogger<WishListsController> _logger;
-        public WishListsController(IWishListRepo wishListRepo)//, Logger<WishListsController> logger
+
+        public WishListsController(IWishListRepo wishListRepo)
         {
             _wishListRepo = wishListRepo;
-           // _logger = logger;
-
-
-
         }
         
 
@@ -42,7 +34,7 @@ namespace MediaWish.WebApi.Controllers
         {
             try
             {
-                var isRemoved = _wishListRepo.RemoveItemFromWishlist(id);
+                _wishListRepo.RemoveItemFromWishlist(id);
                 return Ok(true);
             }
             catch (NullReferenceException)
