@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MediaWish.Test.MockRepositories
 {
-    public class MockApiMoviesRepo: IMoviesRepo<MovieAPI, MovieDetails>
+    public class MockApiMoviesRepo: IMoviesRepo<MovieApi, MovieDetails>
     {
         static IEnumerable<Movies> movies = new List<Movies>()
         {
@@ -45,17 +45,17 @@ namespace MediaWish.Test.MockRepositories
             throw new NotImplementedException();
         }
 
-        public MovieAPI GetMoviesByGenre(int genreID, int page)
+        public MovieApi GetMoviesByGenre(int genreID, int page)
         {
             throw new NotImplementedException();
         }
 
-        public MovieAPI GetPopularMovies(int page)
+        public MovieApi GetPopularMovies(int page)
         {
             throw new NotImplementedException();
         }
 
-        public MovieAPI SearchMovie(string movieStr, int page)
+        public MovieApi SearchMovie(string movieStr, int page)
         {
             throw new NotImplementedException();
         }

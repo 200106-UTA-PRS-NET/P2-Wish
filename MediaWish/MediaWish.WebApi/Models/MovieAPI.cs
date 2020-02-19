@@ -2,7 +2,7 @@
 
 namespace MediaWish.WebApi.Models
 {
-    public class MovieAPI
+    public class MovieApi
     {
         public int page { get; set; }
         public int total_results { get; set; }
