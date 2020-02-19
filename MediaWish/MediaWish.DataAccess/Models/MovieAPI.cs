@@ -3,7 +3,7 @@
 namespace MediaWish.DataAccess.Models
 {
     // class for when searching for a list of movies
-    public class MovieAPI
+    public class MovieApi
     {
         public int page { get; set; }
         public int total_results { get; set; }

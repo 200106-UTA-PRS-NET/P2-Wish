@@ -10,7 +10,7 @@ namespace MediaWish.Test
 {
     public class MoviesRepoTest
     {
-        IMoviesRepo<MovieAPI, MovieDetails> _moviesRepo = new MoviesRepo(new Library.Entities.MediaWishContext());
+        IMoviesRepo<MovieApi, MovieDetails> _moviesRepo = new MoviesRepo(new Library.Entities.MediaWishContext());
 
         [Theory]
         [InlineData("Forrest", 1)]

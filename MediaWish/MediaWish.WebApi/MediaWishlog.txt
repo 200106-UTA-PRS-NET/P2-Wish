@@ -3476,3 +3476,29 @@ WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
 2020-02-18 14:43:58.537 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
 2020-02-18 14:43:58.537 -06:00 [INF] Request finished in 70.7365ms 200 application/json; charset=utf-8
 2020-02-18 15:35:09.145 -06:00 [INF] Application is shutting down...
+2020-02-19 15:06:11.670 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-19 15:06:11.686 -06:00 [INF] Hosting environment: Development
+2020-02-19 15:06:11.686 -06:00 [INF] Content root path: C:\Users\dyjam\OneDrive\Documents\Revature\P2-Wish\MediaWish\MediaWish.WebApi
+2020-02-19 15:06:11.730 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies  
+2020-02-19 15:06:11.794 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-19 15:06:11.820 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-19 15:06:12.141 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-19 15:06:12.868 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-19 15:06:12.897 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 1073.1153ms
+2020-02-19 15:06:12.898 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-19 15:06:12.899 -06:00 [INF] Request finished in 1172.3132ms 200 application/json; charset=utf-8
+2020-02-19 15:06:20.832 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/movies/popular/122  
+2020-02-19 15:06:20.834 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-19 15:06:20.837 -06:00 [INF] Route matched with {action = "Popular", controller = "Movies"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Popular(Int32) on controller MediaWish.WebApi.Controllers.MoviesController (MediaWish.WebApi).
+2020-02-19 15:06:20.840 -06:00 [INF] Starting up MoviesController Logggggggggg
+2020-02-19 15:06:20.959 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.DataAccess.Models.Movies, MediaWish.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-19 15:06:20.960 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi) in 122.7201ms
+2020-02-19 15:06:20.960 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.MoviesController.Popular (MediaWish.WebApi)'
+2020-02-19 15:06:20.961 -06:00 [INF] Request finished in 128.9898ms 200 application/json; charset=utf-8
+2020-02-19 15:06:25.820 -06:00 [INF] Request starting HTTP/2.0 GET https://localhost:44335/games/  
+2020-02-19 15:06:25.822 -06:00 [INF] Executing endpoint 'MediaWish.WebApi.Controllers.GamesController.All (MediaWish.WebApi)'
+2020-02-19 15:06:25.824 -06:00 [INF] Route matched with {action = "All", controller = "Games"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult All(Int32) on controller MediaWish.WebApi.Controllers.GamesController (MediaWish.WebApi).
+2020-02-19 15:06:26.874 -06:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[MediaWish.WebApi.Models.Games, MediaWish.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-19 15:06:26.878 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.GamesController.All (MediaWish.WebApi) in 1053.8058ms
+2020-02-19 15:06:26.878 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.GamesController.All (MediaWish.WebApi)'
+2020-02-19 15:06:26.879 -06:00 [INF] Request finished in 1059.4939ms 200 application/json; charset=utf-8
