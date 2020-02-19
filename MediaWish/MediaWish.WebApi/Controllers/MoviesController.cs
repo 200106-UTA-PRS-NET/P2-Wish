@@ -10,10 +10,10 @@ namespace MediaWish.WebApi.Controllers
     [ApiController]
     public class MoviesController : ControllerBase
     {
-        private readonly IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails> _moviesRepo;
+        private readonly IMoviesRepo<DataAccess.Models.MovieApi, DataAccess.Models.MovieDetails> _moviesRepo;
 
 
-        public MoviesController(IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails> moviesRepo){
+        public MoviesController(IMoviesRepo<DataAccess.Models.MovieApi, DataAccess.Models.MovieDetails> moviesRepo){
             _moviesRepo = moviesRepo;
         }
 
@@ -62,7 +62,7 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult Genre(int id, int page=1)
         {
             var movies = _moviesRepo.GetMoviesByGenre(id, page);
-            if (movies.results.Count() == 0 || movies == null)
+            if (movies.results.Any() || movies == null)
             {
                 return NotFound();
             }
@@ -80,7 +80,7 @@ namespace MediaWish.WebApi.Controllers
         public IActionResult Search(string movieSearch, int page=1)
         {
             var movies = _moviesRepo.SearchMovie(movieSearch, page);
-            if (movies.results.Count() == 0 || movies == null)
+            if (movies.results.Any() || movies == null)
             {
                 return NotFound();
             }

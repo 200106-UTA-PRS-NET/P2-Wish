@@ -35,7 +35,7 @@ namespace MediaWish.WebApi
 
             // Adding Dependency to your Controller to use Db
             services.AddTransient<IUsersRepo, UsersRepo>();
-            services.AddTransient<IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.MovieDetails>, MoviesRepo>();
+            services.AddTransient<IMoviesRepo<DataAccess.Models.MovieApi, DataAccess.Models.MovieDetails>, MoviesRepo>();
             services.AddTransient<IGamesRepo<DataAccess.Models.GameApi, DataAccess.Models.Games, DataAccess.Models.GameChickenApi>, GamesRepo>();
             services.AddTransient<IWishListRepo, WishListsRepo>();
 

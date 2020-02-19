@@ -1,7 +1,6 @@
 ﻿using MediaWish.Library.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using Microsoft.Extensions.Logging;
 using Serilog;
 
 
