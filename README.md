@@ -12,3 +12,4 @@ Media Wish is a web application in which allows the user to generate their media
 -Sonarcloud for code quality checks, bugs and code smells.
 -Swagger for API documentation.
 -Logger to log information and exceptions when running the API.
+-Jasmine and Karma for Angular application unit testing.
