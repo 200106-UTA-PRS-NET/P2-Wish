@@ -3502,3 +3502,4 @@ WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
 2020-02-19 15:06:26.878 -06:00 [INF] Executed action MediaWish.WebApi.Controllers.GamesController.All (MediaWish.WebApi) in 1053.8058ms
 2020-02-19 15:06:26.878 -06:00 [INF] Executed endpoint 'MediaWish.WebApi.Controllers.GamesController.All (MediaWish.WebApi)'
 2020-02-19 15:06:26.879 -06:00 [INF] Request finished in 1059.4939ms 200 application/json; charset=utf-8
+
