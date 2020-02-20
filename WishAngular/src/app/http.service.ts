@@ -11,8 +11,8 @@ import { addData } from './addObj';
   providedIn: 'root'
 })
 export class HttpService {
-
-
+  ROOT_URL = 'http://mediawish.azurewebsites.net/users/info/';
+  
   constructor(private http: HttpClient) { }
 
 
