@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
 import { AlertService } from './alert.service';
 import { AlertComponent } from './alert/alert.component';
 import { DataServiceService } from "./data-service.service";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
