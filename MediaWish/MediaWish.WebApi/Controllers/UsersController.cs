@@ -3,7 +3,6 @@ using MediaWish.Library.Interfaces;
 using MediaWish.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Serilog;
 
 namespace MediaWish.WebApi.Controller
@@ -12,14 +11,10 @@ namespace MediaWish.WebApi.Controller
     public class UsersController : ControllerBase
     {
         private readonly IUsersRepo _usersRepo;
-        private readonly ILogger<UsersController> _logger;
 
-
-        public UsersController(IUsersRepo usersRepo)//, Logger<UsersController> logger
+        public UsersController(IUsersRepo usersRepo)
         {
             _usersRepo = usersRepo;
-           // _logger = logger;
-
         }
 
 
@@ -49,7 +44,7 @@ namespace MediaWish.WebApi.Controller
 
 
         [Route("users/info/{id}")]
-        [HttpGet]//added these HttpGet 's to see documentation for swagger, needed to be on top of IaAction result
+        [HttpGet]
         public IActionResult Info(int id)
         {
             try
@@ -71,7 +66,7 @@ namespace MediaWish.WebApi.Controller
         {
             try
             {
-                int newid = _usersRepo.CreateUser(Mapper.Map(user));
+                _usersRepo.CreateUser(Mapper.Map(user));
                 return Ok(true);
             } catch (DbUpdateException)
             {

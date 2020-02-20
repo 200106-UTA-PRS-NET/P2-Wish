@@ -1,13 +1,10 @@
 ﻿
 namespace MediaWish.Library.Entities
 {
+#nullable enable
     public partial class WishList
     {
         public int Id { get; set; }
-
-        //public int? UserId { get; set; }
-
-        //public int? MediaId { get; set; }
 
         public string? MediaTitle { get; set; }
 
@@ -18,4 +15,6 @@ namespace MediaWish.Library.Entities
         public virtual Medias mediaTypes { get; set; }
         public virtual Users users { get; set; }
     }
+#nullable restore
+
 }

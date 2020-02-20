@@ -34,7 +34,7 @@ namespace MediaWish.Test
         [Fact]
         public void MapException_MovieAPI()
         {
-            IMoviesRepo<DataAccess.Models.MovieAPI, DataAccess.Models.Movies> dataMoviesRepo = new MockDataMoviesRepo();
+            IMoviesRepo<DataAccess.Models.MovieApi, DataAccess.Models.Movies> dataMoviesRepo = new MockDataMoviesRepo();
 
             Assert.ThrowsAny<Exception>(() => Mapper.Map(dataMoviesRepo.GetPopularMovies(1).results));
         }
